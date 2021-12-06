@@ -6,7 +6,7 @@
     $HEIGHT = 24;  // in
     $WEIGHT = 3;  // lbs
 
-    $XML_RequestFile=file_get_contents(__DIR__."/request-rate.xml");
+    $XML_RequestFile=file_get_contents(__DIR__."/order-105982.xml"); //"/request-rate.xml");
 
     $search  = array("{LENGTH}","{WIDTH}","{HEIGHT}","{WEIGHT}");
     $replace = array( $LENGTH, $WIDTH, $HEIGHT, $WEIGHT );

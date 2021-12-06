@@ -11,14 +11,14 @@
             <XpciVersion>1.0001</XpciVersion>
         </TransactionReference>
         <RequestAction>Rate</RequestAction>
-        <RequestOption>Rate</RequestOption>
+        <RequestOption>shop</RequestOption>
     </Request>
     <PickupType>
         <Code>01</Code>
     </PickupType>
     <Shipment>
         <Shipper>
-            <ShipperNumber>3YF222</ShipperNumber>
+            <ShipperNumber>429744</ShipperNumber>
             <Address>
                 <City>Kokomo</City>
                 <StateProvinceCode>IN</StateProvinceCode>
@@ -28,11 +28,10 @@
         </Shipper>
         <ShipTo>
             <Address>
-                <City>bryant</City>
-                <StateProvinceCode>AR</StateProvinceCode>
+                <City>San Jose</City>
+                <StateProvinceCode>CA</StateProvinceCode>
                 <CountryCode>US</CountryCode>
-                <PostalCode>72022</PostalCode>
-                <ResidentialAddressIndicator />
+                <PostalCode>95125-5981</PostalCode>
             </Address>
         </ShipTo>
         <ShipFrom>
@@ -43,9 +42,6 @@
                 <PostalCode>46902</PostalCode>
             </Address>
         </ShipFrom>
-        <Service>
-            <Code>93</Code>
-        </Service>
         <Package>
             <PackagingType>
                 <Code>02</Code>
@@ -54,8 +50,8 @@
                 <UnitOfMeasurement>
                     <Code>IN</Code>
                 </UnitOfMeasurement>
-                <Length>24</Length>
-                <Width>19</Width>
+                <Length>18</Length>   
+                <Width>13</Width>
                 <Height>1</Height>
             </Dimensions>
             <PackageWeight>

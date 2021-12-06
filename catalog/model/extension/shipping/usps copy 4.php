@@ -2,7 +2,7 @@
 
 /*
  * DEBUG WITH ChromePHP Logger 
- *
+ * 
 // $root = "/home/b16aa05/oc3.throttlejockey.com/";
 $root = "/home/b16aa05/public_html/";    
 if (file_exists($root . 'system/library/ChromePHP.php')) {
@@ -24,7 +24,7 @@ class ModelExtensionShippingUsps extends Model {
 		}
 
 		$weight = $this->weight->convert($this->cart->getWeight(), $this->config->get('config_weight_class_id'), $this->config->get('shipping_usps_weight_class_id'));
-        // weight = convert( 5, lb, lb ); 
+
 		// 70 pound limit
 		if ($weight > 70) {
 			$status = false;

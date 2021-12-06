@@ -188,8 +188,7 @@ class ModelExtensionPaymentPPExpress extends Model {
 				if ($total_row['value'] != 0) {
 					$item_price = $this->currency->format($total_row['value'], $this->session->data['currency'], false, false);
 
-					// $data['L_PAYMENTREQUEST_0_NUMBER' . $i] = $total_row['code'];
-					$data['L_PAYMENTREQUEST_0_NUMBER' . $i] = $total_row['extension_id'];
+					$data['L_PAYMENTREQUEST_0_NUMBER' . $i] = $total_row['code'];
 					$data['L_PAYMENTREQUEST_0_NAME' . $i] = $total_row['title'];
 					$data['L_PAYMENTREQUEST_0_AMT' . $i] = $this->currency->format($total_row['value'], $this->session->data['currency'], false, false);
 					$data['L_PAYMENTREQUEST_0_QTY' . $i] = 1;

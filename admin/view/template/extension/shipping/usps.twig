@@ -49,6 +49,17 @@
               <div class="well well-sm" style="height: 150px; overflow: auto;">
                 <div class="checkbox">
                   <label>
+                    {% if shipping_usps_domestic_61 %}
+                    <input type="checkbox" name="shipping_usps_domestic_61" value="1" checked="checked" />
+                    {{ text_domestic_61 }}
+                    {% else %}
+                    <input type="checkbox" name="shipping_usps_domestic_61" value="1" />
+                    {{ text_domestic_61 }}
+                    {% endif %}
+                  </label>
+                </div>              
+                <div class="checkbox">
+                  <label>
                     {% if shipping_usps_domestic_00 %}
                     <input type="checkbox" name="shipping_usps_domestic_00" value="1" checked="checked" />
                     {{ text_domestic_00 }}

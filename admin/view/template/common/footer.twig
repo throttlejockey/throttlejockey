@@ -9,7 +9,7 @@
 
 
         /* Add HideSideNav class to ... hide the sidenav */
-        div#content.HideSideNav {
+        {# div#content.HideSideNav {
             margin-left: 0px!important;
         }
         nav#column-left.HideSideNav {
@@ -20,7 +20,7 @@
         }
         #button-menu.HideSideNav {
             display: block!important;
-        }
+        } #}
 
         #option.nav-pills > li > a {
             border-radius: 3px;
@@ -40,12 +40,12 @@
     $('#tab-option .col-sm-2').removeClass('col-sm-2').addClass('col-sm-3');
     $('#tab-option .col-sm-10').removeClass('col-sm-10').addClass('col-sm-9');
 
-    $('#button-menu').addClass('HideSideNav'); 
+    {# $('#button-menu').addClass('HideSideNav'); 
     $('div#header-logo').addClass('HideSideNav'); 
     $('a#button-menu').on('click', function(){
         $('nav#column-left').toggleClass('HideSideNav'); 
         $('div#content').toggleClass('HideSideNav'); 
-    });
+    }); #}
     
 
     // SIDEBAR COLLAPSE
@@ -71,13 +71,6 @@
 
 
 Sortable.create(option, {
-
-
-    multiDrag: true, // Enable the plugin
-	selectedClass: "sortable-selected", // Class name for selected item
-//	multiDragKey: null, // Key that must be down for items to be selected
-
-
     animation: 100,
     group: 'list-1',
     draggable: '#option li',

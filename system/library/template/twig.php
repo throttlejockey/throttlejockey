@@ -22,7 +22,7 @@ final class Twig {
 		// initialize Twig environment
 		$config = array(
 			'autoescape'  => false,
-			'debug'       => false,
+			'debug'       => true,
 			'auto_reload' => true,
 			'cache'       => DIR_CACHE . 'template/'
 		);

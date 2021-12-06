@@ -1,0 +1,51 @@
+file:   /catalog/view/theme/journal3/template/journal3/headers/desktop/classic.twig 
+
+search ( offset: 6): 
+
+        {% if j3.settings.get('logo_src') %}
+
+add replace: 
+        {# ## SNIP HERE FOR OCMOD ## #} 
+        {# If a category logo path was passed, use it, else use the store default.  #}
+        {% if category_logo is not null and category_logo is not empty %}
+            <a href="{{ home }}">
+                <img src="{{ category_logo }}"  width="{{ j3.settings.get('logo_width') }}" height="{{ j3.settings.get('logo_height') }}" alt="{{ name }}" title="{{ name }}"/>
+            </a>
+        {% else %}
+
+            {% if j3.settings.get('logo_src') %}
+                <a href="{{ home }}">
+                     <img src="{{ j3.settings.get('logo_src') }}" {% if j3.settings.get('logo2x_src') %}srcset="{{ j3.settings.get('logo_src') }} 1x, {{ j3.settings.get('logo2x_src') }} 2x"{% endif %}
+                     width="{{ j3.settings.get('logo_width') }}" height="{{ j3.settings.get('logo_height') }}" alt="{{ name }}" title="{{ name }}"/>
+                 </a>
+            {% else %}
+                <h1><a href="{{ home }}">{{ name }}</a></h1>
+          {% endif %}
+
+        {% endif %}
+       {# ## SNIP HERE FOR OCMOD ## #}
+
+file: catalog/view/theme/default/template/common/header.twig
+
+
+search: 
+        <div id="logo">{% if logo %}<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
+
+add 'replace': 
+          <!--         /* ### SNIP HERE FOR OCMOD ### */    -->
+        {% if logo %}
+            <a href="{{ home }}">
+                <img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" />
+            </a>
+            {% else %}
+                <h1><a href="{{ home }}">{{ name }}</a></h1>
+          {% endif %}
+          <!--         /* ### SNIP HERE FOR OCMOD ### */    -->
+
+search: 
+<h1><a href="{{ home }}">{{ name }}</a></h1>
+
+add 'replace': "" /* empty string */
+
+search: {% endif %}</div>
+add 'replace': "" /* empty string */

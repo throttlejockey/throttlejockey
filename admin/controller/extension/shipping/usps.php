@@ -73,6 +73,12 @@ class ControllerExtensionShippingUsps extends Controller {
 		} else {
 			$data['shipping_usps_postcode'] = $this->config->get('shipping_usps_postcode');
 		}
+		
+        if (isset($this->request->post['shipping_usps_domestic_61'])) {
+			$data['shipping_usps_domestic_61'] = $this->request->post['shipping_usps_domestic_61'];
+		} else {
+			$data['shipping_usps_domestic_61'] = $this->config->get('shipping_usps_domestic_61');
+		}           
 
 		if (isset($this->request->post['shipping_usps_domestic_00'])) {
 			$data['shipping_usps_domestic_00'] = $this->request->post['shipping_usps_domestic_00'];

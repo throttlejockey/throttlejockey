@@ -1,0 +1,52 @@
+file: /catalog/controller/common/header.php 
+
+search: 
+
+$data['title'] = $this->document->getTitle();
+
+add before: 
+
+        /* ### SNIP HERE FOR OCMOD ### */
+        $category_id = 0;
+        if (isset($this->request->get['route'])) {
+            $route = (string)$this->request->get['route'];
+        } else {
+            $route = 'common/home';
+        }
+
+        if ($route == 'product/category' && isset($this->request->get['path'])) {
+            $path = explode('_', (string)$this->request->get['path']);
+            $category_id = end($path);
+            // $this->load->model('catalog/category');
+            // $layout_id = $this->model_catalog_category->getCategoryLayoutId($category_id);
+            // $this->journal3->document->setPageId($category_id);
+            // $this->journal3->document->addClass('category-' . $category_id);
+        }
+        $data['category_id'] = $category_id;
+        /* ### SNIP HERE FOR OCMOD ### */
+
+
+file: catalog/view/theme/default/template/common/header.twig
+
+
+search: 
+        <div id="logo">{% if logo %}<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
+
+add 'replace': 
+          <!--         /* ### SNIP HERE FOR OCMOD ### */    -->
+        {% if logo %}
+            <a href="{{ home }}">
+                <img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" />
+            </a>
+            {% else %}
+                <h1><a href="{{ home }}">{{ name }}</a></h1>
+          {% endif %}
+          <!--         /* ### SNIP HERE FOR OCMOD ### */    -->
+
+search: 
+<h1><a href="{{ home }}">{{ name }}</a></h1>
+
+add 'replace': "" /* empty string */
+
+search: {% endif %}</div>
+add 'replace': "" /* empty string */

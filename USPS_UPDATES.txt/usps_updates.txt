@@ -1,0 +1,34 @@
+/admin/view/template/extension/shipping/usps.twig
++ line #52 - 2 (:before)(div.checkbox) 
+  >  {% if shipping_usps_domestic_00 %} 
+
+Add at line 50
+ 
+                <div class="checkbox">
+                  <label>
+                    {% if shipping_usps_domestic_61 %}
+                    <input type="checkbox" name="shipping_usps_domestic_61" value="1" checked="checked" />
+                    {{ text_domestic_61 }}
+                    {% else %}
+                    <input type="checkbox" name="shipping_usps_domestic_61" value="1" />
+                    {{ text_domestic_61 }}
+                    {% endif %}
+                  </label>
+                </div>
+
+
+/admin/controller/extension/shipping/usps.php
+
+Add at line 76
+
+		if (isset($this->request->post['shipping_usps_domestic_61'])) {
+			$data['shipping_usps_domestic_61'] = $this->request->post['shipping_usps_domestic_61'];
+		} else {
+			$data['shipping_usps_domestic_61'] = $this->config->get('shipping_usps_domestic_61');
+		}           
+
+
+/catalog/model/extension/shipping/usps.php
+
+... 
+

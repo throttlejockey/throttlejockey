@@ -5,9 +5,12 @@
 *error_log
 !index.html
 
+backup_aug/
+
 download/
 
 # Images
+/image/
 image/data/
 image/cache/
 
@@ -33,4 +36,3 @@ vqmod/logs/*
 vqmod/vqcache/*
 vqmod/checked.cache
 vqmod/mods.cache
-

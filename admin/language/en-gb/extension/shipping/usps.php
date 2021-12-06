@@ -28,6 +28,8 @@ $_['text_domestic_23']      = 'Express Mail Sunday/Holiday';
 $_['text_domestic_25']      = 'Express Mail Flat-Rate Envelope Sunday/Holiday';
 $_['text_domestic_27']      = 'Express Mail Flat-Rate Envelope Hold For Pickup';
 $_['text_domestic_28']      = 'Priority Mail Small Flat-Rate Box';
+$_['text_domestic_61']      = 'First-Class Package Service';
+
 $_['text_international_1']  = 'Express Mail International';
 $_['text_international_2']  = 'Priority Mail International';
 $_['text_international_4']  = 'Global Express Guaranteed (Document and Non-document)';

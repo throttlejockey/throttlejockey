@@ -52,6 +52,8 @@ $_['text_today_dedicated_courier'] = 'UPS Today Dedicated Courier';
 $_['text_today_intercity']         = 'UPS Today Intercity';
 $_['text_today_express']           = 'UPS Today Express';
 $_['text_today_express_saver']     = 'UPS Today Express Saver';
+$_['text_surepost_1lb_greater']    = 'UPS Surepost 1lb or Greater';
+$_['text_surepost_less_than_1lb']  = 'UPS Surepost Less Than 1lb';
 
 // Entry
 $_['entry_key']                    = 'Access Key';

@@ -10,11 +10,18 @@ function initNewPcopFront(p_pcop_data, p_pcop_theme_name, $p_custom_option_conta
 		theme_name : '',
 		$custom_option_container: false,
 		$stored_option_container: false,
+		$stored_not_required_options: false,
 		timer_delayed_first_option_change_call : 0,
 		html_default_values : [],
 		initialized : false,
 		original_methods: {},
 		events: {},
+		works: {
+			checkVisibility: false,
+		},
+		timers: {
+			checkVisibility: false,
+		},
 		
 		each : function(collection, fn){
 			for ( var i_item in collection ) {
@@ -230,16 +237,22 @@ function initNewPcopFront(p_pcop_data, p_pcop_theme_name, $p_custom_option_conta
 		},
 		
 		getCodePcopInputNotRequired : function() {
-			return '<input type="hidden" name="options_pcop_not_required" id="options_pcop_not_required" value="">';
+			return '<input type="hidden" name="options_pcop_not_required" value="">';
 		},
 		
 		getElementPcopInputNotRequired : function() {
 			
-			if ( !pcop_front.getOptionElement('#options_pcop_not_required').length ) {
-				pcop_front.getOptionContainer().append( pcop_front.getCodePcopInputNotRequired() );
+			if ( !pcop_front.$stored_not_required_options || !pcop_front.$stored_not_required_options.length ) {
+				if ( pcop_front.getOptionContainer().find('#product').length ) {
+					pcop_front.getOptionContainer().find('#product').append( pcop_front.getCodePcopInputNotRequired() );
+					pcop_front.$stored_not_required_options = pcop_front.getOptionContainer().find('#product').find('[name="options_pcop_not_required"]');
+				} else {
+					pcop_front.getOptionContainer().append( pcop_front.getCodePcopInputNotRequired() );
+					pcop_front.$stored_not_required_options = pcop_front.getOptionContainer().find('[name="options_pcop_not_required"]');
+				}
 			}
 			
-			return pcop_front.getOptionElement('#options_pcop_not_required');
+			return pcop_front.$stored_not_required_options;
 		},
 		
 		getStoredNotRequiredPOIds : function() {
@@ -273,14 +286,16 @@ function initNewPcopFront(p_pcop_data, p_pcop_theme_name, $p_custom_option_conta
 		},
 		
 		
+		getOptionElementContainer: function($option_element) {
+			return $option_element.closest('div.form-group, table.form-group');
+		},
+		
 		// pcop_front.changeOptionVisibility
 		changeOptionVisibility : function (product_option_id, option_toggle) {
 			
-			
-			
 			let option_name = pcop_front.option_prefix+'['+product_option_id+']';
 			let $option_elements = pcop_front.getOptionElementNamedCached('[name^="'+option_name+'"]');
-			let $option_container = $option_elements.closest('div.form-group, table.form-group');
+			let $option_container = pcop_front.getOptionElementContainer($option_elements);
 			let option_was_visible = $option_container.is(':visible');
 		
 			$option_container.toggle(option_toggle);
@@ -417,6 +432,15 @@ function initNewPcopFront(p_pcop_data, p_pcop_theme_name, $p_custom_option_conta
 		// pcop_front.checkVisibility
 		checkVisibility : function () {
 			
+			clearTimeout(pcop_front.timers.checkVisibility);
+			if ( pcop_front.works.checkVisibility ) {
+				pcop_front.timers.checkVisibility = setTimeout(function(){
+					pcop_front.checkVisibility();
+				}, 50);
+			}
+			
+			pcop_front.works.checkVisibility = true;
+			
 			let product_option_ids_visible = false;
 			
 			if (pcop_front.data && Object.keys(pcop_front.data).length) {
@@ -481,7 +505,9 @@ function initNewPcopFront(p_pcop_data, p_pcop_theme_name, $p_custom_option_conta
 			
 			pcop_front.trigger('checkVisibility_after', product_option_ids_visible);
 			
-			return product_option_ids_visible;
+			pcop_front.works.checkVisibility = false;
+			
+			//return product_option_ids_visible;
 		},
 		
 		// pcop_front.getOptionContainer
@@ -492,10 +518,14 @@ function initNewPcopFront(p_pcop_data, p_pcop_theme_name, $p_custom_option_conta
 				} else if ( pcop_front.$custom_option_container ) {
 					pcop_front.$stored_option_container = pcop_front.$custom_option_container;
 				} else {
-					pcop_front.$stored_option_container = $('#product, section[id="content"], .boss-product').first();
+					pcop_front.$stored_option_container = pcop_front.getOptionContainerDefault();
 				}
 			}
 			return pcop_front.$stored_option_container;
+		},
+		
+		getOptionContainerDefault: function() {
+			return $('#product, section[id="content"], .boss-product, #content').first();
 		},
 		
 		// pcop_update_data

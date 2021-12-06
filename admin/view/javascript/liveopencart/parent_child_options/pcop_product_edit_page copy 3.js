@@ -2,10 +2,11 @@
 //  Support: support@liveopencart.com / Поддержка: help@liveopencart.ru
 
 var pcop = {
-
+	
 	initialized : false,
 	parent_option_cnt : 0,
 	texts : {},
+	settings: {},
 	all_product_options : {},	// created by specific function of PCOP
 	basic_product_options : {}, // created by standard product controller
 	temp_id_cnt : 0,
@@ -19,31 +20,38 @@ var pcop = {
 	//colors: ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
 
 	init : function( product_option_cnt ) {
-
+		
 		let product_options = pcop.getAllOptions();
-
+		
 		for ( let product_option_num=0; product_option_num<product_option_cnt; product_option_num++ ) {
 			if ( typeof(pcop.basic_product_options[product_option_num]) != 'undefined' && typeof(pcop.basic_product_options[product_option_num].pcop) != 'undefined' ) {
                 pcop.showOptionSettings(product_option_num, pcop.basic_product_options[product_option_num].pcop, product_options);
 			}
 		}
-
+		
 		$('#option').on('click', 'a[href^="'+pcop.option_tab_href_prefix+'"]', function(){
-			var tab_num = $(this).attr('href').substr( pcop.option_tab_href_prefix.length );
-
+			var tab_num = $(this).attr('href').substr( pcop.option_tab_href_prefix.length );	
 			pcop.updateParentSettingsForOption(tab_num);
-		});
 
+
+            let option_temp_id = $($(this).attr('href')).find('input[data-pcop="option-temp-id"]').val();
+            // console.log(option_temp_id);
+            pcop.selectChildren(option_temp_id);
+		});
+		
 		$(document).on('change.pcop.liveopencart', '[data-pcop="parent-option"], [data-pcop="parent-option-value"]', function(){
 			pcop.updateMarksDelayed();
 		});
-
+		
 		$(document).on('click.pcop.liveopencart', '#option a[href^="'+pcop.option_tab_href_prefix+'"], button', function(){
-			pcop.updateMarksDelayed();
+			// let option_temp_id = $($(this).attr('href')).find('input[data-pcop="option-temp-id"]').val();
+ 
+            pcop.updateMarksDelayed();
+            
 		});
-
-
-
+		
+		
+		
 		$('#option').on('mouseover', 'a[href^="#tab-option"]', function(){
 			let option_temp_id = $($(this).attr('href')).find('input[data-pcop="option-temp-id"]').val();
 			pcop.displayChildsHightlights(option_temp_id);
@@ -53,17 +61,17 @@ var pcop = {
 			pcop.hideChildHightlights();
 			pcop.hideParentHightlights();
 		});
-
+		
 		//$('#option').on('mouseover', '[data-pcop="mark"]', function(){
 		//	pcop.displayParentHightlight($(this).attr('data-pcop-parent-temp-id'));
 		//});
 		//$('#option').on('mouseout', '[data-pcop="mark"]', function(){
 		//	pcop.hideParentHightlights();
 		//});
-
+		
 		pcop.updateMarksDelayed();
 	},
-
+	
 	each : function(collection, fn){
 		for ( let i_item in collection ) {
 			if ( !collection.hasOwnProperty(i_item) ) continue;
@@ -72,7 +80,7 @@ var pcop = {
 			}
 		}
 	},
-
+	
 	displayChildsHightlights: function(option_temp_id) {
 		pcop.hideChildHightlights();
 		$('select[data-pcop="parent-option"]').each(function(){
@@ -82,10 +90,19 @@ var pcop = {
 			}
 		});
 	},
+	
+    selectChildren: function(option_temp_id){
+		$('select[data-pcop="parent-option"]').each(function(){
+			if ( $(this).val() == option_temp_id ) {
+				let child_option_anchor_id = $(this).closest('[id^="'+pcop.option_tab_id_prefix+'"]').attr('id');
+				$('#option a[href="#'+child_option_anchor_id+'"]').parent('li').addClass('selected');
+			}
+		});
+    },
 
 	displayParentsHightlights: function(option_temp_id){
 		pcop.hideParentHightlights();
-
+		
 		$('select[data-pcop="parent-option"][data-pcop-option-temp-id="'+option_temp_id+'"]').each(function(){
 			let parent_option_temp_id = $(this).val();
 			if ( parent_option_temp_id ) {
@@ -93,18 +110,18 @@ var pcop = {
 				$('#option a[href="#'+parent_option_anchor_id+'"]').addClass('pcop-highlight-parent');
 			}
 		});
-
+		
 		//let parent_option_anchor_id = $('input[data-pcop="option-temp-id"][value="'+parent_temp_id+'"]').closest('[id^="'+pcop.option_tab_id_prefix+'"]').attr('id');
 		//$('#option a[href="#'+parent_option_anchor_id+'"]').addClass('pcop-highlight-parent');
 	},
-
+	
 	hideParentHightlights: function(){
 		$('#option a[href^="#tab-option"]').removeClass('pcop-highlight-parent');
 	},
 	hideChildHightlights: function(){
 		$('#option a[href^="#tab-option"]').removeClass('pcop-highlight-child');
 	},
-
+	
 	getNewTempId : function() {
 		pcop.temp_id_cnt++;
 		return pcop.temp_id_cnt;
@@ -116,9 +133,9 @@ var pcop = {
 		});
 		return max_temp_id;
 	},
-
+	
 	getAllOptions : function() {
-
+		
 		var product_options = [];
 		//var pcop_temp_id_cnt = pcop.getMaxExistingTempId()+1;
 		var option_tab_id_beginning = 'tab-option';
@@ -126,11 +143,11 @@ var pcop = {
 			var $option_container = $(this);
 			var tab_num = parseInt( $option_container.attr('id').substr( option_tab_id_beginning.length ) );
 			if ( !isNaN(tab_num) ) {
-
+				
 				var product_option = {};
-
+				
 				var $po_id_input = $option_container.find('input[name="product_option['+tab_num+'][product_option_id]"]');
-
+				
 				product_option.product_option_id 			= $po_id_input.val();
 				product_option.pcop_po_id 					= $option_container.find('input[name="product_option['+tab_num+'][pcop_po_id]"]').val();
 				product_option.product_option_temp_id 		= $option_container.find('input[name="product_option['+tab_num+'][product_option_temp_id]"]').val();
@@ -138,115 +155,115 @@ var pcop = {
 				product_option.option_id 					= $option_container.find('input[name="product_option['+tab_num+'][option_id]"]').val();
 				product_option.type 						= $option_container.find('input[name="product_option['+tab_num+'][type]"]').val();
 				product_option.container_id					= $option_container.attr('id');
-
+				
 				// the module uses temp ids, add them id needed
 				if ( !product_option.product_option_temp_id ) {
 					product_option.product_option_temp_id = pcop.getNewTempId();
 					var html_temp_id = '<input type="hidden" name="product_option['+tab_num+'][product_option_temp_id]" value="'+product_option.product_option_temp_id+'" data-pcop="option-temp-id">';
 					$po_id_input.before(html_temp_id);
 				}
-
-
+				
+				
 				product_option.values = pcop.getAllOptionValuesFromContainer($option_container, tab_num);
-
-
+				
+				
 				product_options.push(product_option);
 			}
-
+			
 		});
-
+		
 		return product_options;
 	},
-
+	
 	getPOVDetailsByRowElement: function($option_value_row, tab_num, row_num) {
 		//let $inputs = $option_value_row.find('input, select');
-
+					
 		let value = {};
 		let pov_id_input = $option_value_row[0].querySelector('input[name="product_option['+tab_num+'][product_option_value]['+row_num+'][product_option_value_id]"]');
 		let $pov_select = $($option_value_row[0].querySelector('select[name="product_option['+tab_num+'][product_option_value]['+row_num+'][option_value_id]"]'));
-
+		
 		let temp_input = $option_value_row[0].querySelector('input[name="product_option['+tab_num+'][product_option_value]['+row_num+'][product_option_value_temp_id]"]');
 		value.product_option_value_temp_id = temp_input ? temp_input.value : '';
-
+		
 		//value.product_option_value_id = $inputs.filter('input[name="product_option['+tab_num+'][product_option_value]['+row_num+'][product_option_value_temp_id]"]').val();
 		let pcop_pov_id_input = $option_value_row[0].querySelector('input[name="product_option['+tab_num+'][product_option_value]['+row_num+'][pcop_pov_id]"]'); // for mass update
 		value.pcop_pov_id = pcop_pov_id_input ? pcop_pov_id_input.value : '';
-
+		
 		value.product_option_value_id = pov_id_input.value;
 		value.option_value_id = $pov_select.val();
 		let select_option_elem = $pov_select.length ? $pov_select[0].querySelector('option[value="'+value.option_value_id+'"]') : '';
 		value.name = select_option_elem ? select_option_elem.innerHTML : '';
 		return value;
 	},
-
+	
 	getAllOptionValuesFromContainer : function($option_container, tab_num) {
-
+		
 		let option_value_row_id_beginning = 'option-value-row';
 		let $option_value_container = $option_container.find('#option-value'+tab_num);
-
+		
 		if ( $option_value_container.length ) {
 			let values = [];
 			$option_value_container.find('tbody:first').children('[id^="'+option_value_row_id_beginning+'"]').each(function(){
 			//$option_value_container.find('[id^="'+option_value_row_id_beginning+'"]').each(function(){
-
+				
 				let $option_value_row = $(this);
 				let row_num = parseInt( $option_value_row.attr('id').substr( option_value_row_id_beginning.length ) );
 				if ( !isNaN(row_num) ) {
-
+					
 					let $pov_id_input = $option_value_row.find('input[name="product_option['+tab_num+'][product_option_value]['+row_num+'][product_option_value_id]"]');
-
+					
 					value = pcop.getPOVDetailsByRowElement($option_value_row, tab_num, row_num);
-
+					
 					// the module uses temp ids, add them id needed
 					if ( !value.product_option_value_temp_id ) {
 						value.product_option_value_temp_id = pcop.getNewTempId();
-
+						
 						// faster than jQuery
 						let elem_temp_id = document.createElement('input');
 						elem_temp_id.setAttribute('type', 'hidden');
 						elem_temp_id.setAttribute('name', 'product_option['+tab_num+'][product_option_value]['+row_num+'][product_option_value_temp_id]');
 						elem_temp_id.setAttribute('value', value.product_option_value_temp_id);
-
+						
 						$pov_id_input.parent()[0].appendChild(elem_temp_id);
-
+						
 					}
-
+					
 					values.push(value);
 				}
-
+				
 			});
-
+			
 			return values;
 		}
 	},
-
+	
 	getParentSettingsForOption(product_option_block_num) {
 		var parents_settings = [];
-
+		
 		var $parents_container = $('#pcop_parent_options_'+product_option_block_num);
 		$parents_container.find('input[data-pcop-num]').each(function(){
 			var pcop_num = $(this).attr('data-pcop-num');
 			var pcop_name_prefix = 'product_option['+product_option_block_num+'][pcop]['+pcop_num+']';
 			var parent_settings = {};
-
+			
 			parent_settings.pcop_id = $parents_container.find('input[name="'+pcop_name_prefix+'[pcop_id]"]').val();
 			parent_settings.pcop_or = $parents_container.find(':checkbox[name="'+pcop_name_prefix+'[pcop_or]"]:checked').val();
 			parent_settings.parent_product_option_temp_id = $parents_container.find('select[name="'+pcop_name_prefix+'[parent_product_option_temp_id]"]').val();
-
+			
 			var current_values = [];
-
+			
 			$parents_container.find(':checkbox[name^="'+pcop_name_prefix+'"][name$="[values][]"]:checked').each(function(){
 				current_values.push( $(this).val() );
 			});
-
+			
 			parent_settings.current_values = current_values;
-
+			
 			parents_settings.push(parent_settings);
 		});
-
+		
 		return parents_settings;
 	},
-
+	
 	updateParentSettingsForOption : function(product_option_block_num) {
 		var parents_settings = pcop.getParentSettingsForOption(product_option_block_num);
 		$('#pcop_parent_options_'+product_option_block_num).find('tbody').html('');
@@ -256,21 +273,21 @@ var pcop = {
 			pcop.addParentOption(product_option_block_num, parent_settings);
 
             // console.group('hi');
-            console.log('updateParentSettingsForOption');
-            console.log( parent_settings );
+                // console.log('updateParentSettingsForOption');
+                // console.log( parent_settings );
             // console.groupEnd();
 
 		}
 	},
-
+	
 	// add one more parent option rule
 	addParentOption : function(product_option_block_num, settings, p_product_options) {
-
+		
 		let product_options = p_product_options ? p_product_options : pcop.getAllOptions();
 		let $product_option_container = $('#tab-option'+product_option_block_num);
 		let pcop_table = $('#pcop_parent_options_'+product_option_block_num);
 		let current_product_option_temp_id = $product_option_container.find('input[name="product_option['+product_option_block_num+'][product_option_temp_id]"]').val();
-
+		
 		let html = '';
 		html += '<tr>';
 		html += '<td>';
@@ -279,18 +296,18 @@ var pcop = {
 		html += '<input type="hidden" name="product_option['+product_option_block_num+'][pcop]['+pcop.parent_option_cnt+'][pcop_id]" value="'+(settings ? settings.pcop_id : '')+'">';
 		html += '<select name="product_option['+product_option_block_num+'][pcop]['+pcop.parent_option_cnt+'][parent_product_option_temp_id]" id="parent_option_'+pcop.parent_option_cnt+'" class="form-control" data-pcop="parent-option" data-pcop-option-temp-id="'+current_product_option_temp_id+'" onchange="pcop.showParentOptionValues('+pcop.parent_option_cnt+')">';
 		html += '<option value="">-</option>';
-
-
-
+		
+		
+		
 		if (product_options) {
 			for (var i_product_options in product_options) {
 				if ( !product_options.hasOwnProperty(i_product_options) ) continue;
 				var product_option = product_options[i_product_options];
-
+				
 				if ( current_product_option_temp_id && current_product_option_temp_id == product_option.product_option_temp_id ) {
 					continue;
 				}
-
+				
 				if ( $.inArray(product_option.type, ['select','radio','image','checkbox','block','color','prodoptcolsizeimg_color','prodoptcolsizeimg_size']) != -1 ) {
 					html += '<option value="'+product_option.product_option_temp_id+'"';
 					if ( settings && typeof(settings.parent_product_option_id) != 'undefined' && product_option.product_option_id==settings.parent_product_option_id) {
@@ -304,49 +321,65 @@ var pcop = {
 				}
 			}
 		}
-
+		
 		html += '</select>';
 		html += '</div>';
-		html += '<div class="col-sm-4">';
-		html += '<div class="well well-sm" style="height: 150px; overflow: auto; margin-bottom:0px;" id="parent_option_values_'+pcop.parent_option_cnt+'">';
-		html += '';
-		html += '';
-		html += '</div>';
-		html += '</div>';
 
-		html += '<label class="col-sm-4">';
+        // -- RoeMedia : Make the options a little wider.
+		// html += '<div class="col-sm-4">';
+        html += '<div class="col-sm-6">';
+
+        // -- RoeMedia : Make the height of the selection larger to see more.
+        // html += '<div class="well well-sm" style="height: 150px; overflow: auto; margin-bottom:0px;" id="parent_option_values_'+pcop.parent_option_cnt+'">';
+		html += '<div class="well well-sm" style="max-height: 500px; overflow: auto; margin-bottom:0px;" id="parent_option_values_'+pcop.parent_option_cnt+'">';
+		html += '';
+		html += '';
+		html += '</div>';
+		html += '</div>';
+		
+        // -- RoeMedia : or doesn't need to be this big
+        // html += '<label class="col-sm-4">';
+		html += '<label class="col-sm-2">';
 		html += '<input type="checkbox" data-pcop="or" name="product_option['+product_option_block_num+'][pcop]['+pcop.parent_option_cnt+'][pcop_or]" value="1" '+(settings && settings.pcop_or && settings.pcop_or!='0' ? 'checked' : '')+'>';
 		html += pcop.texts.pcop_entry_or;
 		html += '</label>';
-
+		
 		html += '</td>';
-
+		
 		html += '<td>';
 		html += '<button type="button" onclick="$(this).closest(\'tr\').remove();pcop.checkTextNoParentOptions('+product_option_block_num+');" data-toggle="tooltip" class="btn btn-danger"';
 		html += 'title="'+pcop.texts.pcop_entry_remove_parent_option+'"><i class="fa fa-minus-circle"></i></button>';
 		html += '</td>';
 		html += '</tr>';
-
+		
 		pcop_table.find('tbody').append(html);
-
+		
 		pcop.showParentOptionValues(pcop.parent_option_cnt, settings, product_options );
-
+		
 		pcop.parent_option_cnt++;
 		pcop.checkTextNoParentOptions(product_option_block_num);
-
+		
 	},
-
+	
 	// refresh list of values for parent option
 	// pcop_parent_option_cnt - number of parent option block
 	// settings - values that should be selected
 	// set_parent_option_id - set parent option id to this value
 	showParentOptionValues : function(parent_option_num, settings, p_product_options) {
+	
+
+
+        // console.group( 'showParentOptionValues()' );
+        // console.log( 'parent_option_num - ', parent_option_num );
+        // console.log('settings - ', settings);
+        // console.log( 'p_product_options - ', p_product_options );
+        // console.groupEnd();
 
 		var product_options = p_product_options ? p_product_options : pcop.getAllOptions();
-
+	
 		var parent_option_select = $('#parent_option_'+parent_option_num);
 		var parent_product_option_temp_id = parent_option_select.val();
-
+		
 		var block_number = pcop.getProductOptionBlockNumberFromName( $('#parent_option_'+parent_option_num).attr('name') );
 
 		if ( block_number === false ) {
@@ -357,18 +390,18 @@ var pcop = {
 		if (parent_product_option_temp_id) {
 			for (var i_product_options in product_options) {
 				if ( !product_options.hasOwnProperty(i_product_options) ) continue;
-
+				
 				var product_option = product_options[i_product_options];
-
+				
 				if (product_option.product_option_temp_id == parent_product_option_temp_id && product_option.values) {
 					for (var i_values in product_option.values) {
 						if ( !product_option.values.hasOwnProperty(i_values) ) continue;
-
+					
 						var pcop_pov = product_option.values[i_values];
-
+					
 						html += '<div class="checkbox"><label>';
 						html += '<input type="checkbox" data-pcop="parent-option-value" name="product_option['+block_number+'][pcop]['+parent_option_num+'][values][]" ';
-
+						
 						if ( settings && typeof(settings.values) != 'undefined' ) { // pcop settings are set
 							if ( settings.parent_product_option_temp_id && pcop_pov.product_option_value_temp_id ) { // return from unsuccessful attempt to save
 								if ( $.inArray(pcop_pov.product_option_value_temp_id, settings.values) != -1 || $.inArray(pcop_pov.product_option_value_temp_id.toString(), settings.values) != -1 ) {
@@ -393,12 +426,12 @@ var pcop = {
 				}
 			}
 		}
-
+		
 		$('#parent_option_values_'+parent_option_num).html(html);
-
+		
 	},
-
-
+	
+	
 	getNewRandomColor: function(){
 		let letters = '0123456789ABCDEF';
 		let color = '#';
@@ -408,27 +441,29 @@ var pcop = {
 		pcop.colors.push(color);
 		return color;
 	},
-
+	
 	updateMarksDelayed: function() {
 		clearTimeout(pcop.timers.update_marks);
 		pcop.timers.update_marks = setTimeout(function(){
 			pcop.updateMarks();
 		}, 100);
 	},
-
+	
 	updateMarks: function(){
-
+		
+		if ( pcop.settings.disable_highlight ) return;
+		
 		pcop.hideChildHightlights();
 		pcop.hideParentHightlights();
-
+		
 		let used_parents_temp_ids = [];
 		$('select[data-pcop="parent-option"]').each(function(){
 			if ( $(this).val() ) {
 				used_parents_temp_ids.push($(this).val());
 			}
 		});
-
-
+		
+		
 		let options = [];
 		let used_colors = 0;
 		pcop.each(pcop.getAllOptions(), function(option){
@@ -448,12 +483,12 @@ var pcop = {
 			});
 			options.push(option);
 		});
-
+		
 		$('#option').find('[data-pcop="marks-container"]').remove();
-		pcop.each(options, function(option){
+		pcop.each(options, function(option){ 
 			let html = '';
 			html+= '<div class="pcop-marks-container" data-pcop="marks-container" ';
-			if ( option.color ) { // parent mark displaing the option color
+			if ( option.color ) { // parent mark displaying the option color
 				html+= ' style="background-color: '+option.color+'" ';
 			}
 			html+= '>';
@@ -461,42 +496,43 @@ var pcop = {
 				if ( $.inArray(parent.product_option_temp_id, option.parents_temp_ids) != -1 ) {
 					html+= '<span class="pcop-mark" data-pcop="mark" style="background-color: '+parent.color+'" title="'+parent.name+'" data-pcop-parent-temp-id="'+parent.product_option_temp_id+'"></span>';
 				}
-			});
+			}); 
 			html+= '</div>';
 			$('#option a[href="#'+option.container_id+'"]').append(html);
 		});
-
+		
 		// add marks update for removing options
 		$('#option a[href^="'+pcop.option_tab_href_prefix+'"] [onclick*="remove"]:not([onclick*="updateMarks"])').each(function(){
 			$(this).attr('onclick', $(this).attr('onclick')+';pcop.updateMarksDelayed();');
 		});
-
+		
 	},
 
 	// show parent options settings for product option
 	showOptionSettings : function(product_option_block_num, pcop_data, p_product_options) {
-
+		
+        // var _CopyParentButton = `<button type="button" onclick="_CopyParentButton(8)" data-toggle="tooltip" class="btn btn-primary" title="" data-original-title="Add parent option"> Copy </button>`;
 		var html = '';
-
+		
 		html += '<div class="form-group">';
 		html += '<label class="col-sm-2 control-label">'+pcop.texts.pcop_entry_settings+'</label>';
 		html += '<div class="col-sm-10">';
 		html += '<table id="pcop_parent_options_'+product_option_block_num+'" class="table table-striped table-bordered table-hover">';
 		html += '<tbody></tbody>';
-		html += '<tfoot><td width="100%"><div id="text_no_parent_options_'+product_option_block_num+'">'+pcop.texts.pcop_entry_no_parent_options+'</font></td>';
+		html += '<tfoot><td width="100%"> <button type="button" onclick="copyParentInfo('+product_option_block_num+')" data-toggle="tooltip" class="btn btn-primary" title="" data-original-title="Add parent option"> Copy </button>  <div id="text_no_parent_options_'+product_option_block_num+'">'+pcop.texts.pcop_entry_no_parent_options+'</font></td>';
 		html += '<td>';
 		html += '<button type="button" onclick="pcop.addParentOption('+product_option_block_num+')" data-toggle="tooltip" class="btn btn-primary"';
 		html += 'title="'+pcop.texts.pcop_entry_add_parent_option+'"><i class="fa fa-plus-circle"></i></button>';
 		html += '</td></tfoot>';
 		html += '</div>';
 		html += '</div>';
-
-
+    
+        
 		// show after "required" block
 		$('#tab-option'+product_option_block_num+' div.form-group:first').after(html);
-
+		
 		//let _colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-
+		
 		if (pcop_data) {
 			let product_options = p_product_options || pcop.getAllOptions();
 			for (let i in pcop_data) {
@@ -504,16 +540,16 @@ var pcop = {
                 pcop.addParentOption(product_option_block_num, pcop_data[i], product_options);
 			}
 		}
-
+	
 	},
-
+	
 	// get product option block number from name product_option[X]...
 	getProductOptionBlockNumberFromName : function(name) {
 		var str = name.substring(15);
 		str = str.substring(0, str.indexOf(']'));
 		return str;
 	},
-
+	
 	// get product option block number by product option id
 	getProductOptionBlockNumberByProductOptionId : function(product_option_id) {
 		var name = $('#tab-option input[type="hidden"][name^="product_option["][name*="[product_option_id]"][value="'+product_option_id+'"]').attr('name');
@@ -523,13 +559,96 @@ var pcop = {
 			return false;
 		}
 	},
-
-
+	
+	
 	// show text if there's no parent options, hide is there's some parent options
 	checkTextNoParentOptions : function(product_option_block_num) {
-
+		
 		var has_parent_options = $('#pcop_parent_options_'+product_option_block_num+' tbody tr').length;
 		$('#text_no_parent_options_'+product_option_block_num).toggle(!has_parent_options);
-
+		
 	},
+}
+
+
+////////// MOVE THIS TO ANOTHER JS FILE !!! Dev only ... 
+
+test = function() {
+    let opts = pcop.getAllOptions();
+    // console.group('test func');
+    // console.log('opts', opts);
+    // console.groupEnd();
+}
+
+
+var _PARENT_INFO = "";
+copyParentInfo = function(idx){
+    console.log(`copyParentInfo(${idx})`);
+    
+    let _selected = $(`[name*='product_option[${idx}]']`);
+    console.log('_selected', _selected);
+
+    let _parent = _selected.children("option:selected").val();
+    console.log('_parent', _parent);
+
+
+    let _parent_option = $(`input[type=checkbox][name*='product_option[${idx}]']:checked`);
+    console.log('_parent_option', _parent_option);
+
+    let _parent_option_val = _parent_option.attr('value');
+
+    console.log(_parent_option_val);
+
+    let _start = prompt('Start #');
+    let _end   = prompt('End #');
+
+    for( let i=_start; i<=_end; i++){
+        pcop.addParentOption(i);
+        console.log($('#parent_option_'+i));
+        setTimeout(function(){
+            console.log($(`[name*='product_option[${i}]']`));
+            $(`select[name*='product_option[${i}]'][data-pcop="parent-option"]`).val(_parent); // prop("selectedIndex", _parent);
+            // $('#tab-option'+i).click();
+        },500);
+
+        // setTimeout(function() {
+        //     console.log(i);
+        //     let _cb = $(`input[type=checkbox][name*='product_option[${i}]'][value*='${_parent_option_val}']`);
+        //     // let _cb = $(`input[type=checkbox][name*='product_option[14]'][value*='3']`);
+        //     // let _cb = $("input[type=checkbox][name*='product_option[16]'][value=3]").prop('checked', 'checked')
+        //     console.log(_cb);
+        //     _cb.prop('checked', 'checked');
+        // }, 500);
+    }
+ 
+    // _PARENT_INFO = { selected: _selected, parent: _parent, parent_option: _parent_option }; 
+    // let _checked = 
+}
+
+
+
+
+addParents = function( start, end ) {
+    for( let i=start; i<=end; i++){
+        pcop.addParentOption(i);
+
+        $('#parent_option_'+i).prop("selectedIndex", _PARENT_INFO);
+
+    }
+}
+
+SetAllOptionsAsRequired = function() {
+    // get all required inputs
+    let requiredElems = $('[name*=required]');
+    $('[name*=required]').each(function( index, value ) {
+        // 0 = Yes, 1 = NO
+        $(this).prop("selectedIndex", 0);
+        // let option = $(this).children("option[value=1]");
+        // option.attr('selected', '');
+        // console.log( $(this) );
+        // console.log( option );
+        // $("#gate option[value='Yes']").prop('selected', true);
+      });
+ 
+
 }

@@ -1,0 +1,2 @@
+shipping_name,shipping_company,shipping_address_1,shipping_address_2,shipping_city,shipping_postcode,telephone,shipping_zone_id,shipping_zone,shipping_zone_code,shipping_country_id,shipping_country,shipping_iso_code_2,shipping_iso_code_3,shipping_address_format,shipping_method,shipping_code,comment,total,reward,order_status_id,order_status
+"Chris Roe-Australia",,"645 Dundas Road",,Forrestfield,6058,5016816100,198,"Western Australia",WA,13,Australia,AU,AUS,,"DHL EXPRESS WORLDWIDE",hitshippo_dhlexpress.P,,0.0300,0,5,Complete

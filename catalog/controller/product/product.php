@@ -327,6 +327,22 @@ class ControllerProductProduct extends Controller {
 						);
 					}
 				}
+                // $this->log->write('product_option_value_data:');
+                // $this->log->write(print_r($product_option_value_data, 1));
+
+                // $sorted_product_option_value_data = $product_option_value_data;
+                // function custom_sort($a,$b) {
+                //     return $a['name']>$b['name'];
+                // }
+
+                // Sort the multidimensional array
+                // usort($nt, "custom_sort");
+                // usort($product_option_value_data, function($a, $b) { return ($a['name'] <=> $b['name']); });
+
+                 // Define the custom sort function
+
+                // $this->log->write('nt:');
+                // $this->log->write(print_r($nt, 1));
 
 				$data['options'][] = array(
 					'product_option_id'    => $option['product_option_id'],
@@ -438,7 +454,7 @@ class ControllerProductProduct extends Controller {
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
-			
+
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
@@ -622,7 +638,7 @@ class ControllerProductProduct extends Controller {
 		}
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-		
+
 		$recurring_info = $this->model_catalog_product->getProfile($product_id, $recurring_id);
 
 		$json = array();

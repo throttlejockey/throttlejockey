@@ -1,4 +1,17 @@
 <?php
+
+/*
+ * DEBUG WITH ChromePHP Logger 
+ * 
+// $root = "/home/b16aa05/oc3.throttlejockey.com/";
+$root = "/home/b16aa05/public_html/";    
+if (file_exists($root . 'system/library/ChromePHP.php')) {
+    require_once($root . 'system/library/ChromePHP.php');
+}
+/******/
+
+
+
 class ControllerCheckoutShippingMethod extends Controller {
 	public function index() {
 		$this->load->language('checkout/checkout');
@@ -16,7 +29,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 					$this->load->model('extension/shipping/' . $result['code']);
 
 					$quote = $this->{'model_extension_shipping_' . $result['code']}->getQuote($this->session->data['shipping_address']);
-
+                    // ChromePhp::log("Quote: ", $quote);
 					if ($quote) {
 						$method_data[$result['code']] = array(
 							'title'      => $quote['title'],
@@ -35,7 +48,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 			}
 
 			array_multisort($sort_order, SORT_ASC, $method_data);
-
+             
 			$this->session->data['shipping_methods'] = $method_data;
 		}
 
@@ -63,9 +76,20 @@ class ControllerCheckoutShippingMethod extends Controller {
 			$data['comment'] = '';
 		}
 		
+        // $data['error_warning'] = print_r($method_data, 1); // 
+        $data['error_warning'] = sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact'));
+
 		$this->response->setOutput($this->load->view('checkout/shipping_method', $data));
 	}
 
+    public function var_dump_ret($mixed = null) {
+        ob_start();
+        var_dump($mixed);
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+      }
+      
 	public function save() {
 		$this->load->language('checkout/checkout');
 
@@ -109,8 +133,17 @@ class ControllerCheckoutShippingMethod extends Controller {
 			$json['error']['warning'] = $this->language->get('error_shipping');
 		} else {
 			$shipping = explode('.', $this->request->post['shipping_method']);
+             
+            $this->log->write( '$shipping: ' . print_r($shipping, 1) );
+            $this->log->write( '$this->session->data[\'shipping_methods\']: ' . print_r( $this->session->data['shipping_methods'],  1 ) );
+            $this->log->write( '$shipping='. var_export( $shipping, 1));
+            $this->log->write( '$this_session_data_shipping_methods='.var_export( $this->session->data['shipping_methods'], 1) );
+			if (!isset($shipping[0]) || 
+                !isset($shipping[1]) || 
+                !isset($this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]])) {
+                    // $this->log->write( '$this->session->data[\'shipping_methods\']: ' . print_r( $this->session->data['shipping_methods'],  1 ) );
 
-			if (!isset($shipping[0]) || !isset($shipping[1]) || !isset($this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]])) {
+
 				$json['error']['warning'] = $this->language->get('error_shipping');
 			}
 		}

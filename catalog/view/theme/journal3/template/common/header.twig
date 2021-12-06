@@ -14,7 +14,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>{{ title }}</title>
+<title> {{ title }}</title>
 <base href="{{ base }}" />
 {% if j3.document.hasFonts() %}
 <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
@@ -118,7 +118,6 @@
         </div>
       </div>
     {% endif %}
-    <a class="x"></a>
   </div>
   <div class="mobile-main-menu-wrapper">
     {{ j3.document.isPhone() or (j3.document.isTablet() and j3.settings.get('mobileHeaderOn') == 'tablet') ? j3.settings.get('mobile_main_menu') : '' }}

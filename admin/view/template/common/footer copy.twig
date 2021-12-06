@@ -1,0 +1,154 @@
+<footer id="footer">{{ text_footer }}<br />{{ text_version }}</footer></div>
+
+
+<style>
+        {# #column-left + #content, #column-left + #content + #footer {
+            left: 0px;
+            margin-left: 235px;
+        } #}
+
+
+        /* Add HideSideNav class to ... hide the sidenav */
+        div#content.HideSideNav {
+            margin-left: 0px!important;
+        }
+        nav#column-left.HideSideNav {
+            left: -235px!important;
+        }
+        div#header-logo.HideSideNav {
+            display: none!important;
+        }
+        #button-menu.HideSideNav {
+            display: block!important;
+        }
+
+        #option.nav-pills > li > a {
+            border-radius: 3px;
+            font-size: 12px;
+            /* font-size: 0.8em; */
+            /* font-weight: 600; */
+        }
+
+
+
+</style>
+
+
+<script>
+
+
+    $('#tab-option .col-sm-2').removeClass('col-sm-2').addClass('col-sm-3');
+    $('#tab-option .col-sm-10').removeClass('col-sm-10').addClass('col-sm-9');
+
+    $('#button-menu').addClass('HideSideNav');
+    $('div#header-logo').addClass('HideSideNav');
+    $('a#button-menu').on('click', function(){
+        $('nav#column-left').toggleClass('HideSideNav');
+        $('div#content').toggleClass('HideSideNav');
+    });
+
+
+    // SIDEBAR COLLAPSE
+    /*
+        #column-left.active + #content, #column-left.active + #content + #footer {
+            left: 0px !important;
+        }
+
+        @media (min-width: 768px)
+        #column-left + #content, #column-left + #content + #footer {
+            left: 0px;
+            margin-left: 235px;
+        }
+
+    */
+
+    // Available SortableJS options --
+    // -  https://github.com/SortableJS/Sortable
+    // -  Examples: https://sortablejs.github.io/Sortable/
+
+    // This is to drag & drop Options on the products page.
+    // TODO: Add this to the relevent location so it is not loaded on every page.
+
+
+Sortable.create(option, {
+
+    // multiDrag: true, // Enable the plugin
+    // selectedClass: "sortable-selected", // Class name for selected item
+    // multiDragKey: null, // Key that must be down for items to be selected
+
+    animation: 100,
+    group: 'list-1',
+    draggable: '#option li',
+    handle: '#option li',
+    sort: true,
+    filter: '.sortable-disabled',
+    chosenClass: 'active',
+
+    // Element dragging ended
+    onEnd: function (/**Event*/evt) {
+        var itemEl = evt.item;  // dragged HTMLElement
+        var _tab   = $(itemEl).find('a:first').attr('href');
+        var _tabID = _tab.replace('#tab-option', '');
+
+        let newID = evt.newIndex;
+        let oldID = evt.oldIndex;
+
+        // Update the dragged element ID with the new position
+        // and then change the old tab to the old id.
+        {# let _newTabID = '#tab-option'+oldID;
+
+        let _newTabSortInput = $('#input-prodoptsort' + _tabID);
+        let _oldTabSortInput = $('#input-prodoptsort' + oldID);
+
+        _newTabSortInput.attr('value', newID);
+        _oldTabSortInput.attr('value', _tabID);
+        console.log('_selectedTabSortInput: ', _newTabSortInput);
+
+
+        console.log('Tab ID: ', _tabID);
+
+        console.log('New Index: ' + evt.newIndex);
+        console.log('Old Index: ' + evt.oldIndex); #}
+
+        let _totalOpts = $('#option li').length-1;
+
+        $( "#option li" ).each(function( index ) {
+
+            console.log(this);
+            console.log(' index: ' + index );
+            console.log('_totalOpts ' + _totalOpts );
+
+            // the last li is not an option..
+            if(index >= _totalOpts) return;
+
+            console.log(`$('#tab-option${index})`);
+            {# let _tab   = $('#tab-option'+index);  #}
+            {# console.log(_tab); #}
+            let x_tab = $(this).find('a:first').attr('href');
+
+            console.log(x_tab);
+
+            let _tabID = x_tab.replace('#tab-option', '');
+            $('#input-prodoptsort' + _tabID).attr('value', index);
+            console.log($('#input-prodoptsort' + index));
+            console.log( index + ": " + $( this ).text() );
+        });
+
+
+        {# console.table( evt ); #}
+        /*
+        evt.to;    // target list
+        evt.from;  // previous list
+        evt.oldIndex;  // element's old index within old parent
+        evt.newIndex;  // element's new index within new parent
+        evt.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
+        evt.newDraggableIndex; // element's new index within new parent, only counting draggable elements
+        evt.clone // the clone element
+        evt.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
+        */
+    },
+});
+
+</script>
+
+</body></html>

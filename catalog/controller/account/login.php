@@ -5,6 +5,9 @@ class ControllerAccountLogin extends Controller {
 	public function index() {
 		$this->load->model('account/customer');
 
+
+        $this->log->write('Hey. I am in /controller/account/login.php -> ControllerAcountLogin now.');
+
 		// Login override for admin users
 		if (!empty($this->request->get['token'])) {
 			$this->customer->logout();

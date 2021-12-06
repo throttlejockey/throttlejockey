@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+    <AccessLicenseNumber>0CFF620989E39008</AccessLicenseNumber>
+    <UserId>mattdavis.qvm</UserId>
+    <Password>golT5E0!</Password>
+</AccessRequest>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ShipmentAcceptRequest>
+    <Request>
+        <TransactionReference>
+            <CustomerContext>Customer Comment</CustomerContext>
+        </TransactionReference>
+        <RequestAction>ShipAccept</RequestAction>
+        <RequestOption>1</RequestOption>
+    </Request>
+</ShipmentAcceptRequest>

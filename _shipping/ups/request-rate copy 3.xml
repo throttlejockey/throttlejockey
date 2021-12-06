@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+    <AccessLicenseNumber>0CFF620989E39008</AccessLicenseNumber>
+    <UserId>mattdavis.qvm</UserId>
+    <Password>UPSGLab1986!</Password>
+</AccessRequest><?xml version="1.0"?>
+<RatingServiceSelectionRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" lang="en-US">
+    <Request>
+        <TransactionReference>
+            <CustomerContext>Bare Bones Rate Request</CustomerContext>
+            <XpciVersion>1.0001</XpciVersion>
+        </TransactionReference>
+        <RequestAction>Rate</RequestAction>
+        <RequestOption>shop</RequestOption>
+    </Request>
+    <PickupType>
+        <Code>01</Code>
+    </PickupType>
+    <Shipment>
+        <Shipper>
+            <ShipperNumber>429744</ShipperNumber>
+            <Address>
+                <City>Kokomo</City>
+                <StateProvinceCode>IN</StateProvinceCode>
+                <CountryCode>US</CountryCode>
+                <PostalCode>46902</PostalCode>
+            </Address>
+        </Shipper>
+        <ShipTo>
+            <Address>
+                <City>bryant</City>
+                <StateProvinceCode>AR</StateProvinceCode>
+                <CountryCode>US</CountryCode>
+                <PostalCode>72022</PostalCode>
+                <ResidentialAddressIndicator />
+            </Address>
+        </ShipTo>
+        <ShipFrom>
+            <Address>
+                <City>Kokomo</City>
+                <StateProvinceCode>IN</StateProvinceCode>
+                <CountryCode>US</CountryCode>
+                <PostalCode>46902</PostalCode>
+            </Address>
+        </ShipFrom>
+        <Package>
+            <PackagingType>
+                <Code>02</Code>
+            </PackagingType>
+            <Dimensions>
+                <UnitOfMeasurement>
+                    <Code>IN</Code>
+                </UnitOfMeasurement>
+                <Length>24</Length>
+                <Width>18</Width>
+                <Height>1</Height>
+            </Dimensions>
+            <PackageWeight>
+                <UnitOfMeasurement>
+                    <Code>LBS</Code>
+                </UnitOfMeasurement>
+                <Weight>3</Weight>
+            </PackageWeight>
+        </Package>
+        <RateInformation>
+            <NegotiatedRatesIndicator/>
+        </RateInformation>
+    </Shipment>
+</RatingServiceSelectionRequest>
+
+<!-- REQUEST RATE -->

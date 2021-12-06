@@ -6,6 +6,7 @@ var pcop = {
 	initialized : false,
 	parent_option_cnt : 0,
 	texts : {},
+	settings: {},
 	all_product_options : {},	// created by specific function of PCOP
 	basic_product_options : {}, // created by standard product controller
 	temp_id_cnt : 0,
@@ -411,6 +412,8 @@ var pcop = {
 	},
 	
 	updateMarks: function(){
+		
+		if ( pcop.settings.disable_highlight ) return;
 		
 		pcop.hideChildHightlights();
 		pcop.hideParentHightlights();

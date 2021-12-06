@@ -10,7 +10,8 @@ backup_aug/
 download/
 
 # Images
-/image/
+image/*/
+image/catalog/
 image/data/
 image/cache/
 

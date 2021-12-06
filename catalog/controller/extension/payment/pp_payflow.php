@@ -112,8 +112,13 @@ class ControllerExtensionPaymentPPPayflow extends Controller {
 		$request .= '&CARDSTART=' . urlencode($this->request->post['cc_start_date_month'] . substr($this->request->post['cc_start_date_year'], - 2, 2));
 		$request .= '&EXPDATE=' . urlencode($this->request->post['cc_expire_date_month'] . substr($this->request->post['cc_expire_date_year'], - 2, 2));
 		$request .= '&CVV2=' . urlencode($this->request->post['cc_cvv2']);
-		$request .= '&CARDISSUE=' . urlencode($this->request->post['cc_issue']);
-		$request .= '&BUTTONSOURCE=' . urlencode('OpenCart_2.0_PFP');
+
+        // NOT SURE WHY BUT CARDISSUE is never defined or entered.. 
+		if (isset($this->request->post['cc_issue'])) {
+    		$request .= '&CARDISSUE=' . urlencode($this->request->post['cc_issue']);
+        }
+        
+        $request .= '&BUTTONSOURCE=' . urlencode('OpenCart_2.0_PFP');
 
 		if (!$this->config->get('payment_pp_payflow_test')) {
 			$curl = curl_init('https://payflowpro.paypal.com');

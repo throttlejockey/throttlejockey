@@ -3,6 +3,16 @@
 use Journal3\Utils\Arr;
 use Journal3\Utils\Str;
 
+/*
+ * DEBUG WITH ChromePHP Logger 
+ *
+// $root = "/home/b16aa05/oc3.throttlejockey.com/";
+$root = "/home/b16aa05/public_html/";    
+if (file_exists($root . 'system/library/ChromePHP.php')) {
+    require_once($root . 'system/library/ChromePHP.php');
+} 
+/******/
+
 class ControllerJournal3Checkout extends \Journal3\Opencart\Controller {
 
 	public function __construct($registry) {
@@ -185,11 +195,30 @@ class ControllerJournal3Checkout extends \Journal3\Opencart\Controller {
 			'button_upload'         => $this->language->get('button_upload'),
 		));
 
-		$data['shipping_method_block'] = $this->renderView('journal3/checkout/shipping_method', array(
+
+
+        // $error_warning = sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact'));
+        // $custom_warning = "Please enter your ship to address to see shipping options.";
+        // // Required Shipping, use shipping_address. 
+        // if (!$this->session->data['same_address'] && $this->cart->hasShipping()) {
+        //     if ($err = $this->validateAddress('shipping', $json['custom_fields'])) {
+        //         $error_warning = $custom_warning; // $this->journal3->settings->get('confirmOrderAddressErrorText');
+        //     }
+        // } else if( $this->session->data['same_address'] && $this->cart->hasShipping() ) {
+        //     if ($err = $this->validateAddress('payment', $json['custom_fields'])) {
+        //         $error_warning = $custom_warning; // $this->journal3->settings->get('confirmOrderAddressErrorText');
+        //     }
+        // }
+        
+		// $data['shipping_method_block'] = $this->renderView('journal3/checkout/shipping_method', array(
+		// 	'error_warning' => $error_warning, //'s' . sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact')),
+		// ));
+
+        $data['shipping_method_block'] = $this->renderView('journal3/checkout/shipping_method', array(
 			'error_warning' => sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact')),
 		));
 
-		$data['payment_method_block'] = $this->renderView('journal3/checkout/payment_method', array(
+        $data['payment_method_block'] = $this->renderView('journal3/checkout/payment_method', array(
 			'error_warning' => sprintf($this->language->get('error_no_payment'), $this->url->link('information/contact')),
 		));
 
@@ -388,6 +417,7 @@ class ControllerJournal3Checkout extends \Journal3\Opencart\Controller {
 			$json['redirect'] = $this->model_journal3_links->url('checkout/cart', '', true);
 		}
 
+        
 		$json['error'] = $error ? $error : null;
 
 		$this->renderJson('success', $json);
@@ -633,7 +663,24 @@ class ControllerJournal3Checkout extends \Journal3\Opencart\Controller {
 
 		$total_items = $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0);
 
+
+        // ChromePhp::log("XShipping Methods: ");
+        // ChromePhp::log( $this->session->data['shipping_methods'] );
+        // ChromePhp::log(  json_encode( $this->session->data['shipping_methods'] ) );
+        
+        // foreach( $this->session->data['shipping_methods'] as $meth ) {
+        //     ChromePhp::log(  json_encode($meth, JSON_FORCE_OBJECT) );
+        // }
+
+    
+        // $this->log->write( print_r( $this->session->data['shipping_methods'], 1)  );
+        // $this->log->write( '$shipping_methods = ' . var_export( $this->session->data['shipping_methods'], 1) );
+        
+        // ChromePhp::log("Session Data: ");
+        // ChromePhp::log( $this->session->data );
+
 		return array(
+            // 'hamburgs' => json_encode( $this->session->data['shipping_methods'] ),
 			'stock_warning'              => !$this->cart->hasStock() && $this->config->get('config_stock_warning'),
 			'shipping_required'          => $this->cart->hasShipping(),
 			'account'                    => $this->session->data['account'],

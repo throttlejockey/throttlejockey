@@ -144,7 +144,7 @@ class ModelExtensionModuleModificationManager extends Model {
 		}
 
 		if (!in_array('date_modified', $column_names)) {
-			$this->db->query("ALTER TABLE `" . DB_PREFIX . "modification` ADD COLUMN  `date_modified` datetime NOT NULL");
+			$this->db->query("ALTER TABLE `" . DB_PREFIX . "modification` ADD COLUMN  `date_modified` datetime");
 
 			$this->db->query("UPDATE `" . DB_PREFIX . "modification` SET `date_modified` = `date_added` WHERE `date_modified` = '0000-00-00 00:00:00'");
 		}

@@ -1,6 +1,6 @@
 <footer id="footer">{{ text_footer }}<br />{{ text_version }}</footer></div>
 
- 
+
 <style>
         {# #column-left + #content, #column-left + #content + #footer {
             left: 0px;
@@ -9,7 +9,7 @@
 
 
         /* Add HideSideNav class to ... hide the sidenav */
-        {# div#content.HideSideNav {
+/*        div#content.HideSideNav {
             margin-left: 0px!important;
         }
         nav#column-left.HideSideNav {
@@ -20,17 +20,15 @@
         }
         #button-menu.HideSideNav {
             display: block!important;
-        } #}
+        }*/
 
         #option.nav-pills > li > a {
             border-radius: 3px;
             font-size: 12px;
-            /* font-size: 0.8em; */
-            /* font-weight: 600; */
         }
 
-         
-        
+
+
 </style>
 
 
@@ -40,13 +38,13 @@
     $('#tab-option .col-sm-2').removeClass('col-sm-2').addClass('col-sm-3');
     $('#tab-option .col-sm-10').removeClass('col-sm-10').addClass('col-sm-9');
 
-    {# $('#button-menu').addClass('HideSideNav'); 
-    $('div#header-logo').addClass('HideSideNav'); 
-    $('a#button-menu').on('click', function(){
-        $('nav#column-left').toggleClass('HideSideNav'); 
-        $('div#content').toggleClass('HideSideNav'); 
-    }); #}
-    
+    // $('#button-menu').addClass('HideSideNav');
+    // $('div#header-logo').addClass('HideSideNav');
+    // $('a#button-menu').on('click', function(){
+    //     $('nav#column-left').toggleClass('HideSideNav');
+    //     $('div#content').toggleClass('HideSideNav');
+    // });
+
 
     // SIDEBAR COLLAPSE
     /*
@@ -65,16 +63,28 @@
     // Available SortableJS options --
     // -  https://github.com/SortableJS/Sortable
     // -  Examples: https://sortablejs.github.io/Sortable/
-    
+
     // This is to drag & drop Options on the products page.
     // TODO: Add this to the relevent location so it is not loaded on every page.
 
 
-Sortable.create(option, {
+
+
+var sortable = Sortable.create(option, {
+
+    // multiDrag: true, // Enable the plugin
+    // selectedClass: "sortable-selected", // Class name for selected item
+    // multiDragKey: "Alt", // Key that must be down for items to be selected
+
+    // multiDrag: true, // Enable multi-drag
+    // selectedClass: 'selected', // The class applied to the selected items
+
     animation: 100,
     group: 'list-1',
-    draggable: '#option li',
-    handle: '#option li',
+    // draggable: '#option li',
+    // handle: '#option li',
+    draggable: '#option li:not(:last-child)',
+    // handle: '#option li:not(:last-child)',
     sort: true,
     filter: '.sortable-disabled',
     chosenClass: 'active',
@@ -89,11 +99,11 @@ Sortable.create(option, {
         let oldID = evt.oldIndex;
 
         // Update the dragged element ID with the new position
-        // and then change the old tab to the old id.         
+        // and then change the old tab to the old id.
         {# let _newTabID = '#tab-option'+oldID;
 
         let _newTabSortInput = $('#input-prodoptsort' + _tabID);
-        let _oldTabSortInput = $('#input-prodoptsort' + oldID); 
+        let _oldTabSortInput = $('#input-prodoptsort' + oldID);
 
         _newTabSortInput.attr('value', newID);
         _oldTabSortInput.attr('value', _tabID);
@@ -101,11 +111,11 @@ Sortable.create(option, {
 
 
         console.log('Tab ID: ', _tabID);
-       
+
         console.log('New Index: ' + evt.newIndex);
         console.log('Old Index: ' + evt.oldIndex); #}
 
-        let _totalOpts = $('#option li').length-1; 
+        let _totalOpts = $('#option li').length-1;
 
         $( "#option li" ).each(function( index ) {
 
@@ -113,7 +123,7 @@ Sortable.create(option, {
             console.log(' index: ' + index );
             console.log('_totalOpts ' + _totalOpts );
 
-            // the last li is not an option.. 
+            // the last li is not an option..
             if(index >= _totalOpts) return;
 
             console.log(`$('#tab-option${index})`);

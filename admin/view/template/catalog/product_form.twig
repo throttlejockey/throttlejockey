@@ -579,7 +579,7 @@
                           </div>
                         {% endif %}
                         {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
-                          <div class="table-responsive">
+                          <div class="table-responsive"   style="overflow: visible;">
                             <table id="option-value{{ option_row }}" class="table table-striped table-bordered table-hover">
                               <thead>
                                 <tr>
@@ -596,7 +596,7 @@
 
                                 {% for product_option_value in product_option.product_option_value %}
                                   <tr id="option-value-row{{ option_value_row }}">
-                                    <td class="text-left"><select name="product_option[{{ option_row }}][product_option_value][{{ option_value_row }}][option_value_id]" class="form-control">
+                                    <td class="text-left"><select name="product_option[{{ option_row }}][product_option_value][{{ option_value_row }}][option_value_id]" class="form-control option_value_select option_value_select_{{option_value_row}}">
 
 
                                         {% if option_values[product_option.option_id] %}
@@ -1129,6 +1129,13 @@
   <link href="view/javascript/summernote/summernote.css" rel="stylesheet"/>
   <script type="text/javascript" src="view/javascript/summernote/summernote-image-attributes.js"></script>
   <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+
+
+  <script type="text/javascript" src="view/javascript/selectize/selectize.js"></script>
+  <link href="view/javascript/selectize/selectize.bootstrap3.css" rel="stylesheet"/>
+
+
+
   <script type="text/javascript"><!--
   // Manufacturer
   $('input[name=\'manufacturer\']').autocomplete({
@@ -1401,11 +1408,11 @@
 		  }
 
 		  if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
-			  html += '<div class="table-responsive">';
+			  html += '<div class="table-responsive" style="overflow: visible;">';
 			  html += '  <table id="option-value' + option_row + '" class="table table-striped table-bordered table-hover">';
 			  html += '  	 <thead>';
 			  html += '      <tr>';
-			  html += '        <td class="text-left">{{ entry_option_value }}</td>';
+			  html += '        <td class="text-left option_select">{{ entry_option_value }}</td>';
 			  html += '        <td class="text-right">{{ entry_quantity }}</td>';
 			  html += '        <td class="text-left">{{ entry_subtract }}</td>';
 			  html += '        <td class="text-right">{{ entry_price }}</td>';
@@ -1471,7 +1478,7 @@
 
   function addOptionValue(option_row) {
 	  html = '<tr id="option-value-row' + option_value_row + '">';
-	  html += '  <td class="text-left"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][option_value_id]" class="form-control">';
+	  html += '  <td class="text-left"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][option_value_id]" class="form-control option_value_select option_value_select_'+option_value_row+'">';
 	  html += $('#option-values' + option_row).html();
 	  html += '  </select><input type="hidden" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][product_option_value_id]" value="" /></td>';
 	  html += '  <td class="text-right"><input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][quantity]" value="" placeholder="{{ entry_quantity }}" class="form-control" /></td>';
@@ -1500,8 +1507,19 @@
 	  $('#option-value' + option_row + ' tbody').append(html);
 	  $('[rel=tooltip]').tooltip();
 
+    $("select.form-control.option_value_select_" + option_value_row).selectize({
+        create: true,
+        sortField: "text",
+    });
+
 	  option_value_row++;
   }
+
+    $("select.form-control.option_value_select").selectize({
+        create: true,
+        sortField: "text",
+    });
+
 
   //--></script>
   <script type="text/javascript"><!--

@@ -1,4 +1,15 @@
 <?php
+
+/*
+ * DEBUG WITH ChromePHP Logger 
+ *
+// $root = "/home/b16aa05/oc3.throttlejockey.com/";
+$root = "/home/b16aa05/public_html/";    
+if (file_exists($root . 'system/library/ChromePHP.php')) {
+    require_once($root . 'system/library/ChromePHP.php');
+} 
+/******/
+
 class ControllerCheckoutCart extends Controller {
 	public function index() {
 		$this->load->language('checkout/cart');
@@ -282,15 +293,25 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			if (isset($this->request->post['option'])) {
-				$option = array_filter($this->request->post['option']);
+				// $option = array_filter($this->request->post['option']);
+                // RM ENTRY {
+                // This filters out empty strings and variables except for 0, which we can actually get for a number entry.
+                $option = array_filter($this->request->post['option'], 'strlen');
+                // } RM
 			} else {
 				$option = array();
 			}
 
 			$product_options = $this->model_catalog_product->getProductOptions($this->request->post['product_id']);
 
+            // ChromePhp::log("-- [/catalog/model/cart.php] add() -> Product Options --");
+            // ChromePhp::log( print_r($product_options, 1 ) );
+
+
 			foreach ($product_options as $product_option) {
-				if ($product_option['required'] && empty($option[$product_option['product_option_id']])) {
+				if ($product_option['required'] && !isset($option[$product_option['product_option_id']])) {
+                    // ChromePhp::log("-- [/catalog/model/cart.php] add() -> !isset --");
+
 					$json['error']['option'][$product_option['product_option_id']] = sprintf($this->language->get('error_required'), $product_option['name']);
 				}
 			}

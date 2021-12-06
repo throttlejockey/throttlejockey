@@ -5,6 +5,9 @@ namespace liveopencart;
 class parent_child_options_common {
 	protected $registry;
 	
+	use lib\v0020\traits\theme;
+	use lib\v0020\traits\cache;
+	
 	public function __construct($registry) {
 		$this->registry = $registry;
 	}
@@ -18,14 +21,17 @@ class parent_child_options_common {
 		return $query->num_rows;
 	}
 	
-	public function getThemeName() {
-		if ($this->config->get('config_theme') == 'theme_default' || $this->config->get('config_theme') == 'default') {
-			return $this->config->get('theme_default_directory');
-		} else {
-			return substr($this->config->get('config_theme'), 0, 6) == 'theme_' ? substr($this->config->get('config_theme'), 6) : $this->config->get('config_theme') ;
+	public function getSettings() {
+		if ( !$this->hasCacheSimple('settings') ) {
+			$settings = $this->config->get('module_parent_child_options_settings');
+			if ( !is_array($settings) ) {
+				$settings = array();
+			}
+			$this->setCacheSimple('settings', $settings);
 		}
+		return $this->getCacheSimple('settings');
 	}
-	
+
 	
 	public function getResourceLinkPathWithVersion($path) {
 		
@@ -192,18 +198,6 @@ class parent_child_options_common {
 																		FROM  `".DB_PREFIX."pcop` PCOP
 																		WHERE PCOP.product_option_id = '" . (int)$product_option_id . "'
 																		");
-		/*
-		$query_pcop = $this->db->query("SELECT PCOP.pcop_id, PCOP.pcop_or, PO.product_id, POP.product_option_id parent_product_option_id
-																		FROM  `".DB_PREFIX."pcop` PCOP
-																				,	`".DB_PREFIX."product_option` PO
-																				,	`".DB_PREFIX."product_option` POP
-																		WHERE PCOP.product_option_id = '" . (int)$product_option_id . "'
-																			AND PO.product_option_id = PCOP.product_option_id
-																			AND POP.product_id = PO.product_id
-																			AND POP.option_id = PCOP.parent_option_id
-																		");
-		*/
-		
 		
 		foreach ($query_pcop->rows as $row_pcop) {
 			
@@ -211,16 +205,6 @@ class parent_child_options_common {
 																							FROM  `".DB_PREFIX."pcop_value` PCOPV
 																							WHERE PCOPV.pcop_id = '" . (int)$row_pcop['pcop_id'] . "'
 																						");
-			/*
-			$query_pcop_values = $this->db->query(" SELECT POVP.product_option_value_id
-																							FROM  `".DB_PREFIX."pcop_value` PCOPV
-																									, `".DB_PREFIX."product_option_value` POVP
-																							WHERE PCOPV.pcop_id = '" . (int)$row_pcop['pcop_id'] . "'
-																								AND POVP.option_value_id = PCOPV.parent_option_value_id
-																								AND POVP.product_id = ".(int)$row_pcop['product_id']."
-																							");
-			*/
-			
 			$row_pcop['values'] = array();
 			foreach ($query_pcop_values->rows as $row_pcop_value) {
 				$row_pcop['values'][] = $row_pcop_value['parent_product_option_value_id'];

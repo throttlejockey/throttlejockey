@@ -1,7 +1,8 @@
 <?php
 // Text
 $_['text_subject']          = '%s - Order %s';
-$_['text_greeting']         = 'Thank you for your interest in %s products. Your order has been received and will be processed once payment has been confirmed.';
+// $_['text_greeting']         = 'Thank you for your interest in %s products. Your order has been received and will be processed once payment has been confirmed.';
+$_['text_greeting']         = 'Thank you for your interest in %s products. Your order has been received! If the products you ordered has custom options it will be made in the order that it was placed';
 $_['text_link']             = 'To view your order click on the link below:';
 $_['text_order_detail']     = 'Order Details';
 $_['text_instruction']      = 'Instructions';

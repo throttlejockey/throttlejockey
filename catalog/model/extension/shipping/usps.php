@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * DEBUG WITH ChromePHP Logger 
+ * 
+// $root = "/home/b16aa05/oc3.throttlejockey.com/";
+$root = "/home/b16aa05/public_html/";    
+if (file_exists($root . 'system/library/ChromePHP.php')) {
+    require_once($root . 'system/library/ChromePHP.php');
+}  
+/******/
 class ModelExtensionShippingUsps extends Model {
 	public function getQuote($address) {
 		$this->load->language('extension/shipping/usps');
@@ -14,7 +24,7 @@ class ModelExtensionShippingUsps extends Model {
 		}
 
 		$weight = $this->weight->convert($this->cart->getWeight(), $this->config->get('config_weight_class_id'), $this->config->get('shipping_usps_weight_class_id'));
-		
+
 		// 70 pound limit
 		if ($weight > 70) {
 			$status = false;
@@ -355,11 +365,16 @@ class ModelExtensionShippingUsps extends Model {
 					$error = $dom->getElementsByTagName('Error')->item(0);
 
 					$firstclasses = array (
+                        'First-Class Package Service - Retail', // 0
 						'First-Class Mail Parcel',
 						'First-Class Mail Large Envelope',
 						'First-Class Mail Stamped Letter',
 						'First-Class Mail Postcards'
 					);
+
+                    $firstclasses_replace = array (
+                        'First-Class Postal',       // First-Class Package Service - Retail
+                    ); 
 
 					if ($rate_response || $intl_rate_response) {
 						if ($address['iso_code_2'] == 'US') {
@@ -376,10 +391,34 @@ class ModelExtensionShippingUsps extends Model {
 									if (in_array($classid, $allowed)) {
 										if ($classid == '0') {
 											$mailservice = $postage->getElementsByTagName('MailService')->item(0)->nodeValue;
-
+                                            // ChromePhp::log("USPS: mailservice " . $mailservice);
+                                             
 											foreach ($firstclasses as $k => $firstclass)  {
 												if ($firstclass == $mailservice) {
+                                                    
+
+                                                    /* Only allow First Class for packages < 13oz */
+                                                    if( (intval($pounds) > 0) || (intval($ounces) > 13) ) {
+                                                        $this->log->write('The cart cannot be shipped First Class..');
+                                                        $this->log->write('pounds: ' . $pounds);
+                                                        $this->log->write('ounces: ' . $ounces);
+
+                                                        // ChromePhp::log("USPS: The cart cannot be shipped First Class..");
+                                                        // ChromePhp::log("USPS: pounds: " . $pounds);
+                                                        // ChromePhp::log("USPS: ounces: " . $ounces);
+
+                                                        // $this->log->write('ounces: ' . $ounces);
+                                                        continue; 
+                                                    } else {
+                                                        $this->log->write('The cart can be shipped First Class: ' . $mailservice);
+                                                        // ChromePhp::log("USPS: The cart can be shipped First Class: " . $mailservice);
+                                                    }
+                                                    /* /Only allow First Class for packages < 13oz */
+
+
 													$classid = $classid . $k;
+                                                    // $mailservice_title = str_replace( 'First-Class Package Service - Retail', 'First-Class Postal' $mailservice)
+                                                    $mailservice_title = str_replace( ' - Retail', '', $mailservice); // Remove the `- Retail` from mail service title.
 													break;
 												}
 											}
@@ -389,7 +428,7 @@ class ModelExtensionShippingUsps extends Model {
 
 												$quote_data[$classid] = array(
 													'code'         => 'usps.' . $classid,
-													'title'        => $postage->getElementsByTagName('MailService')->item(0)->nodeValue,
+													'title'        => $mailservice_title, //$postage->getElementsByTagName('MailService')->item(0)->nodeValue,
 													'cost'         => $this->currency->convert($cost, 'USD', $this->config->get('config_currency')),
 													'tax_class_id' => $this->config->get('shipping_usps_tax_class_id'),
 													'text'         => $this->currency->format($this->tax->calculate($this->currency->convert($cost, 'USD', $this->session->data['currency']), $this->config->get('shipping_usps_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency'], 1.0000000)
@@ -476,8 +515,23 @@ class ModelExtensionShippingUsps extends Model {
 					'error'      => false
 				);
 			}
-		}
+		}        
+        
 
-		return $method_data;
+        if ($this->config->get('shipping_usps_debug')) {           
+            // $this->log->write('--- TEST: USPS ---');
+            // $this->log->write( print_r($method_data, 1) );
+        }
+
+        // Prevent the store from displaying empty selection on the checkout page if no quotes 
+        // were returned. Errors are logged ... 
+        if( sizeof( $method_data['quote'] ) == 0 ) {
+            return array();
+        }
+
+        // ChromePhp::log("USPS method_data: ");
+        // ChromePhp::log( print_r($method_data, 1) );
+
+        return $method_data;
 	}
 }

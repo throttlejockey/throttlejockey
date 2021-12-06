@@ -183,6 +183,30 @@
             <div class="col-sm-10">
               <div id="service" class="well well-sm" style="height: 150px; overflow: auto;">
                 <div id="US">
+                  <!--SUREPOST -->
+                  <div class="checkbox">
+                    <label>
+                      {% if shipping_ups_us_92 %}
+                          <input type="checkbox" name="shipping_ups_us_92" value="1" checked="checked" />
+                          {{ text_surepost_less_than_1lb }}
+                      {% else %}
+                          <input type="checkbox" name="shipping_ups_us_92" value="1" />
+                          {{ text_surepost_less_than_1lb }}
+                      {% endif %}
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      {% if shipping_ups_us_93 %}
+                          <input type="checkbox" name="shipping_ups_us_93" value="1" checked="checked" />
+                          {{ text_surepost_1lb_greater }}
+                      {% else %}
+                          <input type="checkbox" name="shipping_ups_us_93" value="1" />
+                          {{ text_surepost_1lb_greater }}
+                      {% endif %}
+                    </label>
+                  </div>
+                  <!--SUREPOST -->
                   <div class="checkbox">
                     <label>
                       {% if shipping_ups_us_01 %}

@@ -364,11 +364,28 @@ class ControllerExtensionShippingUPS extends Controller {
 			$data['shipping_ups_us_59'] = $this->config->get('shipping_ups_us_59');
 		}
 
+        /* SURE POST */
+		if (isset($this->request->post['shipping_ups_us_92'])) {
+			$data['shipping_ups_us_92'] = $this->request->post['shipping_ups_us_92'];
+		} else {
+			$data['shipping_ups_us_92'] = $this->config->get('shipping_ups_us_92');
+		}
+
+		if (isset($this->request->post['shipping_ups_us_93'])) {
+			$data['shipping_ups_us_93'] = $this->request->post['shipping_ups_us_93'];
+		} else {
+			$data['shipping_ups_us_93'] = $this->config->get('shipping_ups_us_93');
+		}
+        /* SURE POST */
+
+        
 		if (isset($this->request->post['shipping_ups_us_65'])) {
 			$data['shipping_ups_us_65'] = $this->request->post['shipping_ups_us_65'];
 		} else {
 			$data['shipping_ups_us_65'] = $this->config->get('shipping_ups_us_65');
 		}
+
+
 
 		// Puerto Rico
 		if (isset($this->request->post['shipping_ups_pr_01'])) {

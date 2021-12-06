@@ -1,0 +1,33 @@
+<RateV4Request USERID="575TMDES2190">
+    <Revision />
+        <Package ID="1-0">
+        <Service>Online</Service>
+        <ZipOrigination>97502</ZipOrigination>
+        <ZipDestination>00744</ZipDestination>
+        <Pounds>3.5</Pounds>
+        <Ounces>0</Ounces>
+        <Container/>
+        <Size>Large</Size>
+        <Width>42</Width>
+        <Length>12</Length>
+        <Height>2</Height>
+        <Girth>28</Girth>
+        <Machinable>False</Machinable>
+    </Package>
+
+
+<Package ID="2-0">
+    <Service>Online</Service>
+    <ZipOrigination>97502</ZipOrigination>
+    <ZipDestination>00744</ZipDestination>
+    <Pounds>3.5</Pounds>
+    <Ounces>0</Ounces>
+    <Container/>
+    <Size>Large</Size>
+    <Width>42</Width>
+    <Length>12</Length>
+    <Height>2</Height>
+    <Girth>28</Girth>
+    <Machinable>False</Machinable>
+</Package>
+</RateV4Request>

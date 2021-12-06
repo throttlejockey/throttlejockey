@@ -89,6 +89,7 @@ class ControllerKaOptionTooltips extends \KaInstaller {
 
 		$this->tables['ka_option_tooltip']['query'] = "
 			CREATE TABLE `" . DB_PREFIX . "ka_option_tooltip` (  
+                `tipid` int AUTO_INCREMENT PRIMARY KEY,                
 				`option_id` int(11) NOT NULL,  
 				`language_id` int(11) NOT NULL,
 				`tooltip` mediumtext NOT NULL,
@@ -100,6 +101,7 @@ class ControllerKaOptionTooltips extends \KaInstaller {
 		 		 			
 		$this->tables['ka_product_option_tooltip']['query'] = "
 			CREATE TABLE `" . DB_PREFIX . "ka_product_option_tooltip` (
+                `tipid` int AUTO_INCREMENT PRIMARY KEY,    
 				`product_option_id` int(11) NOT NULL,
 				`language_id` int(11) NOT NULL,
 				`tooltip` mediumtext NOT NULL,

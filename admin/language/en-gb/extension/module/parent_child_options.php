@@ -17,6 +17,9 @@ $_['text_column_right']     = 'Column Right';
 $_['text_m_all_options']    = 'All available options';
 $_['text_m_support']        = "Developer: <a href='https://liveopencart.com' target='_blank'>liveopencart.com</a> | Support, questions and suggestions: <a href=\"mailto:support@liveopencart.com\">support@liveopencart.com</a>";
 
+
+
+
 // for the product edit page
 $_['pcop_entry_settings']               = 'Parent options';
 $_['pcop_entry_no_parent_options']      = 'Currently, there\'s no parent options.';
@@ -26,8 +29,10 @@ $_['pcop_entry_remove_parent_option']   = 'Remove parent option';
 
 
 // Entry
-$_['entry_settings']                  = 'Main settings';
-$_['entry_additional']                = 'Additional fields';
+$_['entry_settings']                  = 'Settings';
+$_['entry_disable_highlight']         = 'Disable highlight';
+$_['entry_disable_highlight_help']    = 'Disable highlight (different colors) for parent-child options on the product edit page';
+
 
 $_['error_xlsx_lib_is_not_found']     = '%s library is not found (it is necessary for import/export features only).';
 $_['error_php_excel_is_necessary_for_xls']         = ' (PHPExcel is necessary for importing XLS) ';

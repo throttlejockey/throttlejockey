@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+    <AccessLicenseNumber>0CFF620989E39008</AccessLicenseNumber>
+    <UserId>mattdavis.qvm</UserId>
+    <Password>golT5E0!</Password>
+</AccessRequest>
+<?xml version="1.0"?>
+<AddressValidationRequest xml:lang="en-US">
+    <Request>
+        <TransactionReference>
+            <CustomerContext>Street Level Address Validation Request</CustomerContext>
+            <XpciVersion>1.0</XpciVersion>
+        </TransactionReference>
+        <RequestAction>XAV</RequestAction>
+        <RequestOption>3</RequestOption>
+    </Request>
+    <AddressKeyFormat>
+        <ConsigneeName>Tim Parker</ConsigneeName>
+        <AddressLine>215 SW Wood St</AddressLine>
+        <PoliticalDivision2>Hillsboro</PoliticalDivision2>
+        <PoliticalDivision1>OR</PoliticalDivision1>
+        <PostcodePrimaryLow>97123</PostcodePrimaryLow>
+        <CountryCode>US</CountryCode>
+    </AddressKeyFormat>
+</AddressValidationRequest>

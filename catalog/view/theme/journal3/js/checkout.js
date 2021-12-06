@@ -3,9 +3,12 @@ $(function () {
 		data: window['_QuickCheckoutData'],
 		el: '.quick-checkout',
 		template: '#quick-checkout',
-		mounted: function () {
-			var self = this;
 
+        mounted: function () {
+
+            var self = this;
+            // console.log( window['_QuickCheckoutData'] );
+            // window['_QuickCheckoutData'].shipping_validation_error = 'ha';
 			self.payment();
 
 			if ($.fn.datetimepicker) {
@@ -30,6 +33,42 @@ $(function () {
 			$(self.$el).find('[placeholder]').each(function () {
 				$(this).attr('placeholder', he.decode($(this).attr('placeholder')));
 			});
+
+            // Sort shipping methods by cost.
+            self.sortShippingMethods();
+
+            let address_1 = "";
+            let city = "";
+            let postcode = "";
+            let region_state = "";
+            let country = "";
+            
+            this.shipping_validation_error = false;
+
+            // Form validation for alternate message in shipping_method.twig                     
+            if( this.same_address ) {
+                address_1    = this.order_data.payment_address_1;
+                city         = this.order_data.payment_city;
+                postcode     = this.order_data.payment_postcode;
+                region_state = this.order_data.payment_zone;
+                country      = this.order_data.payment_iso_code_2;
+            } else {
+
+                address_1    = this.order_data.shipping_address_1;
+                city         = this.order_data.shipping_city;
+                postcode     = this.order_data.shipping_postcode;
+                region_state = this.order_data.shipping_zone;
+                country      = this.order_data.shipping_iso_code_2;
+
+            }
+            
+            if( !address_1 || !city || !postcode || !region_state  || !country ) {
+                console.log('Please enter your ship to address to see shipping options.');
+                // Enter a full address please. 
+                // this.shipping_validation_error = "Please enter your ship to address to see shipping options.";
+                
+            }
+
 		},
 		updated: function () {
 			var self = this;
@@ -302,7 +341,47 @@ $(function () {
 					}.bind(this)
 				});
 			},
+
+
+            sortShippingMethods: function() {
+                // console.log('sortShippingMethods()');
+                    /* 
+                     * SORT THE SHIPPING METHODS 
+                    */
+                    let calculatedArray = []
+                    sortCost = function(data) {
+                        if (calculatedArray) {
+                            return data.sort(function(a, b) {
+                                return a.cost - b.cost
+                            })
+                        } else {
+                            return []
+                        }
+                    }
+                    
+                    let p = this.shipping_methods;
+                    // key = each provider 'ups, dhl, usps...' object
+                    for (var key of Object.keys(p)) {
+                        sortedMethodsArray = [];
+                        // console.log('service: ' + key + " -> " + p[key])
+                        for (let [key2, value] of Object.entries(this.shipping_methods[key]['quote'])) {
+                            sortedMethodsArray.push({
+                                id: key2,
+                                ...value
+                            })
+                        }
+                        sortCost(sortedMethodsArray);
+                        let newCost = {};
+                        sortedMethodsArray.forEach(function(entry) {
+                            // So.. the id needs to be prefixed with a _ because they are numbers and JSON automatically sorts numbered indexes.
+                            newCost['_' + entry.id] = entry;
+                        });
+                        this.shipping_methods[key]['quote'] = newCost;
+                    }
+            },
+
 			update: function (json, confirm) {
+                console.log( json );
 				if (json.response.redirect) {
 					window.location = json.response.redirect;
 				} else {
@@ -327,6 +406,150 @@ $(function () {
 					this.coupon_message = json.response.coupon_message;
 					this.voucher_message = json.response.voucher_message;
 					this.reward_message = json.response.reward_message;
+
+                    this.raw_json = json.response.shipping_methods;
+
+                    // let objPrefix = 'payment_';
+
+                    // Address1 
+                    // ? Address2 
+                    // City
+                    // Post Code
+                    // Country
+                    // Region / State
+                    /*
+                        payment_address_1: "2312 Lakeshore Drive"
+                        payment_address_2: ""
+                        payment_address_format: "{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}"
+                        payment_address_id: ""
+                        payment_city: "Bryant"
+                        payment_code: "pp_express"
+                        payment_company: ""
+                        payment_country: "United States"
+                        payment_country_id: "223"
+                        payment_custom_field: []
+                        payment_firstname: "chris"
+                        payment_iso_code_2: "US"
+                        payment_iso_code_3: "USA"
+                        payment_lastname: "roe"
+                        payment_method: "PayPal Express Checkout"
+                        payment_postcode: "72022"
+                        payment_zone: "Arkansas"
+                        payment_zone_id: "3617"
+                    */
+                    let address_1 = "";
+                    let city = "";
+                    let postcode = "";
+                    let region_state = "";
+                    let country = "";
+                    
+                    this.shipping_validation_error = false;
+
+                    // Form validation for alternate message in shipping_method.twig                     
+                    if( this.same_address ) {
+                        address_1    = this.order_data.payment_address_1;
+                        city         = this.order_data.payment_city;
+                        postcode     = this.order_data.payment_postcode;
+                        region_state = this.order_data.payment_zone;
+                        country      = this.order_data.payment_iso_code_2;
+                    } else {
+
+                        address_1    = this.order_data.shipping_address_1;
+                        city         = this.order_data.shipping_city;
+                        postcode     = this.order_data.shipping_postcode;
+                        region_state = this.order_data.shipping_zone;
+                        country      = this.order_data.shipping_iso_code_2;
+
+                    }
+                    
+                    if( !address_1 || !city || !postcode || !region_state  || !country ) {
+                        console.log('Please enter your ship to address to see shipping options.');
+                        // Enter a full address please. 
+                        this.shipping_validation_error = "Please enter your ship to address to see shipping options.";
+
+                    }
+
+
+                    //     console.log( Object.keys( shipping_method) );
+                    // const shipping_data = {
+
+                    
+
+                    /** 
+
+                        if( Object.keys(this.shipping_methods).length === 0 ) {
+                            // No Shipping Methods. 
+                            if( !shipping_address_1 ||  
+                                !shipping_city || 
+                                !shipping_postcode || 
+                                !shipping_zone || 
+                                !shipping_iso_code_2 ) {
+                                console.log('Please enter your ship to address to see shipping options.');
+                                // Enter a full address please. 
+                                this.error_warning = "Please enter your ship to address to see shipping options.";
+                            }
+                        }
+
+
+
+                        // "shipping_firstname": "asdf",
+                        // "shipping_lastname": "",
+                        // // "shipping_company": "",
+                        // // "shipping_address_id": "",
+                        // "shipping_address_1": "Q",
+                        // "shipping_address_2": "",
+                        // "shipping_city": "",
+
+                        // console.log( shipping_firstname );
+                        // console.log( shipping_lastname );
+                        // console.log( shipping_company );
+                        console.log( shipping_address_1 );
+                        // console.log( shipping_address_2 );
+                        console.log( shipping_city );
+                        console.log( shipping_postcode );
+                        console.log( shipping_zone );
+                        console.log( shipping_iso_code_2 );
+
+                    **/ 
+
+                    this.sortShippingMethods();
+
+                    // /* 
+                        //  * SORT THE SHIPPING METHODS 
+                        // */
+                        // let calculatedArray = []
+                        // sortCost = function(data) {
+                        //     if (calculatedArray) {
+                        //         return data.sort(function(a, b) {
+                        //             return a.cost - b.cost
+                        //         })
+                        //     } else {
+                        //         return []
+                        //     }
+                        // }
+                        
+                        // let p = this.shipping_methods;
+                        // // key = each provider 'ups, dhl, usps...' object
+                        // for (var key of Object.keys(p)) {
+                        //     sortedMethodsArray = [];
+                        //     // console.log('service: ' + key + " -> " + p[key])
+                        //     for (let [key2, value] of Object.entries(this.shipping_methods[key]['quote'])) {
+                        //         sortedMethodsArray.push({
+                        //             id: key2,
+                        //             ...value
+                        //         })
+                        //     }
+                        //     sortCost(sortedMethodsArray);
+                        //     let newCost = {};
+                        //     sortedMethodsArray.forEach(function(entry) {
+                        //         // So.. the id needs to be prefixed with a _ because they are numbers and JSON automatically sorts numbered indexes.
+                        //         newCost['_' + entry.id] = entry;
+                        //     });
+                        //     this.shipping_methods[key]['quote'] = newCost;
+                        // }
+                    // console.log('Shipping Methods !@#');
+                    // console.log( this.shipping_methods );
+                    //                     console.log( 'Shipping Methods :: UPDATE() :' , this.shipping_methods  );
 
 					$('#cart-total').html(json.response.total);
 					$('.cart-content > ul').html($(json.response.cart).find('.cart-content > ul').html());
@@ -480,6 +703,7 @@ $(document).ajaxSuccess(function (event, xhr, settings, data) {
 		if (data.error) {
 			$('#quick-checkout-button-confirm').button('reset');
 			_QuickCheckout.payment();
+            // console.log('hey');
 		}
 	}
 });

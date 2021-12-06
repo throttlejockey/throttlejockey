@@ -160,6 +160,87 @@ class ControllerCatalogOption extends Controller {
 
 		$data['options'] = array();
 
+        // ////
+        // $debug_filter_data = array(
+        //     'sort'  => $sort,
+        //     'order' => $order,
+        //     'start' => 0,
+        //     'limit' => 5000
+        // );
+
+        // $debug_results = $this->model_catalog_option->getOptions($debug_filter_data);
+
+        // $dbgString = "";
+        // foreach ($debug_results as $result) {
+        //     // $debug_data['product'][] = array(
+        //     //     'name'        => $result['name'],
+        //     // );
+        //     $debug_data['options'][] = array(
+        //         'name'       => $result['name'],
+        //     );
+
+        //     // $this->log->write( print_r($result['name'], 1) );
+        //     $dbgString .= str_replace("&nbsp;&nbsp;&gt;&nbsp;&nbsp;", "&nbsp;&gt;&nbsp;", $result['name']) . "\r\n";
+        // }
+        // // $this->log->write( "\r\n==Options==\r\n$dbgString");
+
+        // // Write Products to file.
+        // $currDate = date('m-d-Y H:i:s');
+        // $output_file = DIR_LOGS . "lists/options_30.txt";
+        // if (file_exists( $output_file )) { unlink( $output_file ); }
+        // file_put_contents( $output_file  , "Options List \r\nLast Update: $currDate\r\n\r\n\r\n$dbgString" ); //print_r($data, 1));
+        // ////
+
+/*
+        ////
+        $debug_filter_data = array(
+            'sort'  => $sort,
+            'order' => $order,
+            'start' => 0,
+            'limit' => 5000
+        );
+
+        $debug_results = $this->model_catalog_option->getOptions($debug_filter_data);
+
+        $dbgString = "";
+        foreach ($debug_results as $result) {
+            $dbgString .= "\r\n";
+            $dbgString .= "\r\n";
+            // $debug_data['product'][] = array(
+            //     'name'        => $result['name'],
+            // );
+            $debug_data['options'][] = array(
+                'name'       => $result['name'],
+            );
+
+            // $this->log->write( print_r($result['name'], 1) );
+            $dbgString .= str_replace("&nbsp;&nbsp;&gt;&nbsp;&nbsp;", "&nbsp;&gt;&nbsp;", $result['name']) . "\r\n";
+
+            $optVals = $this->model_catalog_option->getOptionValues($result['option_id']);
+
+            // print "<pre>";
+            // print_r($optVals);
+            // print "</pre>";
+
+            foreach ($optVals as $value) {
+                // print "\r\n  - $optVals";
+                $dbgString .= "\r\n - " . $value['name']; //print_r($optVals, true);
+            }
+                $dbgString .= "\r\n";  // . $value['name']; //print_r($optVals, true);
+
+        }
+        // $this->log->write( "\r\n==Options==\r\n$dbgString");
+
+        // Write Products to file.
+        $currDate = date('m-d-Y H:i:s');
+        $output_file = DIR_LOGS . "lists/options_30.txt";
+        if (file_exists( $output_file )) { unlink( $output_file ); }
+        file_put_contents( $output_file  , "Options List \r\nLast Update: $currDate\r\n\r\n\r\n$dbgString" ); //print_r($data, 1));
+        ////
+        */
+
+
+
 		$filter_data = array(
 			'sort'  => $sort,
 			'order' => $order,

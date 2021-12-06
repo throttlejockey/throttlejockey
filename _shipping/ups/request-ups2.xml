@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+    <AccessLicenseNumber>0CFF620989E39008</AccessLicenseNumber>
+    <UserId>mattdavis.qvm</UserId>
+    <Password>golT5E0!</Password>
+</AccessRequest><?xml version="1.0"?>
+<RatingServiceSelectionRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" lang="en-US">
+    <Request>
+        <RequestAction>Rate</RequestAction>
+        <RequestOption>Shop</RequestOption>
+        <TransactionReference>
+            <XpciVersion>1.0</XpciVersion>
+        </TransactionReference>
+    </Request>
+    <PickupType>
+        <Code>01</Code>
+    </PickupType>
+    <CustomerClassification>
+        <Code>01</Code>
+    </CustomerClassification>
+    <Shipment>
+        <Shipper>
+            <ShipperNumber>429744</ShipperNumber>
+            <Address>
+                <AddressLine1>822 ENTERPRISE DR.  # 101</AddressLine1>
+                <AddressLine2 />
+                <City>CENTRAL POINT</City>
+                <StateProvinceCode>OR</StateProvinceCode>
+                <PostalCode>97502-3639</PostalCode>
+                <CountryCode>US</CountryCode>
+            </Address>
+        </Shipper>
+        <ShipTo>
+            <Address>
+                <AddressLine1 />
+                <AddressLine2 />
+                <City>PAR1829 s horne SUITE # 2KER</City>
+                <StateProvinceCode>AZ</StateProvinceCode>
+                <PostalCode>85204</PostalCode>
+                <CountryCode>US</CountryCode>
+                <ResidentialAddressIndicator />
+            </Address>
+        </ShipTo>
+        <Package>
+            <PackagingType>
+                <Code>02</Code>
+            </PackagingType>
+            <Dimensions>
+                <UnitOfMeasurement>
+                    <Code>IN</Code>
+                </UnitOfMeasurement>
+                <Length>24</Length>
+                <Width>18</Width>
+                <Height>1</Height>
+            </Dimensions>
+            <PackageWeight>
+                <UnitOfMeasurement>
+                    <Code>LBS</Code>
+                </UnitOfMeasurement>
+                <Weight>2.0000</Weight>
+            </PackageWeight>
+        </Package>
+        <RateInformation>
+            <NegotiatedRatesIndicator />
+        </RateInformation>
+    </Shipment>
+</RatingServiceSelectionRequest>
+
+
+<!-- REQUEST UPS2 -->

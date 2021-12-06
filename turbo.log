@@ -1,0 +1,2196 @@
+165 tables found...
+Execution time for fetching 165 tables was -353.991 ms
+Switching database table engine now...
+oc_journal3_blog_post_to_product is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_post_to_product was 1.5 ms
+oc_seo_url is already using the InnoDB engine
+Execution time for editing table oc_seo_url was 1.3 ms
+oc_order_voucher is already using the InnoDB engine
+Execution time for editing table oc_order_voucher was 1.2 ms
+oc_journal3_skin_setting is already using the InnoDB engine
+Execution time for editing table oc_journal3_skin_setting was 1.2 ms
+oc_journal3_blog_comments is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_comments was 1.2 ms
+oc_journal3_blog_category is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_category was 1.2 ms
+oc_location is already using the InnoDB engine
+Execution time for editing table oc_location was 1.2 ms
+oc_zone_to_geo_zone is already using the InnoDB engine
+Execution time for editing table oc_zone_to_geo_zone was 1.2 ms
+oc_product_option is already using the InnoDB engine
+Execution time for editing table oc_product_option was 1.1 ms
+oc_attribute is already using the InnoDB engine
+Execution time for editing table oc_attribute was 1.1 ms
+oc_option_description is already using the InnoDB engine
+Execution time for editing table oc_option_description was 1.1 ms
+oc_api is already using the InnoDB engine
+Execution time for editing table oc_api was 1.4 ms
+oc_custom_field_value_description is already using the InnoDB engine
+Execution time for editing table oc_custom_field_value_description was 3 ms
+oc_filter_group is already using the InnoDB engine
+Execution time for editing table oc_filter_group was 1.4 ms
+oc_language is already using the InnoDB engine
+Execution time for editing table oc_language was 1.3 ms
+oc_length_class is already using the InnoDB engine
+Execution time for editing table oc_length_class was 1.3 ms
+oc_ka_product_option_tooltip is already using the InnoDB engine
+Execution time for editing table oc_ka_product_option_tooltip was 1.4 ms
+oc_return_action is already using the InnoDB engine
+Execution time for editing table oc_return_action was 1.4 ms
+oc_banner is already using the InnoDB engine
+Execution time for editing table oc_banner was 1.2 ms
+oc_category_to_store is already using the InnoDB engine
+Execution time for editing table oc_category_to_store was 1.2 ms
+oc_customer_reward is already using the InnoDB engine
+Execution time for editing table oc_customer_reward was 1.2 ms
+oc_journal3_product_attribute is already using the InnoDB engine
+Execution time for editing table oc_journal3_product_attribute was 1.2 ms
+oc_pcop_value is already using the InnoDB engine
+Execution time for editing table oc_pcop_value was 1.1 ms
+oc_product_image is already using the InnoDB engine
+Execution time for editing table oc_product_image was 1.1 ms
+oc_stock_status is already using the InnoDB engine
+Execution time for editing table oc_stock_status was 1.1 ms
+oc_customer_login is already using the InnoDB engine
+Execution time for editing table oc_customer_login was 1.1 ms
+oc_theme is already using the InnoDB engine
+Execution time for editing table oc_theme was 1.1 ms
+oc_translation is already using the InnoDB engine
+Execution time for editing table oc_translation was 1.2 ms
+oc_return_reason is already using the InnoDB engine
+Execution time for editing table oc_return_reason was 1.2 ms
+oc_product_to_layout is already using the InnoDB engine
+Execution time for editing table oc_product_to_layout was 1.1 ms
+oc_manufacturer_to_store is already using the InnoDB engine
+Execution time for editing table oc_manufacturer_to_store was 1 ms
+oc_customer_activity is already using the InnoDB engine
+Execution time for editing table oc_customer_activity was 1.1 ms
+oc_googleshopping_product is already using the InnoDB engine
+Execution time for editing table oc_googleshopping_product was 1.1 ms
+oc_googleshopping_product_target is already using the InnoDB engine
+Execution time for editing table oc_googleshopping_product_target was 1.1 ms
+oc_category_description is already using the InnoDB engine
+Execution time for editing table oc_category_description was 1.2 ms
+oc_zone is already using the InnoDB engine
+Execution time for editing table oc_zone was 1.1 ms
+oc_filter is already using the InnoDB engine
+Execution time for editing table oc_filter was 1.1 ms
+oc_voucher_theme is already using the InnoDB engine
+Execution time for editing table oc_voucher_theme was 1.1 ms
+oc_product_description is already using the InnoDB engine
+Execution time for editing table oc_product_description was 1.2 ms
+oc_modification is already using the InnoDB engine
+Execution time for editing table oc_modification was 1.1 ms
+oc_pcop is already using the InnoDB engine
+Execution time for editing table oc_pcop was 1.1 ms
+oc_customer_group_description is already using the InnoDB engine
+Execution time for editing table oc_customer_group_description was 1.2 ms
+oc_order_recurring_transaction is already using the InnoDB engine
+Execution time for editing table oc_order_recurring_transaction was 1.1 ms
+oc_tax_class is already using the InnoDB engine
+Execution time for editing table oc_tax_class was 1.2 ms
+oc_paypal_order is already using the InnoDB engine
+Execution time for editing table oc_paypal_order was 1.1 ms
+oc_customer is already using the InnoDB engine
+Execution time for editing table oc_customer was 1.2 ms
+oc_review is already using the InnoDB engine
+Execution time for editing table oc_review was 1.1 ms
+oc_information_to_layout is already using the InnoDB engine
+Execution time for editing table oc_information_to_layout was 1.1 ms
+oc_attribute_description is already using the InnoDB engine
+Execution time for editing table oc_attribute_description was 1.1 ms
+oc_order_product is already using the InnoDB engine
+Execution time for editing table oc_order_product was 1.2 ms
+oc_journal3_blog_post is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_post was 1.2 ms
+oc_api_session is already using the InnoDB engine
+Execution time for editing table oc_api_session was 1.2 ms
+oc_journal3_module is already using the InnoDB engine
+Execution time for editing table oc_journal3_module was 1.2 ms
+oc_order_history is already using the InnoDB engine
+Execution time for editing table oc_order_history was 1.2 ms
+oc_journal3_skin is already using the InnoDB engine
+Execution time for editing table oc_journal3_skin was 1.3 ms
+oc_paypal_order_transaction is already using the InnoDB engine
+Execution time for editing table oc_paypal_order_transaction was 1.3 ms
+oc_hitshippo_dhl_pickup_details is already using the InnoDB engine
+Execution time for editing table oc_hitshippo_dhl_pickup_details was 1.6 ms
+oc_filter_group_description is already using the InnoDB engine
+Execution time for editing table oc_filter_group_description was 1.2 ms
+oc_shipping_courier is already using the InnoDB engine
+Execution time for editing table oc_shipping_courier was 1.1 ms
+oc_journal3_blog_category_description is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_category_description was 1.3 ms
+oc_setting is already using the InnoDB engine
+Execution time for editing table oc_setting was 1.2 ms
+oc_tax_rule is already using the InnoDB engine
+Execution time for editing table oc_tax_rule was 1.1 ms
+oc_customer_history is already using the InnoDB engine
+Execution time for editing table oc_customer_history was 1.1 ms
+oc_journal3_blog_post_to_category is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_post_to_category was 1.1 ms
+oc_ka_option_tooltip is already using the InnoDB engine
+Execution time for editing table oc_ka_option_tooltip was 1.1 ms
+oc_product_recurring is already using the InnoDB engine
+Execution time for editing table oc_product_recurring was 1.1 ms
+oc_journal3_setting is already using the InnoDB engine
+Execution time for editing table oc_journal3_setting was 1.2 ms
+oc_customer_wishlist is already using the InnoDB engine
+Execution time for editing table oc_customer_wishlist was 1.1 ms
+oc_extension_install is already using the InnoDB engine
+Execution time for editing table oc_extension_install was 1.5 ms
+oc_category is already using the InnoDB engine
+Execution time for editing table oc_category was 1.2 ms
+oc_order_recurring is already using the InnoDB engine
+Execution time for editing table oc_order_recurring was 1.2 ms
+oc_manufacturer is already using the InnoDB engine
+Execution time for editing table oc_manufacturer was 1.1 ms
+oc_coupon_history is already using the InnoDB engine
+Execution time for editing table oc_coupon_history was 1.2 ms
+oc_custom_field_value is already using the InnoDB engine
+Execution time for editing table oc_custom_field_value was 1.2 ms
+oc_download is already using the InnoDB engine
+Execution time for editing table oc_download was 1.1 ms
+oc_product_filter is already using the InnoDB engine
+Execution time for editing table oc_product_filter was 1.4 ms
+oc_customer_group is already using the InnoDB engine
+Execution time for editing table oc_customer_group was 1.1 ms
+oc_store is already using the InnoDB engine
+Execution time for editing table oc_store was 1.1 ms
+oc_extension_path is already using the InnoDB engine
+Execution time for editing table oc_extension_path was 1.2 ms
+oc_cart is already using the InnoDB engine
+Execution time for editing table oc_cart was 1.1 ms
+oc_order_shipment is already using the InnoDB engine
+Execution time for editing table oc_order_shipment was 1.1 ms
+oc_event is already using the InnoDB engine
+Execution time for editing table oc_event was 1.1 ms
+oc_googleshopping_category is already using the InnoDB engine
+Execution time for editing table oc_googleshopping_category was 1.1 ms
+oc_geo_zone is already using the InnoDB engine
+Execution time for editing table oc_geo_zone was 1.1 ms
+oc_layout is already using the InnoDB engine
+Execution time for editing table oc_layout was 1.1 ms
+oc_download_description is already using the InnoDB engine
+Execution time for editing table oc_download_description was 1.2 ms
+oc_journal3_message is already using the InnoDB engine
+Execution time for editing table oc_journal3_message was 1.2 ms
+oc_category_filter is already using the InnoDB engine
+Execution time for editing table oc_category_filter was 1.1 ms
+oc_product is already using the InnoDB engine
+Execution time for editing table oc_product was 1.1 ms
+oc_attribute_group is already using the InnoDB engine
+Execution time for editing table oc_attribute_group was 1.1 ms
+oc_order_option is already using the InnoDB engine
+Execution time for editing table oc_order_option was 1.2 ms
+oc_voucher_history is already using the InnoDB engine
+Execution time for editing table oc_voucher_history was 1.2 ms
+oc_order_status is already using the InnoDB engine
+Execution time for editing table oc_order_status was 1.1 ms
+oc_custom_field is already using the InnoDB engine
+Execution time for editing table oc_custom_field was 1.2 ms
+oc_customer_approval is already using the InnoDB engine
+Execution time for editing table oc_customer_approval was 1.3 ms
+oc_information is already using the InnoDB engine
+Execution time for editing table oc_information was 1.1 ms
+oc_currency is already using the InnoDB engine
+Execution time for editing table oc_currency was 1.1 ms
+oc_module is already using the InnoDB engine
+Execution time for editing table oc_module was 1.1 ms
+oc_return_history is already using the InnoDB engine
+Execution time for editing table oc_return_history was 1.1 ms
+oc_length_class_description is already using the InnoDB engine
+Execution time for editing table oc_length_class_description was 1.1 ms
+oc_custom_field_description is already using the InnoDB engine
+Execution time for editing table oc_custom_field_description was 1.2 ms
+oc_product_to_store is already using the InnoDB engine
+Execution time for editing table oc_product_to_store was 1.1 ms
+oc_googleshopping_product_status is already using the InnoDB engine
+Execution time for editing table oc_googleshopping_product_status was 2.1 ms
+oc_option_value_description is already using the InnoDB engine
+Execution time for editing table oc_option_value_description was 1.3 ms
+oc_category_path is already using the InnoDB engine
+Execution time for editing table oc_category_path was 1.2 ms
+oc_journal3_variable is already using the InnoDB engine
+Execution time for editing table oc_journal3_variable was 1.2 ms
+oc_marketing is already using the InnoDB engine
+Execution time for editing table oc_marketing was 1.2 ms
+oc_order_total is already using the InnoDB engine
+Execution time for editing table oc_order_total was 1.1 ms
+oc_api_ip is already using the InnoDB engine
+Execution time for editing table oc_api_ip was 1.3 ms
+oc_hitshippo_dhl_details_new is already using the InnoDB engine
+Execution time for editing table oc_hitshippo_dhl_details_new was 1.1 ms
+oc_custom_field_customer_group is already using the InnoDB engine
+Execution time for editing table oc_custom_field_customer_group was 1.1 ms
+oc_product_to_download is already using the InnoDB engine
+Execution time for editing table oc_product_to_download was 1.1 ms
+oc_layout_route is already using the InnoDB engine
+Execution time for editing table oc_layout_route was 1.2 ms
+oc_coupon_product is already using the InnoDB engine
+Execution time for editing table oc_coupon_product was 1.1 ms
+oc_journal3_blog_category_to_store is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_category_to_store was 1.1 ms
+oc_coupon_category is already using the InnoDB engine
+Execution time for editing table oc_coupon_category was 1.2 ms
+oc_customer_transaction is already using the InnoDB engine
+Execution time for editing table oc_customer_transaction was 1.2 ms
+oc_filter_description is already using the InnoDB engine
+Execution time for editing table oc_filter_description was 1.2 ms
+oc_googleshopping_target is already using the InnoDB engine
+Execution time for editing table oc_googleshopping_target was 1.1 ms
+oc_voucher_theme_description is already using the InnoDB engine
+Execution time for editing table oc_voucher_theme_description was 1.1 ms
+oc_option is already using the InnoDB engine
+Execution time for editing table oc_option was 1.4 ms
+oc_return is already using the InnoDB engine
+Execution time for editing table oc_return was 1.1 ms
+oc_weight_class_description is already using the InnoDB engine
+Execution time for editing table oc_weight_class_description was 1.1 ms
+oc_category_to_layout is already using the InnoDB engine
+Execution time for editing table oc_category_to_layout was 1 ms
+oc_country is already using the InnoDB engine
+Execution time for editing table oc_country was 1.1 ms
+oc_recurring is already using the InnoDB engine
+Execution time for editing table oc_recurring was 1.1 ms
+oc_product_option_value is already using the InnoDB engine
+Execution time for editing table oc_product_option_value was 4.3 ms
+oc_customer_affiliate is already using the InnoDB engine
+Execution time for editing table oc_customer_affiliate was 1.2 ms
+oc_coupon is already using the InnoDB engine
+Execution time for editing table oc_coupon was 1.2 ms
+oc_customer_search is already using the InnoDB engine
+Execution time for editing table oc_customer_search was 1.1 ms
+oc_journal3_newsletter is already using the InnoDB engine
+Execution time for editing table oc_journal3_newsletter was 1.1 ms
+oc_option_value is already using the InnoDB engine
+Execution time for editing table oc_option_value was 1.1 ms
+oc_product_attribute is already using the InnoDB engine
+Execution time for editing table oc_product_attribute was 1.2 ms
+oc_session is already using the InnoDB engine
+Execution time for editing table oc_session was 1.1 ms
+oc_product_to_category is already using the InnoDB engine
+Execution time for editing table oc_product_to_category was 1.1 ms
+oc_journal3_blog_post_to_layout is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_post_to_layout was 1.4 ms
+oc_statistics is already using the InnoDB engine
+Execution time for editing table oc_statistics was 1.4 ms
+oc_voucher is already using the InnoDB engine
+Execution time for editing table oc_voucher was 1.3 ms
+oc_order is already using the InnoDB engine
+Execution time for editing table oc_order was 1.2 ms
+oc_recurring_description is already using the InnoDB engine
+Execution time for editing table oc_recurring_description was 1.2 ms
+oc_address is already using the InnoDB engine
+Execution time for editing table oc_address was 1.2 ms
+oc_extension is already using the InnoDB engine
+Execution time for editing table oc_extension was 1.1 ms
+oc_journal3_blog_post_description is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_post_description was 1.1 ms
+oc_user_group is already using the InnoDB engine
+Execution time for editing table oc_user_group was 1.3 ms
+oc_banner_image is already using the InnoDB engine
+Execution time for editing table oc_banner_image was 1.1 ms
+oc_customer_ip is already using the InnoDB engine
+Execution time for editing table oc_customer_ip was 1.1 ms
+oc_information_to_store is already using the InnoDB engine
+Execution time for editing table oc_information_to_store was 1.1 ms
+oc_layout_module is already using the InnoDB engine
+Execution time for editing table oc_layout_module was 1.1 ms
+oc_journal3_blog_category_to_layout is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_category_to_layout was 1.1 ms
+oc_return_status is already using the InnoDB engine
+Execution time for editing table oc_return_status was 1.1 ms
+oc_product_reward is already using the InnoDB engine
+Execution time for editing table oc_product_reward was 1.2 ms
+oc_user is already using the InnoDB engine
+Execution time for editing table oc_user was 1.1 ms
+oc_journal3_blog_post_to_store is already using the InnoDB engine
+Execution time for editing table oc_journal3_blog_post_to_store was 1.2 ms
+oc_product_related is already using the InnoDB engine
+Execution time for editing table oc_product_related was 1.1 ms
+oc_information_description is already using the InnoDB engine
+Execution time for editing table oc_information_description was 1.1 ms
+oc_weight_class is already using the InnoDB engine
+Execution time for editing table oc_weight_class was 1.2 ms
+oc_upload is already using the InnoDB engine
+Execution time for editing table oc_upload was 1.1 ms
+oc_tax_rate_to_customer_group is already using the InnoDB engine
+Execution time for editing table oc_tax_rate_to_customer_group was 1.1 ms
+oc_tax_rate is already using the InnoDB engine
+Execution time for editing table oc_tax_rate was 1.1 ms
+oc_attribute_group_description is already using the InnoDB engine
+Execution time for editing table oc_attribute_group_description was 1.1 ms
+oc_journal3_layout is already using the InnoDB engine
+Execution time for editing table oc_journal3_layout was 1.1 ms
+oc_customer_online is already using the InnoDB engine
+Execution time for editing table oc_customer_online was 1.1 ms
+oc_journal3_style is already using the InnoDB engine
+Execution time for editing table oc_journal3_style was 1.1 ms
+oc_product_special is already using the InnoDB engine
+Execution time for editing table oc_product_special was 1.1 ms
+oc_product_discount is already using the InnoDB engine
+Execution time for editing table oc_product_discount was 1.8 ms
+Execution time for module switch_engine was 3.22 seconds
+165 tables found...
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+165 tables found...
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Execution time for fetching 165 tables was 269.8 ms
+Adding indexes to tables now...
+oc_journal3_blog_post_to_product.post_id - Index already exists
+oc_journal3_blog_post_to_product.product_id - Index already exists
+Execution time for working on oc_journal3_blog_post_to_product table was 3.9 ms
+oc_seo_url.seo_url_id - Index already exists
+oc_seo_url.store_id - Index already exists
+oc_seo_url.language_id - Index already exists
+Execution time for working on oc_seo_url table was 5.7 ms
+oc_order_voucher.order_voucher_id - Index already exists
+oc_order_voucher.order_id - Index already exists
+oc_order_voucher.voucher_id - Index already exists
+oc_order_voucher.voucher_theme_id - Index already exists
+Execution time for working on oc_order_voucher table was 5.8 ms
+oc_journal3_skin_setting.skin_id - Index already exists
+Execution time for working on oc_journal3_skin_setting table was 1.5 ms
+oc_journal3_blog_comments.comment_id - Index already exists
+oc_journal3_blog_comments.parent_id - Index already exists
+oc_journal3_blog_comments.post_id - Index already exists
+oc_journal3_blog_comments.customer_id - Index already exists
+oc_journal3_blog_comments.author_id - Index already exists
+Execution time for working on oc_journal3_blog_comments table was 6.7 ms
+oc_journal3_blog_category.category_id - Index already exists
+oc_journal3_blog_category.parent_id - Index already exists
+Execution time for working on oc_journal3_blog_category table was 3.6 ms
+oc_location.location_id - Index already exists
+Execution time for working on oc_location table was 1.7 ms
+oc_zone_to_geo_zone.zone_to_geo_zone_id - Index already exists
+oc_zone_to_geo_zone.country_id - Index already exists
+oc_zone_to_geo_zone.zone_id - Index already exists
+oc_zone_to_geo_zone.geo_zone_id - Index already exists
+Execution time for working on oc_zone_to_geo_zone table was 5 ms
+oc_product_option.product_option_id - Index already exists
+oc_product_option.product_id - Index already exists
+oc_product_option.option_id - Index already exists
+Execution time for working on oc_product_option table was 3.6 ms
+oc_attribute.attribute_id - Index already exists
+oc_attribute.attribute_group_id - Index already exists
+Execution time for working on oc_attribute table was 2.5 ms
+oc_option_description.option_id - Index already exists
+oc_option_description.language_id - Index already exists
+Execution time for working on oc_option_description table was 2.4 ms
+oc_api.api_id - Index already exists
+Execution time for working on oc_api table was 1.4 ms
+oc_custom_field_value_description.custom_field_value_id - Index already exists
+oc_custom_field_value_description.language_id - Index already exists
+oc_custom_field_value_description.custom_field_id - Index already exists
+Execution time for working on oc_custom_field_value_description table was 3.5 ms
+oc_filter_group.filter_group_id - Index already exists
+Execution time for working on oc_filter_group table was 1.3 ms
+oc_language.language_id - Index already exists
+Execution time for working on oc_language table was 1.5 ms
+oc_length_class.length_class_id - Index already exists
+Execution time for working on oc_length_class table was 1.3 ms
+oc_ka_product_option_tooltip.product_option_id - Index already exists
+oc_ka_product_option_tooltip.language_id - Index already exists
+oc_ka_product_option_tooltip.product_option_value_id - Index already exists
+oc_ka_product_option_tooltip.product_id - Index already exists
+Execution time for working on oc_ka_product_option_tooltip table was 4.9 ms
+oc_return_action.return_action_id - Index already exists
+oc_return_action.language_id - Index already exists
+Execution time for working on oc_return_action table was 2.4 ms
+oc_banner.banner_id - Index already exists
+Execution time for working on oc_banner table was 1.3 ms
+oc_category_to_store.category_id - Index already exists
+oc_category_to_store.store_id - Index already exists
+Execution time for working on oc_category_to_store table was 2.4 ms
+oc_customer_reward.customer_reward_id - Index already exists
+oc_customer_reward.customer_id - Index already exists
+oc_customer_reward.order_id - Index already exists
+Execution time for working on oc_customer_reward table was 3.7 ms
+oc_journal3_product_attribute.product_id - Index already exists
+oc_journal3_product_attribute.attribute_id - Index already exists
+oc_journal3_product_attribute.language_id - Index already exists
+Execution time for working on oc_journal3_product_attribute table was 3.8 ms
+oc_pcop_value.pcop_id - Index already exists
+oc_pcop_value.product_id - Index already exists
+oc_pcop_value.product_option_id - Index already exists
+oc_pcop_value.parent_product_option_value_id - Index already exists
+oc_pcop_value.parent_option_value_id - Index already exists
+Execution time for working on oc_pcop_value table was 4.9 ms
+oc_product_image.product_image_id - Index already exists
+oc_product_image.product_id - Index already exists
+Execution time for working on oc_product_image table was 2.2 ms
+oc_stock_status.stock_status_id - Index already exists
+oc_stock_status.language_id - Index added
+Execution time for working on oc_stock_status table was 306.1 ms
+oc_customer_login.customer_login_id - Index already exists
+Execution time for working on oc_customer_login table was 1.8 ms
+oc_theme.theme_id - Index already exists
+oc_theme.store_id - Index added
+Execution time for working on oc_theme table was 218.8 ms
+oc_translation.translation_id - Index already exists
+oc_translation.store_id - Index added
+oc_translation.language_id - Index added
+Execution time for working on oc_translation table was 476.8 ms
+oc_return_reason.return_reason_id - Index already exists
+oc_return_reason.language_id - Index added
+Execution time for working on oc_return_reason table was 218.2 ms
+oc_product_to_layout.product_id - Index already exists
+oc_product_to_layout.store_id - Index added
+oc_product_to_layout.layout_id - Index added
+Execution time for working on oc_product_to_layout table was 555.5 ms
+oc_manufacturer_to_store.manufacturer_id - Index already exists
+oc_manufacturer_to_store.store_id - Index added
+Execution time for working on oc_manufacturer_to_store table was 203.3 ms
+oc_customer_activity.customer_activity_id - Index already exists
+oc_customer_activity.customer_id - Index added
+Execution time for working on oc_customer_activity table was 309.4 ms
+oc_googleshopping_product.product_advertise_google_id - Index already exists
+oc_googleshopping_product.product_id - Index already exists
+oc_googleshopping_product.store_id - Index added
+Execution time for working on oc_googleshopping_product table was 235.4 ms
+oc_googleshopping_product_target.product_id - Index already exists
+oc_googleshopping_product_target.store_id - Index added
+oc_googleshopping_product_target.advertise_google_target_id - Index added
+Execution time for working on oc_googleshopping_product_target table was 423.8 ms
+oc_category_description.category_id - Index already exists
+oc_category_description.language_id - Index added
+Execution time for working on oc_category_description table was 252.7 ms
+oc_zone.zone_id - Index already exists
+oc_zone.country_id - Index added
+Execution time for working on oc_zone table was 1015.2 ms
+oc_filter.filter_id - Index already exists
+oc_filter.filter_group_id - Index added
+Execution time for working on oc_filter table was 295.6 ms
+oc_voucher_theme.voucher_theme_id - Index already exists
+Execution time for working on oc_voucher_theme table was 1.6 ms
+oc_product_description.product_id - Index already exists
+oc_product_description.language_id - Index added
+Execution time for working on oc_product_description table was 363 ms
+oc_modification.modification_id - Index already exists
+oc_modification.extension_install_id - Index added
+Execution time for working on oc_modification table was 388.6 ms
+oc_pcop.pcop_id - Index already exists
+oc_pcop.product_id - Index already exists
+oc_pcop.product_option_id - Index already exists
+oc_pcop.parent_product_option_id - Index already exists
+oc_pcop.parent_option_id - Index already exists
+Execution time for working on oc_pcop table was 6.2 ms
+oc_customer_group_description.customer_group_id - Index already exists
+oc_customer_group_description.language_id - Index added
+Execution time for working on oc_customer_group_description table was 215.4 ms
+oc_order_recurring_transaction.order_recurring_transaction_id - Index already exists
+oc_order_recurring_transaction.order_recurring_id - Index added
+Execution time for working on oc_order_recurring_transaction table was 248.4 ms
+oc_tax_class.tax_class_id - Index already exists
+Execution time for working on oc_tax_class table was 1.5 ms
+oc_paypal_order.paypal_order_id - Index already exists
+oc_paypal_order.order_id - Index added
+oc_paypal_order.authorization_id - Index added
+Execution time for working on oc_paypal_order table was 427.5 ms
+oc_customer.customer_id - Index already exists
+oc_customer.customer_group_id - Index added
+oc_customer.store_id - Index added
+oc_customer.language_id - Index added
+oc_customer.address_id - Index added
+Execution time for working on oc_customer table was 5912.3 ms
+oc_review.review_id - Index already exists
+oc_review.product_id - Index already exists
+oc_review.customer_id - Index added
+Execution time for working on oc_review table was 163.2 ms
+oc_information_to_layout.information_id - Index already exists
+oc_information_to_layout.store_id - Index added
+oc_information_to_layout.layout_id - Index added
+Execution time for working on oc_information_to_layout table was 333.6 ms
+oc_attribute_description.attribute_id - Index already exists
+oc_attribute_description.language_id - Index added
+Execution time for working on oc_attribute_description table was 168.4 ms
+oc_order_product.order_product_id - Index already exists
+oc_order_product.order_id - Index already exists
+oc_order_product.product_id - Index added
+Execution time for working on oc_order_product table was 174 ms
+oc_journal3_blog_post.post_id - Index already exists
+oc_journal3_blog_post.author_id - Index added
+Execution time for working on oc_journal3_blog_post table was 161.3 ms
+oc_api_session.api_session_id - Index already exists
+oc_api_session.api_id - Index added
+oc_api_session.session_id - Index added
+Execution time for working on oc_api_session table was 1072.2 ms
+oc_journal3_module.module_id - Index already exists
+Execution time for working on oc_journal3_module table was 1.9 ms
+oc_order_history.order_history_id - Index already exists
+oc_order_history.order_id - Index added
+oc_order_history.order_status_id - Index added
+Execution time for working on oc_order_history table was 520 ms
+oc_journal3_skin.skin_id - Index already exists
+Execution time for working on oc_journal3_skin table was 1.8 ms
+oc_paypal_order_transaction.paypal_order_transaction_id - Index already exists
+oc_paypal_order_transaction.paypal_order_id - Index added
+oc_paypal_order_transaction.transaction_id - Index added
+oc_paypal_order_transaction.parent_id - Index added
+oc_paypal_order_transaction.receipt_id - Index added
+165 tables found...
+Execution time for fetching 165 tables was -315.348 ms
+Switching database table engine now...
+oc_journal3_blog_post_to_product Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_post_to_product was 738.4 ms
+oc_seo_url Converted from MyISAM to InnoDB
+Execution time for editing table oc_seo_url was 699.8 ms
+oc_order_voucher Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_voucher was 413.8 ms
+oc_journal3_skin_setting Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_skin_setting was 2986.5 ms
+oc_journal3_blog_comments Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_comments was 530.4 ms
+oc_journal3_blog_category Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_category was 687.5 ms
+oc_location Converted from MyISAM to InnoDB
+Execution time for editing table oc_location was 388.1 ms
+oc_zone_to_geo_zone Converted from MyISAM to InnoDB
+Execution time for editing table oc_zone_to_geo_zone was 424.1 ms
+oc_product_option Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_option was 1385.6 ms
+oc_attribute Converted from MyISAM to InnoDB
+Execution time for editing table oc_attribute was 461.6 ms
+oc_option_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_option_description was 407.7 ms
+oc_api Converted from MyISAM to InnoDB
+Execution time for editing table oc_api was 406.5 ms
+oc_custom_field_value_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_custom_field_value_description was 418.6 ms
+oc_filter_group Converted from MyISAM to InnoDB
+Execution time for editing table oc_filter_group was 598.8 ms
+oc_language Converted from MyISAM to InnoDB
+Execution time for editing table oc_language was 499.2 ms
+oc_length_class Converted from MyISAM to InnoDB
+Execution time for editing table oc_length_class was 355.5 ms
+oc_ka_product_option_tooltip is already using the InnoDB engine
+Execution time for editing table oc_ka_product_option_tooltip was 1.6 ms
+oc_return_action Converted from MyISAM to InnoDB
+Execution time for editing table oc_return_action was 391.4 ms
+oc_banner Converted from MyISAM to InnoDB
+Execution time for editing table oc_banner was 394.3 ms
+oc_category_to_store Converted from MyISAM to InnoDB
+Execution time for editing table oc_category_to_store was 416.9 ms
+oc_customer_reward Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_reward was 533.7 ms
+oc_journal3_product_attribute Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_product_attribute was 559.6 ms
+oc_pcop_value Converted from MyISAM to InnoDB
+Execution time for editing table oc_pcop_value was 2320.2 ms
+oc_product_image Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_image was 790.6 ms
+oc_stock_status Converted from MyISAM to InnoDB
+Execution time for editing table oc_stock_status was 400.6 ms
+oc_customer_login Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_login was 498.3 ms
+oc_theme Converted from MyISAM to InnoDB
+Execution time for editing table oc_theme was 309.8 ms
+oc_translation Converted from MyISAM to InnoDB
+Execution time for editing table oc_translation was 861.7 ms
+oc_return_reason Converted from MyISAM to InnoDB
+Execution time for editing table oc_return_reason was 487.7 ms
+oc_product_to_layout Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_to_layout was 542.3 ms
+oc_manufacturer_to_store Converted from MyISAM to InnoDB
+Execution time for editing table oc_manufacturer_to_store was 696.4 ms
+oc_customer_activity Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_activity was 637.3 ms
+oc_googleshopping_product Converted from MyISAM to InnoDB
+Execution time for editing table oc_googleshopping_product was 450.3 ms
+oc_googleshopping_product_target Converted from MyISAM to InnoDB
+Execution time for editing table oc_googleshopping_product_target was 315.4 ms
+oc_category_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_category_description was 695.3 ms
+oc_zone Converted from MyISAM to InnoDB
+Execution time for editing table oc_zone was 2304.6 ms
+oc_filter Converted from MyISAM to InnoDB
+Execution time for editing table oc_filter was 384.3 ms
+oc_voucher_theme Converted from MyISAM to InnoDB
+Execution time for editing table oc_voucher_theme was 441.2 ms
+oc_product_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_description was 1528.8 ms
+oc_modification Converted from MyISAM to InnoDB
+Execution time for editing table oc_modification was 1008.6 ms
+oc_pcop Converted from MyISAM to InnoDB
+Execution time for editing table oc_pcop was 2357.2 ms
+oc_customer_group_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_group_description was 499.6 ms
+oc_order_recurring_transaction Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_recurring_transaction was 324.3 ms
+oc_tax_class Converted from MyISAM to InnoDB
+Execution time for editing table oc_tax_class was 386.5 ms
+oc_paypal_order Converted from MyISAM to InnoDB
+Execution time for editing table oc_paypal_order was 593.8 ms
+oc_customer Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer was 5450 ms
+oc_review Converted from MyISAM to InnoDB
+Execution time for editing table oc_review was 370.7 ms
+oc_information_to_layout Converted from MyISAM to InnoDB
+Execution time for editing table oc_information_to_layout was 509.8 ms
+oc_attribute_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_attribute_description was 346.6 ms
+oc_order_product Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_product was 554.1 ms
+oc_journal3_blog_post Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_post was 575.3 ms
+oc_api_session Converted from MyISAM to InnoDB
+Execution time for editing table oc_api_session was 1165 ms
+oc_journal3_module Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_module was 2567.6 ms
+oc_order_history Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_history was 328.5 ms
+oc_journal3_skin Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_skin was 599 ms
+oc_paypal_order_transaction Converted from MyISAM to InnoDB
+Execution time for editing table oc_paypal_order_transaction was 642.5 ms
+oc_hitshippo_dhl_pickup_details is already using the InnoDB engine
+Execution time for editing table oc_hitshippo_dhl_pickup_details was 1.4 ms
+oc_filter_group_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_filter_group_description was 513.9 ms
+oc_shipping_courier Converted from MyISAM to InnoDB
+Execution time for editing table oc_shipping_courier was 355.6 ms
+oc_journal3_blog_category_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_category_description was 375.8 ms
+oc_setting Converted from MyISAM to InnoDB
+Execution time for editing table oc_setting was 484.7 ms
+oc_tax_rule Converted from MyISAM to InnoDB
+Execution time for editing table oc_tax_rule was 356.1 ms
+oc_customer_history Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_history was 519.2 ms
+oc_journal3_blog_post_to_category Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_post_to_category was 576.1 ms
+oc_ka_option_tooltip is already using the InnoDB engine
+Execution time for editing table oc_ka_option_tooltip was 2.2 ms
+oc_product_recurring Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_recurring was 344 ms
+oc_journal3_setting Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_setting was 421.7 ms
+oc_customer_wishlist Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_wishlist was 379.1 ms
+oc_extension_install Converted from MyISAM to InnoDB
+Execution time for editing table oc_extension_install was 342.2 ms
+oc_category Converted from MyISAM to InnoDB
+Execution time for editing table oc_category was 719.1 ms
+oc_order_recurring Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_recurring was 488.5 ms
+oc_manufacturer Converted from MyISAM to InnoDB
+Execution time for editing table oc_manufacturer was 443.8 ms
+oc_coupon_history Converted from MyISAM to InnoDB
+Execution time for editing table oc_coupon_history was 336.5 ms
+oc_custom_field_value Converted from MyISAM to InnoDB
+Execution time for editing table oc_custom_field_value was 300.9 ms
+oc_download Converted from MyISAM to InnoDB
+Execution time for editing table oc_download was 309 ms
+oc_product_filter Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_filter was 420.7 ms
+oc_customer_group Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_group was 473.5 ms
+oc_store Converted from MyISAM to InnoDB
+Execution time for editing table oc_store was -99502.5 ms
+oc_extension_path Converted from MyISAM to InnoDB
+Execution time for editing table oc_extension_path was 2812.5 ms
+oc_cart is already using the InnoDB engine
+Execution time for editing table oc_cart was 1.3 ms
+oc_order_shipment Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_shipment was 423 ms
+oc_event Converted from MyISAM to InnoDB
+Execution time for editing table oc_event was 364.4 ms
+oc_googleshopping_category Converted from MyISAM to InnoDB
+Execution time for editing table oc_googleshopping_category was 447.5 ms
+oc_geo_zone Converted from MyISAM to InnoDB
+Execution time for editing table oc_geo_zone was 346.9 ms
+oc_layout Converted from MyISAM to InnoDB
+Execution time for editing table oc_layout was 578.4 ms
+oc_download_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_download_description was 533.5 ms
+oc_journal3_message Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_message was 389.5 ms
+oc_category_filter Converted from MyISAM to InnoDB
+Execution time for editing table oc_category_filter was 305.3 ms
+oc_product Converted from MyISAM to InnoDB
+Execution time for editing table oc_product was 573.3 ms
+oc_attribute_group Converted from MyISAM to InnoDB
+Execution time for editing table oc_attribute_group was 319.4 ms
+oc_order_option Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_option was 494 ms
+oc_voucher_history Converted from MyISAM to InnoDB
+Execution time for editing table oc_voucher_history was 503.4 ms
+oc_order_status Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_status was 435 ms
+oc_custom_field Converted from MyISAM to InnoDB
+Execution time for editing table oc_custom_field was 430.2 ms
+oc_customer_approval Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_approval was 289.9 ms
+oc_information Converted from MyISAM to InnoDB
+Execution time for editing table oc_information was 321.4 ms
+oc_currency Converted from MyISAM to InnoDB
+Execution time for editing table oc_currency was 308.4 ms
+oc_module Converted from MyISAM to InnoDB
+Execution time for editing table oc_module was 605.2 ms
+oc_return_history Converted from MyISAM to InnoDB
+Execution time for editing table oc_return_history was 459.2 ms
+oc_length_class_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_length_class_description was 319.4 ms
+oc_custom_field_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_custom_field_description was 379.4 ms
+oc_product_to_store Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_to_store was 387.4 ms
+oc_googleshopping_product_status Converted from MyISAM to InnoDB
+Execution time for editing table oc_googleshopping_product_status was 303.4 ms
+oc_option_value_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_option_value_description was 1036.3 ms
+oc_category_path Converted from MyISAM to InnoDB
+Execution time for editing table oc_category_path was 595 ms
+oc_journal3_variable Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_variable was 375.4 ms
+oc_marketing Converted from MyISAM to InnoDB
+Execution time for editing table oc_marketing was 295.5 ms
+oc_order_total Converted from MyISAM to InnoDB
+Execution time for editing table oc_order_total was 392.6 ms
+oc_api_ip Converted from MyISAM to InnoDB
+Execution time for editing table oc_api_ip was 437.3 ms
+oc_hitshippo_dhl_details_new is already using the InnoDB engine
+Execution time for editing table oc_hitshippo_dhl_details_new was 1.4 ms
+oc_custom_field_customer_group Converted from MyISAM to InnoDB
+Execution time for editing table oc_custom_field_customer_group was 496.2 ms
+oc_product_to_download Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_to_download was 444.3 ms
+oc_layout_route Converted from MyISAM to InnoDB
+Execution time for editing table oc_layout_route was 347.3 ms
+oc_coupon_product Converted from MyISAM to InnoDB
+Execution time for editing table oc_coupon_product was 296.9 ms
+oc_journal3_blog_category_to_store Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_category_to_store was 310.1 ms
+oc_coupon_category Converted from MyISAM to InnoDB
+Execution time for editing table oc_coupon_category was 376.7 ms
+oc_customer_transaction Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_transaction was 500.1 ms
+oc_filter_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_filter_description was 501.9 ms
+oc_googleshopping_target Converted from MyISAM to InnoDB
+Execution time for editing table oc_googleshopping_target was 381.4 ms
+oc_voucher_theme_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_voucher_theme_description was 375.3 ms
+oc_option Converted from MyISAM to InnoDB
+Execution time for editing table oc_option was 700.3 ms
+oc_return Converted from MyISAM to InnoDB
+Execution time for editing table oc_return was 476.1 ms
+oc_weight_class_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_weight_class_description was 872.6 ms
+oc_category_to_layout Converted from MyISAM to InnoDB
+Execution time for editing table oc_category_to_layout was 675.3 ms
+oc_country Converted from MyISAM to InnoDB
+Execution time for editing table oc_country was 403.8 ms
+oc_recurring Converted from MyISAM to InnoDB
+Execution time for editing table oc_recurring was 384.4 ms
+oc_product_option_value Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_option_value was 4313.9 ms
+oc_customer_affiliate Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_affiliate was 374.4 ms
+oc_coupon Converted from MyISAM to InnoDB
+Execution time for editing table oc_coupon was 391.6 ms
+oc_customer_search Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_search was 444.3 ms
+oc_journal3_newsletter Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_newsletter was 484 ms
+oc_option_value Converted from MyISAM to InnoDB
+Execution time for editing table oc_option_value was 657.1 ms
+oc_product_attribute Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_attribute was 304.8 ms
+oc_session is already using the InnoDB engine
+Execution time for editing table oc_session was 1.3 ms
+oc_product_to_category Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_to_category was 912.8 ms
+oc_journal3_blog_post_to_layout Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_post_to_layout was 587.1 ms
+oc_statistics Converted from MyISAM to InnoDB
+Execution time for editing table oc_statistics was 715.8 ms
+oc_voucher Converted from MyISAM to InnoDB
+Execution time for editing table oc_voucher was 315.9 ms
+oc_order Converted from MyISAM to InnoDB
+Execution time for editing table oc_order was 462 ms
+oc_recurring_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_recurring_description was 307.9 ms
+oc_address Converted from MyISAM to InnoDB
+Execution time for editing table oc_address was 7198.3 ms
+oc_extension Converted from MyISAM to InnoDB
+Execution time for editing table oc_extension was 1272.3 ms
+oc_journal3_blog_post_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_post_description was 994.8 ms
+oc_user_group Converted from MyISAM to InnoDB
+Execution time for editing table oc_user_group was 645.4 ms
+oc_banner_image Converted from MyISAM to InnoDB
+Execution time for editing table oc_banner_image was 2589.1 ms
+oc_customer_ip Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_ip was 11883.9 ms
+oc_information_to_store Converted from MyISAM to InnoDB
+Execution time for editing table oc_information_to_store was 2381.5 ms
+oc_layout_module Converted from MyISAM to InnoDB
+Execution time for editing table oc_layout_module was 602.7 ms
+oc_journal3_blog_category_to_layout Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_category_to_layout was 410.1 ms
+oc_return_status Converted from MyISAM to InnoDB
+Execution time for editing table oc_return_status was 391 ms
+oc_product_reward Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_reward was 479.3 ms
+oc_user Converted from MyISAM to InnoDB
+Execution time for editing table oc_user was 430.9 ms
+oc_journal3_blog_post_to_store Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_blog_post_to_store was 589.1 ms
+oc_product_related Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_related was 901.5 ms
+oc_information_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_information_description was 404 ms
+oc_weight_class Converted from MyISAM to InnoDB
+Execution time for editing table oc_weight_class was 366.2 ms
+oc_upload Converted from MyISAM to InnoDB
+Execution time for editing table oc_upload was 359.8 ms
+oc_tax_rate_to_customer_group Converted from MyISAM to InnoDB
+Execution time for editing table oc_tax_rate_to_customer_group was 370.8 ms
+oc_tax_rate Converted from MyISAM to InnoDB
+Execution time for editing table oc_tax_rate was 394.2 ms
+oc_attribute_group_description Converted from MyISAM to InnoDB
+Execution time for editing table oc_attribute_group_description was 599.3 ms
+oc_journal3_layout Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_layout was 1115.9 ms
+oc_customer_online Converted from MyISAM to InnoDB
+Execution time for editing table oc_customer_online was 338.7 ms
+oc_journal3_style Converted from MyISAM to InnoDB
+Execution time for editing table oc_journal3_style was 2235.7 ms
+oc_product_special Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_special was 611.9 ms
+oc_product_discount Converted from MyISAM to InnoDB
+Execution time for editing table oc_product_discount was 520.6 ms
+Execution time for module switch_engine was 1.95 seconds
+165 tables found...
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+165 tables found...
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 265
+Running SQL - Line 284
+165 tables found...
+Execution time for fetching 165 tables was -75.6 ms
+Adding indexes to tables now...
+Execution time for working on oc_journal3_blog_post_to_product table was 1.6 ms
+Execution time for working on oc_seo_url table was 1.2 ms
+Execution time for working on oc_order_voucher table was 1.2 ms
+Execution time for working on oc_journal3_skin_setting table was 1.1 ms
+Execution time for working on oc_journal3_blog_comments table was 1.1 ms
+Execution time for working on oc_journal3_blog_category table was 1.5 ms
+Execution time for working on oc_location table was 1.2 ms
+Execution time for working on oc_zone_to_geo_zone table was 1.9 ms
+Execution time for working on oc_product_option table was 1 ms
+Execution time for working on oc_attribute table was 1 ms
+Execution time for working on oc_option_description table was 1.1 ms
+Execution time for working on oc_api table was 1 ms
+Execution time for working on oc_custom_field_value_description table was 1.1 ms
+Execution time for working on oc_filter_group table was 1 ms
+Execution time for working on oc_language table was 1 ms
+Execution time for working on oc_length_class table was 1.1 ms
+Execution time for working on oc_ka_product_option_tooltip table was 1 ms
+Execution time for working on oc_return_action table was 1 ms
+Execution time for working on oc_banner table was 1 ms
+Execution time for working on oc_category_to_store table was 1 ms
+Execution time for working on oc_customer_reward table was 1 ms
+Execution time for working on oc_journal3_product_attribute table was 1 ms
+Execution time for working on oc_pcop_value table was 1 ms
+Execution time for working on oc_product_image table was 1 ms
+Execution time for working on oc_stock_status table was 1 ms
+Execution time for working on oc_customer_login table was 1 ms
+Execution time for working on oc_theme table was 1.1 ms
+Execution time for working on oc_translation table was 1 ms
+Execution time for working on oc_return_reason table was 1 ms
+Execution time for working on oc_product_to_layout table was 1 ms
+Execution time for working on oc_manufacturer_to_store table was 1 ms
+Execution time for working on oc_customer_activity table was 1 ms
+Execution time for working on oc_googleshopping_product table was 0.7 ms
+Execution time for working on oc_googleshopping_product_target table was 0.7 ms
+Execution time for working on oc_category_description table was 0.7 ms
+Execution time for working on oc_zone table was 6 ms
+Execution time for working on oc_filter table was 0.8 ms
+Execution time for working on oc_voucher_theme table was 0.8 ms
+Execution time for working on oc_product_description table was 0.7 ms
+Execution time for working on oc_modification table was 0.7 ms
+Execution time for working on oc_pcop table was 0.7 ms
+Execution time for working on oc_customer_group_description table was 0.7 ms
+Execution time for working on oc_order_recurring_transaction table was 0.7 ms
+Execution time for working on oc_tax_class table was 0.7 ms
+Execution time for working on oc_paypal_order table was 1.1 ms
+Execution time for working on oc_customer table was 0.9 ms
+Execution time for working on oc_review table was 0.7 ms
+Execution time for working on oc_information_to_layout table was 0.9 ms
+Execution time for working on oc_attribute_description table was 0.7 ms
+Execution time for working on oc_order_product table was 0.8 ms
+Execution time for working on oc_journal3_blog_post table was 0.7 ms
+Execution time for working on oc_api_session table was 0.7 ms
+Execution time for working on oc_journal3_module table was 0.8 ms
+Execution time for working on oc_order_history table was 0.7 ms
+Execution time for working on oc_journal3_skin table was 0.8 ms
+Execution time for working on oc_paypal_order_transaction table was 0.8 ms
+Execution time for working on oc_hitshippo_dhl_pickup_details table was 0.8 ms
+Execution time for working on oc_filter_group_description table was 0.7 ms
+Execution time for working on oc_shipping_courier table was 0.7 ms
+Execution time for working on oc_journal3_blog_category_description table was 0.8 ms
+Execution time for working on oc_setting table was 0.7 ms
+Execution time for working on oc_tax_rule table was 0.8 ms
+Execution time for working on oc_customer_history table was 0.9 ms
+Execution time for working on oc_journal3_blog_post_to_category table was 0.8 ms
+Execution time for working on oc_ka_option_tooltip table was 0.7 ms
+Execution time for working on oc_product_recurring table was 1 ms
+Execution time for working on oc_journal3_setting table was 1 ms
+Execution time for working on oc_customer_wishlist table was 1.1 ms
+Execution time for working on oc_extension_install table was 1 ms
+Execution time for working on oc_category table was 0.9 ms
+Execution time for working on oc_order_recurring table was 0.7 ms
+Execution time for working on oc_manufacturer table was 0.8 ms
+Execution time for working on oc_coupon_history table was 1.2 ms
+Execution time for working on oc_custom_field_value table was 0.7 ms
+Execution time for working on oc_download table was 0.8 ms
+Execution time for working on oc_product_filter table was 0.7 ms
+Execution time for working on oc_customer_group table was 0.8 ms
+Execution time for working on oc_store table was 0.8 ms
+Execution time for working on oc_extension_path table was 0.8 ms
+Execution time for working on oc_cart table was 0.8 ms
+Execution time for working on oc_order_shipment table was 0.7 ms
+Execution time for working on oc_event table was 0.7 ms
+Execution time for working on oc_googleshopping_category table was 1 ms
+Execution time for working on oc_geo_zone table was 1.1 ms
+Execution time for working on oc_layout table was 0.8 ms
+Execution time for working on oc_download_description table was 0.7 ms
+Execution time for working on oc_journal3_message table was 0.8 ms
+Execution time for working on oc_category_filter table was 2.1 ms
+Execution time for working on oc_product table was 1 ms
+Execution time for working on oc_attribute_group table was 1.2 ms
+Execution time for working on oc_order_option table was 0.9 ms
+Execution time for working on oc_voucher_history table was 0.8 ms
+Execution time for working on oc_order_status table was 0.8 ms
+Execution time for working on oc_custom_field table was 0.9 ms
+Execution time for working on oc_customer_approval table was 0.7 ms
+Execution time for working on oc_information table was 0.7 ms
+Execution time for working on oc_currency table was 0.8 ms
+Execution time for working on oc_module table was 1.1 ms
+Execution time for working on oc_return_history table was 2 ms
+Execution time for working on oc_length_class_description table was 1.1 ms
+Execution time for working on oc_custom_field_description table was 1.9 ms
+Execution time for working on oc_product_to_store table was 0.9 ms
+Execution time for working on oc_googleshopping_product_status table was 0.8 ms
+Execution time for working on oc_option_value_description table was 0.7 ms
+Execution time for working on oc_category_path table was 0.9 ms
+Execution time for working on oc_journal3_variable table was 0.7 ms
+Execution time for working on oc_marketing table was 0.8 ms
+Execution time for working on oc_order_total table was 1 ms
+Execution time for working on oc_api_ip table was 1.1 ms
+Execution time for working on oc_hitshippo_dhl_details_new table was 2 ms
+Execution time for working on oc_custom_field_customer_group table was 0.7 ms
+Execution time for working on oc_product_to_download table was 1 ms
+Execution time for working on oc_layout_route table was 0.7 ms
+Execution time for working on oc_coupon_product table was 0.8 ms
+Execution time for working on oc_journal3_blog_category_to_store table was 0.8 ms
+Execution time for working on oc_coupon_category table was 0.8 ms
+Execution time for working on oc_customer_transaction table was 0.8 ms
+Execution time for working on oc_filter_description table was 0.7 ms
+Execution time for working on oc_googleshopping_target table was 0.9 ms
+Execution time for working on oc_voucher_theme_description table was 0.8 ms
+Execution time for working on oc_option table was 0.7 ms
+Execution time for working on oc_return table was 0.7 ms
+Execution time for working on oc_weight_class_description table was 0.7 ms
+Execution time for working on oc_category_to_layout table was 0.7 ms
+Execution time for working on oc_country table was 0.7 ms
+Execution time for working on oc_recurring table was 0.7 ms
+Execution time for working on oc_product_option_value table was 0.7 ms
+Execution time for working on oc_customer_affiliate table was 0.8 ms
+Execution time for working on oc_coupon table was 0.8 ms
+Execution time for working on oc_customer_search table was 0.7 ms
+Execution time for working on oc_journal3_newsletter table was 0.8 ms
+Execution time for working on oc_option_value table was 0.7 ms
+Execution time for working on oc_product_attribute table was 0.7 ms
+Execution time for working on oc_session table was 0.7 ms
+Execution time for working on oc_product_to_category table was 0.7 ms
+Execution time for working on oc_journal3_blog_post_to_layout table was 0.8 ms
+Execution time for working on oc_statistics table was 0.7 ms
+Execution time for working on oc_voucher table was 1 ms
+Execution time for working on oc_order table was 0.8 ms
+Execution time for working on oc_recurring_description table was 0.7 ms
+Execution time for working on oc_address table was 0.7 ms
+Execution time for working on oc_extension table was 0.8 ms
+Execution time for working on oc_journal3_blog_post_description table was 0.7 ms
+Execution time for working on oc_user_group table was 0.8 ms
+Execution time for working on oc_banner_image table was 0.8 ms
+Execution time for working on oc_customer_ip table was 0.8 ms
+Execution time for working on oc_information_to_store table was 0.8 ms
+Execution time for working on oc_layout_module table was 0.7 ms
+Execution time for working on oc_journal3_blog_category_to_layout table was 0.8 ms
+Execution time for working on oc_return_status table was 0.7 ms
+Execution time for working on oc_product_reward table was 0.7 ms
+Execution time for working on oc_user table was 0.7 ms
+Execution time for working on oc_journal3_blog_post_to_store table was 0.8 ms
+Execution time for working on oc_product_related table was 0.8 ms
+Execution time for working on oc_information_description table was 0.7 ms
+Execution time for working on oc_weight_class table was 0.8 ms
+Execution time for working on oc_upload table was 0.8 ms
+Execution time for working on oc_tax_rate_to_customer_group table was 0.7 ms
+Execution time for working on oc_tax_rate table was 0.8 ms
+Execution time for working on oc_attribute_group_description table was 0.8 ms
+Execution time for working on oc_journal3_layout table was 0.7 ms
+Execution time for working on oc_customer_online table was 0.8 ms
+Execution time for working on oc_journal3_style table was 1.1 ms
+Execution time for working on oc_product_special table was 1 ms
+Execution time for working on oc_product_discount table was 1.1 ms
+Execution time for module turbo_table_indexes was 3.94 seconds
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+Running SQL - Line 265
+Running SQL - Line 284
+165 tables found...
+Execution time for fetching 165 tables was -92.9 ms
+Adding indexes to tables now...
+Execution time for working on oc_journal3_blog_post_to_product table was 1.1 ms
+Execution time for working on oc_seo_url table was 0.9 ms
+Execution time for working on oc_order_voucher table was 0.8 ms
+Execution time for working on oc_journal3_skin_setting table was 0.8 ms
+Execution time for working on oc_journal3_blog_comments table was 0.7 ms
+Execution time for working on oc_journal3_blog_category table was 0.7 ms
+Execution time for working on oc_location table was 0.8 ms
+Execution time for working on oc_zone_to_geo_zone table was 0.7 ms
+Execution time for working on oc_product_option table was 0.7 ms
+Execution time for working on oc_attribute table was 0.8 ms
+Execution time for working on oc_option_description table was 0.7 ms
+Execution time for working on oc_api table was 0.7 ms
+Execution time for working on oc_custom_field_value_description table was 0.7 ms
+Execution time for working on oc_filter_group table was 0.8 ms
+Execution time for working on oc_language table was 0.7 ms
+Execution time for working on oc_length_class table was 0.8 ms
+Execution time for working on oc_ka_product_option_tooltip table was 0.7 ms
+Execution time for working on oc_return_action table was 0.8 ms
+Execution time for working on oc_banner table was 0.7 ms
+Execution time for working on oc_category_to_store table was 0.8 ms
+Execution time for working on oc_customer_reward table was 0.7 ms
+Execution time for working on oc_journal3_product_attribute table was 0.8 ms
+Execution time for working on oc_pcop_value table was 0.8 ms
+Execution time for working on oc_product_image table was 0.8 ms
+Execution time for working on oc_stock_status table was 0.9 ms
+Execution time for working on oc_customer_login table was 0.8 ms
+Execution time for working on oc_theme table was 0.8 ms
+Execution time for working on oc_translation table was 1.2 ms
+Execution time for working on oc_return_reason table was 0.8 ms
+Execution time for working on oc_product_to_layout table was 0.8 ms
+Execution time for working on oc_manufacturer_to_store table was 0.9 ms
+Execution time for working on oc_customer_activity table was 0.8 ms
+Execution time for working on oc_googleshopping_product table was 0.7 ms
+Execution time for working on oc_googleshopping_product_target table was 0.7 ms
+Execution time for working on oc_category_description table was 0.7 ms
+Execution time for working on oc_zone table was 0.7 ms
+Execution time for working on oc_filter table was 0.7 ms
+Execution time for working on oc_voucher_theme table was 0.7 ms
+Execution time for working on oc_product_description table was 0.7 ms
+Execution time for working on oc_modification table was 0.7 ms
+Execution time for working on oc_pcop table was 0.8 ms
+Execution time for working on oc_customer_group_description table was 0.7 ms
+Execution time for working on oc_order_recurring_transaction table was 0.7 ms
+Execution time for working on oc_tax_class table was 0.7 ms
+Execution time for working on oc_paypal_order table was 0.7 ms
+Execution time for working on oc_customer table was 0.7 ms
+Execution time for working on oc_review table was 0.7 ms
+Execution time for working on oc_information_to_layout table was 0.8 ms
+Execution time for working on oc_attribute_description table was 0.8 ms
+Execution time for working on oc_order_product table was 0.7 ms
+Execution time for working on oc_journal3_blog_post table was 0.8 ms
+Execution time for working on oc_api_session table was 0.7 ms
+Execution time for working on oc_journal3_module table was 0.7 ms
+Execution time for working on oc_order_history table was 0.8 ms
+Execution time for working on oc_journal3_skin table was 1.8 ms
+Execution time for working on oc_paypal_order_transaction table was 1 ms
+Execution time for working on oc_hitshippo_dhl_pickup_details table was 0.7 ms
+Execution time for working on oc_filter_group_description table was 0.7 ms
+Execution time for working on oc_shipping_courier table was 0.7 ms
+Execution time for working on oc_journal3_blog_category_description table was 0.7 ms
+Execution time for working on oc_setting table was 0.7 ms
+Execution time for working on oc_tax_rule table was 0.7 ms
+Execution time for working on oc_customer_history table was 0.7 ms
+Execution time for working on oc_journal3_blog_post_to_category table was 0.8 ms
+Execution time for working on oc_ka_option_tooltip table was 0.8 ms
+Execution time for working on oc_product_recurring table was 0.8 ms
+Execution time for working on oc_journal3_setting table was 0.7 ms
+Execution time for working on oc_customer_wishlist table was 0.7 ms
+Execution time for working on oc_extension_install table was 0.8 ms
+Execution time for working on oc_category table was 0.7 ms
+Execution time for working on oc_order_recurring table was 0.7 ms
+Execution time for working on oc_manufacturer table was 0.7 ms
+Execution time for working on oc_coupon_history table was 0.7 ms
+Execution time for working on oc_custom_field_value table was 0.7 ms
+Execution time for working on oc_download table was 0.7 ms
+Execution time for working on oc_product_filter table was 0.7 ms
+Execution time for working on oc_customer_group table was 0.8 ms
+Execution time for working on oc_store table was 0.7 ms
+Execution time for working on oc_extension_path table was 0.8 ms
+Execution time for working on oc_cart table was 0.7 ms
+Execution time for working on oc_order_shipment table was 0.7 ms
+Execution time for working on oc_event table was 0.7 ms
+Execution time for working on oc_googleshopping_category table was 0.7 ms
+Execution time for working on oc_geo_zone table was 0.8 ms
+Execution time for working on oc_layout table was 0.8 ms
+Execution time for working on oc_download_description table was 0.8 ms
+Execution time for working on oc_journal3_message table was 0.8 ms
+Execution time for working on oc_category_filter table was 0.8 ms
+Execution time for working on oc_product table was 0.8 ms
+Execution time for working on oc_attribute_group table was 0.8 ms
+Execution time for working on oc_order_option table was 0.8 ms
+Execution time for working on oc_voucher_history table was 0.8 ms
+Execution time for working on oc_order_status table was 1.1 ms
+Execution time for working on oc_custom_field table was 0.8 ms
+Execution time for working on oc_customer_approval table was 0.7 ms
+Execution time for working on oc_information table was 0.7 ms
+Execution time for working on oc_currency table was 0.7 ms
+Execution time for working on oc_module table was 0.7 ms
+Execution time for working on oc_return_history table was 0.8 ms
+Execution time for working on oc_length_class_description table was 0.7 ms
+Execution time for working on oc_custom_field_description table was 0.7 ms
+Execution time for working on oc_product_to_store table was 0.7 ms
+Execution time for working on oc_googleshopping_product_status table was 0.7 ms
+Execution time for working on oc_option_value_description table was 0.8 ms
+Execution time for working on oc_category_path table was 0.7 ms
+Execution time for working on oc_journal3_variable table was 0.7 ms
+Execution time for working on oc_marketing table was 0.7 ms
+Execution time for working on oc_order_total table was 0.7 ms
+Execution time for working on oc_api_ip table was 0.7 ms
+Execution time for working on oc_hitshippo_dhl_details_new table was 0.7 ms
+Execution time for working on oc_custom_field_customer_group table was 0.7 ms
+Execution time for working on oc_product_to_download table was 0.7 ms
+Execution time for working on oc_layout_route table was 0.7 ms
+Execution time for working on oc_coupon_product table was 0.9 ms
+Execution time for working on oc_journal3_blog_category_to_store table was 0.8 ms
+Execution time for working on oc_coupon_category table was 0.8 ms
+Execution time for working on oc_customer_transaction table was 0.7 ms
+Execution time for working on oc_filter_description table was 0.7 ms
+Execution time for working on oc_googleshopping_target table was 0.7 ms
+Execution time for working on oc_voucher_theme_description table was 0.7 ms
+Execution time for working on oc_option table was 1.1 ms
+Execution time for working on oc_return table was 0.8 ms
+Execution time for working on oc_weight_class_description table was 0.7 ms
+Execution time for working on oc_category_to_layout table was 0.7 ms
+Execution time for working on oc_country table was 0.7 ms
+Execution time for working on oc_recurring table was 0.8 ms
+Execution time for working on oc_product_option_value table was 0.7 ms
+Execution time for working on oc_customer_affiliate table was 0.7 ms
+Execution time for working on oc_coupon table was 0.7 ms
+Execution time for working on oc_customer_search table was 0.8 ms
+Execution time for working on oc_journal3_newsletter table was 0.7 ms
+Execution time for working on oc_option_value table was 0.7 ms
+Execution time for working on oc_product_attribute table was 0.7 ms
+Execution time for working on oc_session table was 0.8 ms
+Execution time for working on oc_product_to_category table was 0.7 ms
+Execution time for working on oc_journal3_blog_post_to_layout table was 0.7 ms
+Execution time for working on oc_statistics table was 0.8 ms
+Execution time for working on oc_voucher table was 0.8 ms
+Execution time for working on oc_order table was 0.8 ms
+Execution time for working on oc_recurring_description table was 0.8 ms
+Execution time for working on oc_address table was 0.7 ms
+Execution time for working on oc_extension table was 0.7 ms
+Execution time for working on oc_journal3_blog_post_description table was 0.7 ms
+Execution time for working on oc_user_group table was 0.8 ms
+Execution time for working on oc_banner_image table was 0.7 ms
+Execution time for working on oc_customer_ip table was 0.7 ms
+Execution time for working on oc_information_to_store table was 0.7 ms
+Execution time for working on oc_layout_module table was 0.7 ms
+Execution time for working on oc_journal3_blog_category_to_layout table was 0.7 ms
+Execution time for working on oc_return_status table was 0.8 ms
+Execution time for working on oc_product_reward table was 0.8 ms
+Execution time for working on oc_user table was 0.8 ms
+Execution time for working on oc_journal3_blog_post_to_store table was 0.7 ms
+Execution time for working on oc_product_related table was 0.8 ms
+Execution time for working on oc_information_description table was 0.7 ms
+Execution time for working on oc_weight_class table was 0.7 ms
+Execution time for working on oc_upload table was 0.7 ms
+Execution time for working on oc_tax_rate_to_customer_group table was 1.1 ms
+Execution time for working on oc_tax_rate table was 0.7 ms
+Execution time for working on oc_attribute_group_description table was 0.7 ms
+Execution time for working on oc_journal3_layout table was 0.7 ms
+Execution time for working on oc_customer_online table was 0.7 ms
+Execution time for working on oc_journal3_style table was 0.8 ms
+Execution time for working on oc_product_special table was 0.7 ms
+Execution time for working on oc_product_discount table was 0.7 ms
+Execution time for module turbo_table_indexes was 0.92 seconds

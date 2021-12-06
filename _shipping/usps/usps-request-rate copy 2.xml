@@ -1,0 +1,73 @@
+<RateV4Request USERID="575TMDES2190">
+    <Revision />
+    <Package ID="1-0">
+        <Service>Express</Service>
+        <ZipOrigination>97502</ZipOrigination>
+        <ZipDestination>72022</ZipDestination>
+        <Pounds>1</Pounds>
+        <Ounces>0</Ounces>
+        <Container />
+        <Size>Regular</Size>
+        <Width>0</Width>
+        <Length>0</Length>
+        <Height>0</Height>
+        <Girth>0</Girth>
+        <Machinable>False</Machinable>
+    </Package>
+    <Package ID="1-1">
+        <Service>Priority</Service>
+        <ZipOrigination>97502</ZipOrigination>
+        <ZipDestination>72022</ZipDestination>
+        <Pounds>1</Pounds>
+        <Ounces>0</Ounces>
+        <Container />
+        <Size>Regular</Size>
+        <Width>0</Width>
+        <Length>0</Length>
+        <Height>0</Height>
+        <Girth>0</Girth>
+        <Machinable>False</Machinable>
+    </Package>
+    <Package ID="1-2">
+        <Service>Parcel</Service>
+        <ZipOrigination>97502</ZipOrigination>
+        <ZipDestination>72022</ZipDestination>
+        <Pounds>1</Pounds>
+        <Ounces>0</Ounces>
+        <Container />
+        <Size>Regular</Size>
+        <Width>0</Width>
+        <Length>0</Length>
+        <Height>0</Height>
+        <Girth>0</Girth>
+        <Machinable>False</Machinable>
+    </Package>
+    <Package ID="1-3">
+        <Service>Library</Service>
+        <ZipOrigination>97502</ZipOrigination>
+        <ZipDestination>72022</ZipDestination>
+        <Pounds>1</Pounds>
+        <Ounces>0</Ounces>
+        <Container />
+        <Size>Regular</Size>
+        <Width>0</Width>
+        <Length>0</Length>
+        <Height>0</Height>
+        <Girth>0</Girth>
+        <Machinable>False</Machinable>
+    </Package>
+    <Package ID="1-4">
+        <Service>Media</Service>
+        <ZipOrigination>97502</ZipOrigination>
+        <ZipDestination>72022</ZipDestination>
+        <Pounds>1</Pounds>
+        <Ounces>0</Ounces>
+        <Container />
+        <Size>Regular</Size>
+        <Width>0</Width>
+        <Length>0</Length>
+        <Height>0</Height>
+        <Girth>0</Girth>
+        <Machinable>False</Machinable>
+    </Package>
+</RateV4Request>

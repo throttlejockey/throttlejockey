@@ -15,8 +15,10 @@
         </a>
       {% endif %}
      <div class="{{ display == 'dropdown' ? 'dropdown-menu j-dropdown': 'collapse' }}" id="{{ cid }}">
-       <ul class="j-menu">
-         {% for subitem in item.items %}
+        {% set level = ( level | default(0) ) + 1 %}
+       <ul class="j-menu {{ level }}">
+        {% for subitem in item.items %}
+
            {{ self.renderMenu(j3, subitem, display) }}
          {% endfor %}
        </ul>
@@ -30,14 +32,26 @@
     {% endif %}
   </li>
 {% endmacro %}
+
 {% import _self as self %}
 {% if items %}
   {% set isMobile = j3.document.hasClass('mobile-header-active') %}
   {% if first %}
   <div class="menu-trigger menu-item main-menu-item"><ul class="j-menu"><li><a>{{ j3.settings.get('menuTriggerText') }}</a></li></ul></div>
+
   {% endif %}
-  <div id="{{ id }}" class="{{ j3.classes(classes) }}">
+      {# <p style'color:white;'>{{ level ~ ' ). ' ~ level.title }}</p> #}
+  <div id="{{ id }}" class="{{ j3.classes(classes) }} ">
+
+
     <ul class="j-menu">{% for item in items %}
+
+
+
+
+
+
+
       {% set cid = j3.uniqueId('collapse-') %}
       <li class="{{ j3.classes(item.classes) }} {% if isMobile and item.isOpen %}open{% endif %}" {% if item.isOpen %}data-is-open{% endif %}>
         {% if item.items %}

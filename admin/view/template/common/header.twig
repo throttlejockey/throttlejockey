@@ -41,13 +41,20 @@
 <header id="header" class="navbar navbar-static-top">
   <div class="container-fluid">
 
-
     <div id="header-logo" class="navbar-header"><a href="{{ home }}" class="navbar-brand"><img src="view/image/logo.png" alt="{{ heading_title }}" title="{{ heading_title }}" /></a></div>
-    <a href="#" id="button-menu" class="hidden-md hidden-lg"><span class="fa fa-bars"></span></a>{% if logged %}
+
+    {# /** ### rm | store logo admin ### */ #}
+{#     <div id="header-logo" class="navbar-header">
+        {% if logo %}
+            <a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>
+        {% else %}
+          <h1><a href="{{ home }}">{{ name }}</a></h1>
+        {% endif %}
+    </div> #}
+    {# /** ### rm | store logo admin ### */ #}
 
 
-
-
+    {% if logged %}
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ image }}" alt="{{ firstname }} {{ lastname }}" title="{{ username }}" id="user-profile" class="img-circle" />{{ firstname }} {{ lastname }} <i class="fa fa-caret-down fa-fw"></i></a>
         <ul class="dropdown-menu dropdown-menu-right">
@@ -66,5 +73,7 @@
       </li>
       <li><a href="{{ logout }}"><i class="fa fa-sign-out"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_logout }}</span></a></li>
     </ul>
-    {% endif %} </div>
+    {% endif %}
+</div>
+
 </header>

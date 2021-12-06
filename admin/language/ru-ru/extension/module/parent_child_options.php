@@ -27,7 +27,8 @@ $_['pcop_entry_remove_parent_option']   = 'Remove parent option';
 
 // Entry
 $_['entry_settings']                  = 'Настройки модуля';
-$_['entry_additional']                = 'Дополнительные поля';
+$_['entry_disable_highlight']         = 'Отключить подсветку';
+$_['entry_disable_highlight_help']    = 'Отключить цветовое выделение для родительских-дочерних опций на странице редактирования товара';
 
 $_['error_xlsx_lib_is_not_found']     = 'Библиотека %s для работы с XLSX не найдена (необходима только использовая функций экспорта-импорта).';
 $_['error_php_excel_is_necessary_for_xls']         = ' (библиотека PHPExcel необходима для импорта XLS) ';

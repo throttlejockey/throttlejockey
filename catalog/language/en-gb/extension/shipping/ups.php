@@ -14,6 +14,10 @@ $_['text_us_origin_14']    = 'UPS Next Day Air Early A.M.';
 $_['text_us_origin_54']    = 'UPS Worldwide Express Plus';
 $_['text_us_origin_59']    = 'UPS 2nd Day Air A.M.';
 $_['text_us_origin_65']    = 'UPS Saver';
+// $_['text_us_origin_93']    = 'UPS SurePost';
+$_['text_us_origin_92'] = 'UPS SurePost Under 1lb';
+$_['text_us_origin_93'] = 'UPS SurePost Over 1lb';
+
 $_['text_ca_origin_01']    = 'UPS Express';
 $_['text_ca_origin_02']    = 'UPS Expedited';
 $_['text_ca_origin_07']    = 'UPS Worldwide Express';

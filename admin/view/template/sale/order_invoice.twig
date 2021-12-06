@@ -9,13 +9,44 @@
 <script type="text/javascript" src="view/javascript/bootstrap/js/bootstrap.min.js"></script>
 <link href="view/javascript/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 <link type="text/css" href="view/stylesheet/stylesheet.css" rel="stylesheet" media="all" />
+<style>
+body { font-size: 12px; }
+tr.no_border td{ border: none!important; }
+</style>
 </head>
 <body>
 <div class="container">
+ 
+
   {% for order in orders %}
   <div style="page-break-after: always;">
-    <h1>{{ text_invoice }} #{{ order.order_id }}</h1>
-    <table class="table table-bordered">
+    {# <h1>{{ text_invoice }} #{{ order.order_id }}</h1> #}
+
+    {# <table class="table table-bordered" style="display: none;"> #}
+    <table class="table" style="margin-bottom: 5px;">
+      <tbody>
+        <tr class="no_border">
+          {# <td style="width: 25%;font-size: 18px;"><b>{{ text_invoice }} #{{ order.order_id }}</b></td> #}
+          <td style="width: 25%;font-size: 14px;"><b>{{ text_invoice }} #{{ order.order_id }}</b></td>
+          {# <td style="width: 75%;" class="text-right"><b>{{ order.order_info.firstname }} {{ order.order_info.lastname }}</b> | {{ order.order_info.email }} | {{ order.telephone }}</td> #}
+          <td style="width: 75%;" class="text-right"><b>{{ order.order_info.firstname }} {{ order.order_info.lastname }}</b> | {{ order.order_info.email }} | {{ order.telephone_formatted }}</td>
+          {# <td style="width: 75%;" class="text-right"><b>{{ order.order_info.customer }}</b> | <b>{{ order.order_info.email }}</b> | <b>{{ order.order_info.telephone }}</b></td> #}
+        </tr>
+      </tbody>
+    </table>
+
+    {# <table class="table">
+      <thead>
+        <tr>
+          <td style="width: 25%;"><h3><b>{{ text_invoice }} #{{ order.order_id }}</b></h3></td>
+          <td style="width: 25%;" class="text-center"><b>{{ order.order_info.customer }} </b></td>
+          <td style="width: 25%;" class="text-center"><b>{{ order.order_info.email }}</b></td>
+          <td style="width: 25%;" class="text-center"><b>{{ order.order_info.telephone }}</b></td>
+        </tr>
+      </thead>
+    </table> #}
+
+    <table class="table table-bordered" style="display: none;">
       <thead>
         <tr>
           <td colspan="2">{{ text_order_detail }}</td>
@@ -48,18 +79,35 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <td style="width: 50%;"><b>{{ text_payment_address }}</b></td>
-          <td style="width: 50%;"><b>{{ text_shipping_address }}</b></td>
+          <td style="width: 30%;"><b>{{ text_payment_address }}</b></td>
+          <td style="width: 30%;"><b>{{ text_shipping_address }}</b></td>
+          <td style="width: 40%;"><b>{{ text_order_detail }}</b></td>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><address>
-            {{ order.payment_address }}
+            {{ order.payment_address }} 
             </address></td>
           <td><address>
-            {{ order.shipping_address }}
+            {{ order.shipping_address }} 
             </address></td>
+
+          <td style="width: 50%;vertical-align: initial;"><b>{{ text_date_added }}</b> {{ order.date_added }}<br />
+            {% if order.invoice_no %}
+                <b>{{ text_invoice_no }}</b> {{ order.invoice_no }}<br />
+            {% endif %}
+            <b>{{ text_order_id }}</b> {{ order.order_id }}<br />
+
+            <b>{{ text_payment_method }}</b> {{ order.payment_method }}<br />
+            {% if order.shipping_method %}
+                <b>{{ text_shipping_method }}</b> {{ order.shipping_method }}<br />
+            {% endif %}
+ 
+            </td>
+
+
+
         </tr>
       </tbody>
     </table>

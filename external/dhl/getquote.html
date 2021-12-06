@@ -1,0 +1,421 @@
+<style>
+    p {
+        padding: 0;
+        margin: 0;
+        font-family: "Times New Roman", serif;
+        letter-spacing: 1px;
+        background-color: #f1f1f1;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    
+    legend {
+        margin-top: 10px;
+        border: 1px solid #444;
+        padding: 5px;
+        margin-bottom: 15px;
+        background-color: #f1f1f1;
+    }
+    
+    fieldset {
+        width: 300px;
+        margin-left: 20px;
+        border: 1px solid #444;
+        padding: 5px;
+    }
+</style>
+
+<form action="mail.php" method="POST">
+
+    <fieldset>
+        <legend>Send To</legend>
+        <p>Country Code:</p> <input type="text" name="country_code">
+        <p>Postal Code:</p> <input type="text" name="postal_code">
+    </fieldset>
+    <br />
+    <fieldset>
+        <legend>Size & Weight</legend>
+        <p>Width</p> <input type="text" name="width">
+        <p>Height</p> <input type="text" name="height">
+        <p>Depth</p> <input type="text" name="depth">
+        <p>Weight</p> <input type="number" name="weight">
+    </fieldset>
+    <br />    
+    <fieldset>
+
+        <legend>Other Information</legend>
+        <p>Dutiable:</p>
+        Yes:<input type="radio" value="Yes" name="dutiable"><br /> No:
+        <input type="radio" value="No" name="dutiable"><br />
+
+        <p>Declared Currency:</p> <input type="text" name="declared_currency">
+        <p>Declared Value:</p> <input type="text" name="declared_value">
+
+
+        <select name="country">
+            <option value="AD">ANDORRA</option>
+            <option value="AM">ARMENIA</option>
+            <option value="AR">ARGENTINA</option>
+            <option value="AS">AMERICAN SAMOA</option>
+            <option value="AT">AUSTRIA</option>
+            <option value="AU">AUSTRALIA</option>
+            <option value="AZ">AZERBAIJAN</option>
+            <option value="BA">BOSNIA AND HERZEGOVINA</option>
+            <option value="BD">BANGLADESH</option>
+            <option value="BE">BELGIUM</option>
+            <option value="BG">BULGARIA</option>
+            <option value="BN">BRUNEI</option>
+            <option value="BR">BRAZIL</option>
+            <option value="BY">BELARUS</option>
+            <option value="CA">CANADA</option>
+            <option value="CH">SWITZERLAND</option>
+            <option value="CN">CHINA, PEOPLES REPUBLIC</option>
+            <option value="CO">COLOMBIA</option>
+            <option value="CU">CUBA</option>
+            <option value="CY">CYPRUS</option>
+            <option value="CZ">CZECH REPUBLIC, THE</option>
+            <option value="DE">GERMANY</option>
+            <option value="DK">DENMARK</option>
+            <option value="DZ">ALGERIA</option>
+            <option value="EC">ECUADOR</option>
+            <option value="EE">ESTONIA</option>
+            <option value="ES">SPAIN</option>
+            <option value="FI">FINLAND</option>
+            <option value="FM">MICRONESIA, FEDERATED STATES OF</option>
+            <option value="FO">FAROE ISLANDS</option>
+            <option value="FR">FRANCE</option>
+            <option value="GB">UNITED KINGDOM</option>
+            <option value="GE">GEORGIA</option>
+            <option value="GF">FRENCH GUYANA</option>
+            <option value="GG">GUERNSEY</option>
+            <option value="GL">GREENLAND</option>
+            <option value="GP">GUADELOUPE</option>
+            <option value="GR">GREECE</option>
+            <option value="GU">GUAM</option>
+            <option value="HR">CROATIA</option>
+            <option value="HU">HUNGARY</option>
+            <option value="IC">CANARY ISLANDS, THE</option>
+            <option value="ID">INDONESIA</option>
+            <option value="IL">ISRAEL</option>
+            <option value="IN">INDIA</option>
+            <option value="IS">ICELAND</option>
+            <option value="IT">ITALY</option>
+            <option value="JE">JERSEY</option>
+            <option value="JP">JAPAN</option>
+            <option value="KG">KYRGYZSTAN</option>
+            <option value="KH">CAMBODIA</option>
+            <option value="KR">KOREA, REPUBLIC OF (SOUTH K.)</option>
+            <option value="KV">KOSOVO</option>
+            <option value="KZ">KAZAKHSTAN</option>
+            <option value="LI">LIECHTENSTEIN</option>
+            <option value="LT">LITHUANIA</option>
+            <option value="LU">LUXEMBOURG</option>
+            <option value="LV">LATVIA</option>
+            <option value="MA">MOROCCO</option>
+            <option value="MC">MONACO</option>
+            <option value="MD">MOLDOVA, REPUBLIC OF</option>
+            <option value="ME">MONTENEGRO, REPUBLIC OF</option>
+            <option value="MG">MADAGASCAR</option>
+            <option value="MH">MARSHALL ISLANDS</option>
+            <option value="MK">MACEDONIA, REPUBLIC OF</option>
+            <option value="MN">MONGOLIA</option>
+            <option value="MP">COMMONWEALTH NO. MARIANA ISLANDS</option>
+            <option value="MQ">MARTINIQUE</option>
+            <option value="MV">MALDIVES</option>
+            <option value="MX">MEXICO</option>
+            <option value="MY">MALAYSIA</option>
+            <option value="NC">NEW CALEDONIA</option>
+            <option value="NL">NETHERLANDS, THE</option>
+            <option value="NO">NORWAY</option>
+            <option value="NZ">NEW ZEALAND</option>
+            <option value="PG">PAPUA NEW GUINEA</option>
+            <option value="PH">PHILIPPINES, THE</option>
+            <option value="PK">PAKISTAN</option>
+            <option value="PL">POLAND</option>
+            <option value="PR">PUERTO RICO</option>
+            <option value="PT">PORTUGAL</option>
+            <option value="PW">PALAU</option>
+            <option value="RE">REUNION, ISLAND OF</option>
+            <option value="RO">ROMANIA</option>
+            <option value="RS">SERBIA, REPUBLIC OF</option>
+            <option value="RU">RUSSIAN FEDERATION, THE</option>
+            <option value="SE">SWEDEN</option>
+            <option value="SG">SINGAPORE</option>
+            <option value="SH">SAINT HELENA</option>
+            <option value="SI">SLOVENIA</option>
+            <option value="SK">SLOVAKIA</option>
+            <option value="SM">SAN MARINO</option>
+            <option value="SZ">SWAZILAND</option>
+            <option value="TH">THAILAND</option>
+            <option value="TN">TUNISIA</option>
+            <option value="TR">TURKEY</option>
+            <option value="TW">TAIWAN</option>
+            <option value="UA">UKRAINE</option>
+            <option value="US">UNITED STATES OF AMERICA</option>
+            <option value="UZ">UZBEKISTAN</option>
+            <option value="VI">VIRGIN ISLANDS (US)</option>
+            <option value="XY">ST. BARTHELEMY</option>
+            <option value="YT">MAYOTTE</option>
+            <option value="ZA">SOUTH AFRICA</option>
+          </select>
+
+<select name="currency_code">
+    <option value="AD">EUR</option>
+    <option value="AE">AED</option>
+    <option value="AF">AFN</option>
+    <option value="AG">XCD</option>
+    <option value="AI">XCD</option>
+    <option value="AL">EUR</option>
+    <option value="AM">AMD</option>
+    <option value="AN">ANG</option>
+    <option value="AO">AOA</option>
+    <option value="AR">ARS</option>
+    <option value="AS">USD</option>
+    <option value="AT">EUR</option>
+    <option value="AU">AUD</option>
+    <option value="AW">AWG</option>
+    <option value="AZ">AZN</option>
+    <option value="GB">GBP</option>
+    <option value="BA">BAM</option>
+    <option value="BB">BBD</option>
+    <option value="BD">BDT</option>
+    <option value="BE">EUR</option>
+    <option value="BF">XOF</option>
+    <option value="BG">BGN</option>
+    <option value="BH">BHD</option>
+    <option value="BI">BIF</option>
+    <option value="BJ">XOF</option>
+    <option value="BM">BMD</option>
+    <option value="BN">BND</option>
+    <option value="BO">BOB</option>
+    <option value="BR">BRL</option>
+    <option value="BS">BSD</option>
+    <option value="BT">BTN</option>
+    <option value="BW">BWP</option>
+    <option value="BY">BYR</option>
+    <option value="BZ">BZD</option>
+    <option value="CA">CAD</option>
+    <option value="CF">XAF</option>
+    <option value="CG">XAF</option>
+    <option value="CH">CHF</option>
+    <option value="CI">XOF</option>
+    <option value="CK">NZD</option>
+    <option value="CL">CLP</option>
+    <option value="CM">XAF</option>
+    <option value="CN">CNY</option>
+    <option value="CO">COP</option>
+    <option value="CR">CRC</option>
+    <option value="CU">CUC</option>
+    <option value="CV">CVE</option>
+    <option value="CY">EUR</option>
+    <option value="CZ">CZF</option>
+    <option value="DE">EUR</option>
+    <option value="DJ">DJF</option>
+    <option value="DK">DKK</option>
+    <option value="DM">XCD</option>
+    <option value="DO">DOP</option>
+    <option value="DZ">DZD</option>
+    <option value="EC">USD</option>
+    <option value="EE">EUR</option>
+    <option value="EG">EGP</option>
+    <option value="ER">ERN</option>
+    <option value="ES">EUR</option>
+    <option value="ET">ETB</option>
+    <option value="FI">EUR</option>
+    <option value="FJ">FJD</option>
+    <option value="FK">GBP</option>
+    <option value="FM">USD</option>
+    <option value="FO">DKK</option>
+    <option value="FR">EUR</option>
+    <option value="GA">XAF</option>
+    <option value="GD">XCD</option>
+    <option value="GE">GEL</option>
+    <option value="GF">EUR</option>
+    <option value="GG">GBP</option>
+    <option value="GH">GBS</option>
+    <option value="GI">GBP</option>
+    <option value="GL">DKK</option>
+    <option value="GM">GMD</option>
+    <option value="GN">GNF</option>
+    <option value="GP">EUR</option>
+    <option value="GQ">XAF</option>
+    <option value="GR">EUR</option>
+    <option value="GT">GTQ</option>
+    <option value="GU">USD</option>
+    <option value="GW">XOF</option>
+    <option value="GY">GYD</option>
+    <option value="HK">HKD</option>
+    <option value="HN">HNL</option>
+    <option value="HR">HRK</option>
+    <option value="HT">HTG</option>
+    <option value="HU">HUF</option>
+    <option value="IC">EUR</option>
+    <option value="ID">IDR</option>
+    <option value="IE">EUR</option>
+    <option value="IL">ILS</option>
+    <option value="IN">INR</option>
+    <option value="IQ">IQD</option>
+    <option value="IR">IRR</option>
+    <option value="IS">ISK</option>
+    <option value="IT">EUR</option>
+    <option value="JE">GBP</option>
+    <option value="JM">JMD</option>
+    <option value="JO">JOD</option>
+    <option value="JP">JPY</option>
+    <option value="KE">KES</option>
+    <option value="KG">KGS</option>
+    <option value="KH">KHR</option>
+    <option value="KI">AUD</option>
+    <option value="KM">KMF</option>
+    <option value="KN">XCD</option>
+    <option value="KP">KPW</option>
+    <option value="KR">KRW</option>
+    <option value="KV">EUR</option>
+    <option value="KW">KWD</option>
+    <option value="KY">KYD</option>
+    <option value="KZ">KZF</option>
+    <option value="LA">LAK</option>
+    <option value="LB">USD</option>
+    <option value="LC">XCD</option>
+    <option value="LI">CHF</option>
+    <option value="LK">LKR</option>
+    <option value="LR">LRD</option>
+    <option value="LS">LSL</option>
+    <option value="LT">LTL</option>
+    <option value="LU">EUR</option>
+    <option value="LV">EUR</option>
+    <option value="LY">LYD</option>
+    <option value="MA">MAD</option>
+    <option value="MC">EUR</option>
+    <option value="MD">MDL</option>
+    <option value="ME">EUR</option>
+    <option value="MG">MGA</option>
+    <option value="MH">USD</option>
+    <option value="MK">MKD</option>
+    <option value="ML">COF</option>
+    <option value="MM">USD</option>
+    <option value="MN">MNT</option>
+    <option value="MO">MOP</option>
+    <option value="MP">USD</option>
+    <option value="MQ">EUR</option>
+    <option value="MR">MRO</option>
+    <option value="MS">XCD</option>
+    <option value="MT">EUR</option>
+    <option value="MU">MUR</option>
+    <option value="MV">MVR</option>
+    <option value="MW">MWK</option>
+    <option value="MX">MXN</option>
+    <option value="MY">MYR</option>
+    <option value="MZ">MZN</option>
+    <option value="NA">NAD</option>
+    <option value="NC">XPF</option>
+    <option value="NE">XOF</option>
+    <option value="NG">NGN</option>
+    <option value="NI">NIO</option>
+    <option value="NL">EUR</option>
+    <option value="NO">NOK</option>
+    <option value="NP">NPR</option>
+    <option value="NR">AUD</option>
+    <option value="NU">NZD</option>
+    <option value="NZ">NZD</option>
+    <option value="OM">OMR</option>
+    <option value="PA">USD</option>
+    <option value="PE">PEN</option>
+    <option value="PF">XPF</option>
+    <option value="PG">PGK</option>
+    <option value="PH">PHP</option>
+    <option value="PK">PKR</option>
+    <option value="PL">PLN</option>
+    <option value="PR">USD</option>
+    <option value="PT">EUR</option>
+    <option value="PW">USD</option>
+    <option value="PY">PYG</option>
+    <option value="QA">QAR</option>
+    <option value="RE">EUR</option>
+    <option value="RO">RON</option>
+    <option value="RS">RSD</option>
+    <option value="RU">RUB</option>
+    <option value="RW">RWF</option>
+    <option value="SA">SAR</option>
+    <option value="SB">SBD</option>
+    <option value="SC">SCR</option>
+    <option value="SD">SDG</option>
+    <option value="SE">SEK</option>
+    <option value="SG">SGD</option>
+    <option value="SH">SHP</option>
+    <option value="SI">EUR</option>
+    <option value="SK">EUR</option>
+    <option value="SL">SLL</option>
+    <option value="SM">EUR</option>
+    <option value="SN">XOF</option>
+    <option value="SO">SOS</option>
+    <option value="SR">SRD</option>
+    <option value="SS">SSP</option>
+    <option value="ST">STD</option>
+    <option value="SV">USD</option>
+    <option value="SY">SYP</option>
+    <option value="SZ">SZL</option>
+    <option value="TC">USD</option>
+    <option value="TD">XAF</option>
+    <option value="TG">XOF</option>
+    <option value="TH">THB</option>
+    <option value="TJ">TJS</option>
+    <option value="TL">USD</option>
+    <option value="TN">TND</option>
+    <option value="TO">TOP</option>
+    <option value="TR">TRY</option>
+    <option value="TT">TTD</option>
+    <option value="TV">AUD</option>
+    <option value="TW">TWD</option>
+    <option value="TZ">TZS</option>
+    <option value="UA">UAH</option>
+    <option value="UG">USD</option>
+    <option value="US">USD</option>
+    <option value="UY">UYU</option>
+    <option value="UZ">UZS</option>
+    <option value="VC">XCD</option>
+    <option value="VE">VEF</option>
+    <option value="VG">USD</option>
+    <option value="VI">USD</option>
+    <option value="VN">VND</option>
+    <option value="VU">VUV</option>
+    <option value="WS">WST</option>
+    <option value="XB">EUR</option>
+    <option value="XC">EUR</option>
+    <option value="XE">ANG</option>
+    <option value="XM">EUR</option>
+    <option value="XN">XCD</option>
+    <option value="XS">SIS</option>
+    <option value="XY">ANG</option>
+    <option value="YE">YER</option>
+    <option value="YT">EUR</option>
+    <option value="ZA">ZAR</option>
+    <option value="ZM">ZMW</option>
+    <option value="ZW">USD</option>
+  </select>
+<!-- 
+        <p>Priority</p>
+        <select name="priority" size="1">
+<option value="Low">Low</option>
+<option value="Normal">Normal</option>
+<option value="High">High</option>
+<option value="Emergency">Emergency</option>
+</select>
+        <br />
+
+        <p>Type</p>
+        <select name="type" size="1">
+<option value="update">Website Update</option>
+<option value="change">Information Change</option>
+<option value="addition">Information Addition</option>
+<option value="new">New Products</option>
+</select>
+        <br />
+    </fieldset>
+    <br />
+    <fieldset>
+        <legend>Your Message</legend>
+        <p>Message</p><textarea name="message" rows="8" cols="29"></textarea><br />
+        <input type="submit" value="Send"><input type="reset" value="Clear">
+    </fieldset> -->
+</form>

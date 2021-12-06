@@ -1,0 +1,1362 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+	{% if error_nodb1 %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_nodb1 }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% elseif error_nodb2 %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_nodb2 }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+	
+	{% if error_customer %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_customer }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% endif %}
+	
+	{% if error_address %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_address }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% endif %}
+	
+	{% if error_category %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_category }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% endif %}
+	
+	{% if error_product %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_product }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% endif %}
+	
+	{% if error_order %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_order }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% endif %}
+	
+	{% if error_other %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_other }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% endif %}
+	
+	{% if error_nomigrate %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_nomigrate }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+	{% endif %}
+ 
+	{% if success %}
+	    <div class="alert alert-success"><i class="fa fa-check-circle"></i> {{ success }} 
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+	    </div>
+	{% endif %}
+	
+	{% if connected %}
+	    {% if db == 'db1' %}
+	        <div class="alert alert-success"><i class="fa fa-check-circle"></i> {{ connected }} {{ db1 }} {{ db }}
+		{% else %}
+		    <div class="alert alert-success"><i class="fa fa-check-circle"></i> {{ connected }} {{ db2 }} {{ db }}
+		{% endif %}
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+	    </div>
+	{% endif %}
+	
+	{% if migrated %}
+	    <div class="alert alert-success"><i class="fa fa-check-circle"></i> {{ migrated }} {{ db2 }}
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+	    </div>
+	{% endif %}
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+	   	<ul class="nav nav-tabs">
+          <li><a href="#tab-tutorial" data-toggle="tab">
+		   {% if error_tutorial == 'on' %}
+                  <div class="text-success">{{ text_tutorial }}</div>
+			  {% else %}
+		          {{ text_tutorial }}
+              {% endif %}
+          </a></li>
+		  <li><a href="#tab-exportdb" data-toggle="tab">
+              {% if error_exportdb == 'on' %}
+                  <div class="text-success">{{ text_exportdb }}</div>
+              {% elseif error_exportdb == 'off' %}
+			      <div class="text-danger">{{ text_exportdb }}</div>
+			  {% else %}
+		          {{ text_exportdb }}
+              {% endif %}
+		  </a></li>
+		  <li><a href="#tab-importdb" data-toggle="tab">
+              {% if error_importdb == 'on' %}
+		          <div class="text-success">{{ text_importdb }}</div>
+			  {% elseif error_importdb == 'off' %}
+			      <div class="text-danger">{{ text_importdb }}</div>
+			  {% else %}
+		          {{ text_importdb }}
+              {% endif %}
+          </a></li>
+		  <li><a href="#tab-migrate" data-toggle="tab">
+              {% if error_migrate == 'on' %}
+		          <div class="text-success">{{ text_migrate }}</div>
+			  {% elseif error_migrate == 'off' %}
+			      <div class="text-danger">{{ text_migrate }}</div>
+			  {% else %}
+		          {{ text_migrate }}
+              {% endif %}
+          </a></li>
+		  <li><a href="#tab-poplarweb" data-toggle="tab">
+		  <div>{{ text_poplarweb }}</div>
+          </a></li>
+		</ul>
+
+		<div class="tab-content">
+		
+		  {% if tab == tab_tutorial %}
+		  <div class="tab-pane active" id="tab-tutorial">
+		  {% else %}
+		  <div class="tab-pane" id="tab-tutorial">
+          {% endif %}
+			<legend>{{ title_tutorial }}</legend>            
+			
+			<fieldset>
+            <div class="form-group">
+			  <label class="col-sm-2 control-label" for="intro">{{ label_intro }}</label>
+			  <div class="col-sm-8">
+			    {{ text_tut_intro }}
+			  </div>
+			</div>
+			</fieldset>
+			<hr>
+			<fieldset>
+            <div class="form-group">
+			  <label class="col-sm-2 control-label" for="intro">{{ label_export }}</label>
+			  <div class="col-sm-8">
+			    {{ text_tut_export }}
+			  </div>
+			</div>
+			</fieldset>
+			<hr>
+			<fieldset>
+            <div class="form-group">
+			  <label class="col-sm-2 control-label" for="export">{{ label_import }}</label>
+			  <div class="col-sm-8">
+			    {{ text_tut_import }}
+			  </div>
+			</div>
+			</fieldset>
+			<hr>
+			<fieldset>
+            <div class="form-group">
+			  <label class="col-sm-2 control-label" for="export">{{ label_migrate }}</label>
+			  <div class="col-sm-8">
+			    {{ text_tut_migrate }}
+			  </div>
+			</div>
+			</fieldset>
+			<hr>
+			<fieldset>
+            <div class="form-group">
+			  <label class="col-sm-2 control-label" for="export">{{ label_further_info }}</label>
+			  <div class="col-sm-8">
+			    {{ text_tut_further_info }}
+			  </div>
+			</div>
+			</fieldset>
+	      </div>
+		    
+		  {% if tab == tab_exportdb %}
+		  <div class="tab-pane active" id="tab-exportdb">
+		  {% else %}
+		  <div class="tab-pane" id="tab-exportdb">
+          {% endif %}
+            <fieldset>
+			<legend>{{ title_setexportdb }}</legend>
+			{{ text_setdb1 }}</br>
+			<form action="{{ action }}" name="exportdb" method="post" enctype="multipart/form-data" id="form-exportdb" class="form-horizontal">
+			<div class="form-group">
+			  <label class="col-sm-3 control-label" for="input-host">{{ entry_host }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_host1" size="20" value="{{ host1 }}" placeholder="{{ entry_localhost }}" id="input-host" class="form-control" /></input>
+				{% if error_nohost1 %}
+                  <div class="text-danger">{{ error_nohost1 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-user">{{ entry_user }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_user1" size="20" value="{{ user1 }}" placeholder="{{ entry_user }}" id="input-user" class="form-control" /></input>
+				{% if error_nouser1 %}
+                  <div class="text-danger">{{ error_nouser1 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-password">{{ entry_passport }}</label>
+              <div class="col-sm-5">
+			    <input type="password" name="input_password1" size="20" value="{{ password1 }}" placeholder="{{ entry_password }}" id="input-password" class="form-control" /></input>
+				{% if error_nopassword1 %}
+                  <div class="text-danger">{{ error_nopassword1 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-port">{{ entry_port }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_port1" size="20" value="{{ port1 }}" placeholder="{{ entry_3306 }}" id="input-port" class="form-control" /></input>
+				{% if error_noport1 %}
+                  <div class="text-danger">{{ error_noport1 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-name">{{ entry_name }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_name1" size="20" value="{{ name1 }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" /></input>
+				{% if error_noname1 %}
+                  <div class="text-danger">{{ error_noname1 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-prefix">{{ entry_prefix }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_prefix1" size="20" value="{{ prefix1 }}" placeholder="{{ entry_oc }}" id="input-prefix" class="form-control" /></input>
+				{% if error_noprefix1 %}
+                  <div class="text-danger">{{ error_noprefix1 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-setdb2">{{ text_checkdbs }}</label>
+              <div class="col-sm-3">
+                <input type="submit" value="{{ button_submit }}" id="button-submit" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+              </div>
+			</div>
+			<input type="hidden" name="input_exportdb" value="input_exportdb">
+			</form>
+			</fieldset>
+		  </div>
+		  
+		  {% if tab == tab_importdb %}
+		  <div class="tab-pane active" id="tab-importdb">
+		  {% else %}
+		  <div class="tab-pane" id="tab-importdb">
+          {% endif %}
+            <fieldset>
+			<legend>{{ title_setimportdb }}</legend>
+			{{ text_setdb2 }}</br>
+			<form action="{{ action }}" name="importdb" method="post" enctype="multipart/form-data" id="form-importtdb" class="form-horizontal">
+			<div class="form-group">
+			  <label class="col-sm-3 control-label" for="input-host">{{ entry_host }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_host2" size="20" value="{{ host2 }}" placeholder="{{ entry_localhost }}" id="input-host" class="form-control" /></input>
+				{% if error_nohost2 %}
+                  <div class="text-danger">{{ error_nohost2 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-user">{{ entry_user }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_user2" size="20" value="{{ user2 }}" placeholder="{{ entry_user }}" id="input-user" class="form-control" /></input>
+				{% if error_nouser2 %}
+                  <div class="text-danger">{{ error_nouser2 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-password">{{ entry_passport }}</label>
+              <div class="col-sm-5">
+			    <input type="password" name="input_password2" size="20" value="{{ password2 }}" placeholder="{{ entry_password }}" id="input-password" class="form-control" /></input>
+				{% if error_nopassword2 %}
+                  <div class="text-danger">{{ error_nopassword2 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-port">{{ entry_port }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_port2" size="20" value="{{ port2 }}" placeholder="{{ entry_3306 }}" id="input-port" class="form-control" /></input>
+				{% if error_noport2 %}
+                  <div class="text-danger">{{ error_noport2 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-name">{{ entry_name }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_name2" size="20" value="{{ name2 }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" /></input>
+				{% if error_noname2 %}
+                  <div class="text-danger">{{ error_noname2 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-prefix">{{ entry_prefix }}</label>
+              <div class="col-sm-5">
+			    <input type="text" name="input_prefix2" size="20" value="{{ prefix2 }}" placeholder="{{ entry_oc }}" id="input-prefix" class="form-control" /></input>
+				{% if error_noprefix2 %}
+                  <div class="text-danger">{{ error_noprefix2 }}</div>
+			    {% endif %}
+              </div>
+			  <br /><br /><br />
+			  <label class="col-sm-3 control-label" for="input-setdb2">{{ text_checkdbs }}</label>
+              <div class="col-sm-3">
+                <input type="submit" value="{{ button_submit }}" id="button-submit" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+              </div>
+			</div>
+			<input type="hidden" name="input_importdb" value="input_importdb">
+			</form>
+			</fieldset>
+		  </div>
+		  
+		  {% if tab == tab_migrate %}
+		  <div class="tab-pane active" id="tab-migrate">
+		  {% else %}
+		  <div class="tab-pane" id="tab-migrate">
+          {% endif %}
+            <fieldset>
+			<table class="table table-bordered table-hover">
+              <tbody>
+                <tr style="background-color:#eeeeee">
+                  <td style="width: 1px;" class="text-center">
+				    {{ text_from }}
+			        {% if db1 %}
+		              <small><br />
+			          {{ host1 }}<br />{{ port1 }}<br />{{ name1 }}<br />{{ prefix1 }}<br />
+			          </small>
+			        {% else %}
+			          {{ text_noexport }}
+                    {% endif %}
+				  </td>
+				  <td style="width: 1px;" class="text-center">
+				    {{ text_to }}
+			        {% if db2 %}
+		              <small><br />
+			          {{ host2 }}<br />{{ port2 }}<br />{{ name2 }}<br />{{ prefix2 }}<br />
+			          </small>
+			        {% else %}
+			          {{ text_noimport }}
+                    {% endif %}
+				  </td>
+                </tr>
+              </tbody>
+			</table>
+			
+			<hr />{{ text_customer }}</br>
+			<form action="{{ action }}" name="migrate" method="post" enctype="multipart/form-data" id="form-migrate" class="form-horizontal">
+			<div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr style="background-color:#ffffcc">
+                    <td colspan="5" style="width: 1px;" class="text-center">
+					  <table>
+					    <tr>
+						 <td>
+						   <input type="checkbox" name="input_customer" id="select_all_customers" class="form-control" onclick="selectAllCustomers()">
+						 </td>
+						 <td>
+						   <label class="col-sm-3 control-label" for="input-customer">{{ prefix1 }}{{ entry_customer }}</label>
+						 </td>
+					    </tr>
+					   </table>
+					</td>
+                  </tr>
+                </thead>
+                
+				<tbody>
+                <tr>
+                  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  ^
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-address"><i>{{ prefix1 }}{{ entry_address }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						   <input type="checkbox" class="check_customer" name="input_c_activity" id="input-c-activity" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						   <label class="col-sm-4 control-label" for="input-c-activity"><i>{{ prefix1 }}{{ entry_c_activity }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						   <input type="checkbox" class="check_customer" name="input_c_affiliate" id="input-c-affiliate" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						   <label class="col-sm-4 control-label" for="input-c-affiliate"><i>{{ prefix1 }}{{ entry_c_affiliate }}</i></label>
+						</td>
+					  </tr>
+					</table>
+                  </td>
+				  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_customer" name="input_c_approval" id="input-c-approval" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-approval"><i>{{ prefix1 }}{{ entry_c_approval }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      <input type="checkbox" class="check_customer" name="input_c_group" id="input-c-group" class="form-control" onclick="toggle(this);" /></input>
+                        </td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-group"><i>{{ prefix1 }}{{ entry_c_group }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      ^
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-3 control-label" for="input-c-group-desc"><i>{{ prefix1 }}{{ entry_c_group_desc }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_customer" name="input_c_history" id="input-c-history" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-history"><i>{{ prefix1 }}{{ entry_c_history }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      <input type="checkbox" class="check_customer" name="input_c_ip" id="input-c-ip" class="form-control" onclick="toggle(this);" /></input>
+                        </td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-ip"><i>{{ prefix1 }}{{ entry_c_ip }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      <input type="checkbox" class="check_customer" name="input_c_login" id="input-c-login" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-login"><i>{{ prefix1 }}{{ entry_c_login }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_customer" name="input_c_online" id="input-c-online" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-online"><i>{{ prefix1 }}{{ entry_c_online }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      <input type="checkbox" class="check_customer" name="input_c_reward" id="input-c-reward" class="form-control" onclick="toggle(this);" /></input>
+                        </td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-reward"><i>{{ prefix1 }}{{ entry_c_reward }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      <input type="checkbox" class="check_customer" name="input_c_search" id="input-c-search" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-search"><i>{{ prefix1 }}{{ entry_c_search }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_customer" name="input_c_select" id="input-c-select" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-select"><i>{{ prefix1 }}{{ entry_c_select }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      <input type="checkbox" class="check_customer" name="input_c_transaction" id="input-c-transaction" class="form-control" onclick="toggle(this);" /></input>
+                        </td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-transaction"><i>{{ prefix1 }}{{ entry_c_transaction }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+					      <input type="checkbox" class="check_customer" name="input_c_wishlist" id="input-c-wishlist" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td>
+						  <label class="col-sm-3 control-label" for="input-c-wishlist"><i>{{ prefix1 }}{{ entry_c_wishlist }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+			<div class="form-group">
+			  <label class="col-sm-3 control-label" for="input-customer">{{ text_c_migrate }}</label>
+			  {% if db1 and db2 %}
+			  <div class="col-sm-3">
+                <input type="submit" value="{{ button_submit }}" id="button-submit" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+              </div>
+			  {% endif %}
+			</div>
+			<input type="hidden" name="input_migrate" value="input_migrate">
+			</form>
+			</fieldset>
+			
+			<hr />{{ text_category }}</br>
+			<form action="{{ action }}" name="migrate" method="post" enctype="multipart/form-data" id="form-migrate" class="form-horizontal">
+			<div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr style="background-color:#ffffcc">
+                    <td colspan="5" style="width: 1px;" class="text-center">
+					  <table>
+					    <tr>
+						 <td>
+						   <input type="checkbox" name="input_category" id="select_all_categories" class="form-control" onclick="selectAllcategories()">
+						 </td>
+						 <td>
+						   <label class="col-sm-3 control-label" for="input-category">{{ prefix1 }}{{ entry_category }}</label>
+						 </td>
+					    </tr>
+					   </table>
+					</td>
+                  </tr>
+                </thead>
+                
+				<tbody>
+                <tr>
+                  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_category" name="input_cat_description" id="input-cat-description" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-cat-description"><i>{{ prefix1 }}{{ entry_cat_description }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_category" name="input_cat_filter" id="input-cat-filter" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-cat-filter"><i>{{ prefix1 }}{{ entry_cat_filter }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_category" name="input_cat_path" id="input-cat-path" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-cat-path"><i>{{ prefix1 }}{{ entry_cat_path }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_category" name="input_cat_to_layout" id="input-cat-to-layout" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-cat-to-layout"><i>{{ prefix1 }}{{ entry_cat_to_layout }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_category" name="input_cat_to_store" id="input-cat-to-store" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-cat-to-store"><i>{{ prefix1 }}{{ entry_cat_to_store }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td
+                </tr>
+                </tbody>
+              </table>
+            </div>
+			<div class="form-group">
+			  <label class="col-sm-3 control-label" for="input-category">{{ text_cat_migrate }}</label>
+			  {% if db1 and db2 %}
+			  <div class="col-sm-3">
+                <input type="submit" value="{{ button_submit }}" id="button-submit" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+              </div>
+			  {% endif %}
+			</div>
+			<input type="hidden" name="input_migrate" value="input_migrate">
+			</form>
+			</fieldset>
+		  
+		    <hr />{{ text_product }}</br>
+			<form action="{{ action }}" name="migrate" method="post" enctype="multipart/form-data" id="form-migrate" class="form-horizontal">
+			<div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr style="background-color:#ffffcc">
+                    <td colspan="5" style="width: 1px;" class="text-center">
+					  <table>
+					    <tr>
+						 <td>
+						   <input type="checkbox" name="input_product" id="select_all_products" class="form-control" onclick="selectAllProducts()">
+						 </td>
+						 <td>
+						   <label class="col-sm-3 control-label" for="input-product">{{ prefix1 }}{{ entry_product }}</label>
+						 </td>
+					    </tr>
+					   </table>
+					</td>
+                  </tr>
+                </thead>
+                
+				<tbody>
+                <tr>
+                  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_attribute" id="input-p-attribute" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-attribute"><i>{{ prefix1 }}{{ entry_p_attribute }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_description" id="input-p-description" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-description"><i>{{ prefix1 }}{{ entry_p_description }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_discount" id="input-p-discount" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-discount"><i>{{ prefix1 }}{{ entry_p_discount }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_filter" id="input-p-filter" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-filter"><i>{{ prefix1 }}{{ entry_p_filter }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_image" id="input-p-image" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-image"><i>{{ prefix1 }}{{ entry_p_image }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_option" id="input-p-option" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-option"><i>{{ prefix1 }}{{ entry_p_option }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_option_value" id="input-p-option-value" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-option-value"><i>{{ prefix1 }}{{ entry_p_option_value }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_recurring" id="input-p-recurring" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-recurring"><i>{{ prefix1 }}{{ entry_p_recurring }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_related" id="input-p-related" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-related"><i>{{ prefix1 }}{{ entry_p_related }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_reward" id="input-p-reward" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-reward"><i>{{ prefix1 }}{{ entry_p_reward }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_special" id="input-p-special" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-special"><i>{{ prefix1 }}{{ entry_p_special }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_to_category" id="input-p-to-category" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-to-category"><i>{{ prefix1 }}{{ entry_p_to_category }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+				  <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_to_download" id="input-p-to-download" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-to-download"><i>{{ prefix1 }}{{ entry_p_to_download }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_to_layout" id="input-p-to-layout" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-to-layout"><i>{{ prefix1 }}{{ entry_p_to_layout }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_to_store" id="input-p-to-store" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-to-store"><i>{{ prefix1 }}{{ entry_p_to_store }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td
+                </tr>
+				<tr  style="background-color:#ffffcc">
+				 <td colspan="4">
+				   {{ text_linked_product }}
+				 </td>
+				</tr>
+				<tr>
+                  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_attributes" id="input-p-attributes" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-attributes"><i>{{ prefix1 }}{{ entry_p_attributes }}</i></label>
+						</td>
+					  </tr>
+					</table>
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_options" id="input-p-options" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-options"><i>{{ prefix1 }}{{ entry_p_options }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_manufacturers" id="input-p-manufacturers" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-manufacturers"><i>{{ prefix1 }}{{ entry_p_manufacturers }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_downloads" id="input-p-downloads" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-downloads"><i>{{ prefix1 }}{{ entry_p_downloads }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_product" name="input_p_review" id="input-p-review" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-p-review"><i>{{ prefix1 }}{{ entry_p_review }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				 </tr>
+                </tbody>
+              </table>
+            </div>
+			<div class="form-group">
+			  <label class="col-sm-3 control-label" for="input-product">{{ text_p_migrate }}</label>
+			  {% if db1 and db2 %}
+			  <div class="col-sm-3">
+                <input type="submit" value="{{ button_submit }}" id="button-submit" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+              </div>
+			  {% endif %}
+			</div>
+			<input type="hidden" name="input_migrate" value="input_migrate">
+			</form>
+			</fieldset>
+		  
+		    <hr />{{ text_order }}</br>
+			<form action="{{ action }}" name="migrate" method="post" enctype="multipart/form-data" id="form-migrate" class="form-horizontal">
+			<div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr style="background-color:#ffffcc">
+                    <td colspan="5" style="width: 1px;" class="text-center">
+					  <table>
+					    <tr>
+						 <td>
+						   <input type="checkbox" name="input_order" id="select_all_orders" class="form-control" onclick="selectAllOrders()">
+						 </td>
+						 <td>
+						   <label class="col-sm-3 control-label" for="input-order">{{ prefix1 }}{{ entry_order }}</label>
+						 </td>
+					    </tr>
+					   </table>
+					</td>
+                  </tr>
+                </thead>
+                
+				<tbody>
+                <tr>
+                  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_history" id="input-o-history" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-history"><i>{{ prefix1 }}{{ entry_o_history }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_option" id="input-o-option" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-option"><i>{{ prefix1 }}{{ entry_o_option }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_product" id="input-o-product" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-product"><i>{{ prefix1 }}{{ entry_o_product }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_recurring" id="input-o-recurring" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-recurring"><i>{{ prefix1 }}{{ entry_o_recurring }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_recurring_txn" id="input-o-recurring-txn" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-recurring-txn"><i>{{ prefix1 }}{{ entry_o_recurring_txn }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_shipment" id="input-o-shipment" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-shipment"><i>{{ prefix1 }}{{ entry_o_shipment }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_status" id="input-o-status" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-status"><i>{{ prefix1 }}{{ entry_o_status }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_total" id="input-o-total" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-total"><i>{{ prefix1 }}{{ entry_o_total }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_o_voucher" id="input-o-voucher" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-o-voucher"><i>{{ prefix1 }}{{ entry_o_voucher }}</i></label>
+						</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+                </tr>
+				<tr  style="background-color:#ffffcc">
+				 <td colspan="4">
+				   {{ text_linked_order }}
+				 </td>
+				</tr>
+				<tr>
+                  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_lo_return" id="input-lo-return" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-lo-return"><i>{{ prefix1 }}{{ entry_lo_return }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_order" name="input_lo_recurring" id="input-lo-recurring" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-lo-recurring"><i>{{ prefix1 }}{{ entry_lo_recurring }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+                    <table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				 </tr>
+                </tbody>
+              </table>
+            </div>
+			<div class="form-group">
+			  <label class="col-sm-3 control-label" for="input-order">{{ text_o_migrate }}</label>
+			  {% if db1 and db2 %}
+			  <div class="col-sm-3">
+                <input type="submit" value="{{ button_submit }}" id="button-submit" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+              </div>
+			  {% endif %}
+			</div>
+			<input type="hidden" name="input_migrate" value="input_migrate">
+			</form>
+			</fieldset>
+		  
+		    <hr />{{ text_other }}</br>
+			<form action="{{ action }}" name="migrate" method="post" enctype="multipart/form-data" id="form-migrate" class="form-horizontal">
+			<div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr style="background-color:#eeeeee">
+                    <td colspan="5" style="width: 1px;" class="text-center">
+					  <table>
+					    <tr>
+						 <td>
+						   <input type="checkbox" name="input_other" id="select_all_others" class="form-control" onclick="selectAllOthers()">
+						 </td>
+						 <td>
+						   &nbsp;
+						 </td>
+					    </tr>
+					   </table>
+					</td>
+                  </tr>
+                </thead>
+                
+				<tbody>
+                <tr>
+                  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_other" name="input_x_coupon" id="input-x-coupon" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-x-coupon"><i>{{ prefix1 }}{{ entry_x_coupon }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  <input type="checkbox" class="check_other" name="input_x_voucher" id="input-x-voucher" class="form-control" onclick="toggle(this);" /></input>
+						</td>
+						<td class="text-right">
+						  <label class="col-sm-4 control-label" for="input-x-voucher"><i>{{ prefix1 }}{{ entry_x_voucher }}</i></label>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				  <td class="text-center">
+					<table>
+					  <tr>
+						<td>
+						  &nbsp;
+						</td>
+						<td class="text-right">
+						  &nbsp;
+						</td>
+					  </tr>
+					</table>
+				  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+			<div class="form-group">
+			  <label class="col-sm-3 control-label" for="input-other">{{ text_x_migrate }}</label>
+			  {% if db1 and db2 %}
+			  <div class="col-sm-3">
+                <input type="submit" value="{{ button_submit }}" id="button-submit" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+              </div>
+			  {% endif %}
+			</div>
+			<input type="hidden" name="input_migrate" value="input_migrate">
+			</form>
+			</fieldset>
+		  </div>
+
+		  <div class="tab-pane" id="tab-poplarweb">
+            <legend>{{ title_poplarweb }}</legend>
+		    {{ text_free }}
+            <div class="row">
+              <table width="80%">
+			    <tr>
+                  <td class=col-sm-2>{{ text_custcsvdownload }}</td>
+			      <td class=col-sm-4><br />{{ text_custcsvdetail }}<br />
+			        <center><a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=32405"><img src="http://www.poplarweb.co.uk/images/custcsvsmallbanner.jpg" width="260" height="152" alt="Customer CSV Download 3" title="Customer CSV Download 3" /></a></center><br />
+			      </td>
+                </tr>
+		        <tr>
+                  <td class=col-sm-2>{{ text_delivery }}</td>
+			      <td class=col-sm-4><br />{{ text_deliverydetail }}<br />
+			        <center><a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=32144"><img src="http://www.poplarweb.co.uk/images/deliverysmallbanner.jpg" width="260" height="152" alt="Delivery Instructions 3" title="Delivery Instructions 3" /></a></center><bt />
+			      </td>
+                </tr>
+		        <tr>
+                  <td class=col-sm-2>{{ text_rssfeed }}</td>
+			      <td class=col-sm-4><br />{{ text_rssfeeddetail }}<br />
+			        <center><a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=28733"><img src="http://www.poplarweb.co.uk/images/rsssmallbanner.jpg" width="260" height="152" alt="RSS Feed Ultimate 3" title="RSS Feed Ultimate 3" /></a></center>
+			      </td>
+                </tr>
+		        <tr>
+                  <td class=col-sm-2>{{ text_csvdownload }}</td>
+			      <td class=col-sm-4><br />{{ text_csvdetail }}<br />
+			        <center><a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=32077"><img src="http://www.poplarweb.co.uk/images/csvsmallbanner.jpg" width="260" height="152" alt="CSV Download Universal 3" title="CSV Download Universal 3" /></a></center><br />
+			      </td>
+                </tr>
+				<tr>
+                  <td class=col-sm-2>{{ text_contactus }}</td>
+			      <td class=col-sm-4><br />{{ text_contactdetail }}<br />
+			        <center><a target="_blank" href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=32201"><img src="http://www.poplarweb.co.uk/images/contactsmallbanner.jpg" width="260" height="152" alt="Contact Us Ultimate 3" title="Contact Us Ultimate 3" /></a></center><br />
+			      </td>
+                </tr>
+              </table>
+		    </div>
+	      </div>
+		</div>
+	  </div>
+    </div>
+  </div>
+</div>
+<script>
+function selectAllCustomers() {
+    var blnChecked = document.getElementById("select_all_customers").checked;
+    var check_customers = document.getElementsByClassName("check_customer");
+    var intLength = check_customers.length;
+    for(var i = 0; i < 99; i++) {
+        var check_customer = check_customers[i];
+        check_customer.checked = blnChecked;
+    }
+}
+function selectAllcategories() {
+    var blnChecked = document.getElementById("select_all_categories").checked;
+    var check_categories = document.getElementsByClassName("check_category");
+    var intLength = check_categories.length;
+    for(var i = 0; i < 99; i++) {
+        var check_category = check_categories[i];
+        check_category.checked = blnChecked;
+    }
+}
+function selectAllProducts() {
+    var blnChecked = document.getElementById("select_all_products").checked;
+    var check_products = document.getElementsByClassName("check_product");
+    var intLength = check_products.length;
+    for(var i = 0; i < 99; i++) {
+        var check_product = check_products[i];
+        check_product.checked = blnChecked;
+    }
+}
+function selectAllOrders() {
+    var blnChecked = document.getElementById("select_all_orders").checked;
+    var check_orders = document.getElementsByClassName("check_order");
+    var intLength = check_orders.length;
+    for(var i = 0; i < 99; i++) {
+        var check_order = check_orders[i];
+        check_order.checked = blnChecked;
+    }
+}
+function selectAllOthers() {
+    var blnChecked = document.getElementById("select_all_others").checked;
+    var check_others = document.getElementsByClassName("check_other");
+    var intLength = check_others.length;
+    for(var i = 0; i < 99; i++) {
+        var check_other = check_others[i];
+        check_other.checked = blnChecked;
+    }
+}
+</script>
+{{ footer }}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>TEST XML</id>
+    <version>1.0</version>
+    <vqmver required="true">2.6.0</vqmver>
+    <author>Bobo.</author>
+
+    <file name="catalog/controller/product/product.php">
+        <operation error="log">
+            <search position="before"><![CDATA[ $data['options'][] = array(]]></search>
+            <add><![CDATA[
+                // RM -- Sort the product option values.
+                usort($product_option_value_data, function($a, $b) { return ($a['name'] <=> $b['name']); });
+                                ]]></add>
+        </operation>
+    </file>
+
+</modification>

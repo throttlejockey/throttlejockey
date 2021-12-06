@@ -31,6 +31,8 @@
 {% endif %}
 {{ j3.loadController('journal3/layout', 'top') }}
 <div id="product-product" class="container">
+
+{# Left Column #}
   <div class="row">{{ column_left }}
     <div id="content" class="{{ class }}">
       {% endif %}
@@ -137,6 +139,14 @@
               {% endfor %}
             </div>
           {% endif %}
+                {% if not j3.document.isPopup('options') %}
+        {% if product_blocks.default %}
+        <div class="product-blocks blocks-default">
+          {{ product_blocks.default|join }}
+        </div>
+        {% endif %}
+      {% endif %}
+
         </div>
         {% endif %}
         <div class="product-right">
@@ -569,14 +579,14 @@
           </div>
         </div>
       {% endif %}
-      {% if not j3.document.isPopup('options') %}
+{#       {% if not j3.document.isPopup('options') %}
         {% if product_blocks.default %}
         <div class="product-blocks blocks-default">
           {{ product_blocks.default|join }}
         </div>
         {% endif %}
       {% endif %}
-      {% if tags and not j3.document.isPopup() and (j3.settings.get(stylePrefix ~ 'TagsPosition') == 'default') %}
+ #}      {% if tags and not j3.document.isPopup() and (j3.settings.get(stylePrefix ~ 'TagsPosition') == 'default') %}
         <div class="tags">
           <span class="tags-title">{{ text_tags }}</span>
           {% for tag in tags %}

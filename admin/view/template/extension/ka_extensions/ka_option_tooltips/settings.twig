@@ -1,0 +1,64 @@
+{#
+    $Project: Product Option Tooltips $
+    $Author: karapuz  team<support@ka-station.com> $
+    $Version: 2.0.0.5 $ ($Revision: 71 $)
+#}
+{{ header }}{{ column_left }} 
+
+<div id="content">
+
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-input" data-toggle="tooltip" title="{{ t('button_save') }}" class="btn btn-primary"><i class="fa fa-check-circle"></i> {{ t('button_save') }}</button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ t('button_cancel') }}" class="btn btn-default"><i class="fa fa-reply"></i>  {{ t('button_cancel') }}</a>
+      </div>
+      <h1><i class="fa fa-puzzle-piece"></i> {{ heading_title }}</h1>
+      {{ ka_breadcrumbs }} 
+    </div>
+  </div>
+
+	<div class="container-fluid">
+		{{ ka_top }} 
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				
+				<form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-input">
+					<input type="hidden" name="mode" value="" id="mode" />
+					
+					<table class="table table-striped table-bordered table-hover">
+						<thead> 
+							<tr>
+								<td class="left">Setting</td>
+								<td>Value</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="left" width="70%">Version          
+								</td>
+								<td class="left" width="30%">
+									{{ extension_version }} 
+								</td>
+							</tr>
+							<tr>
+								<td class="left">Show Global Values for Empty Option Tooltips
+								</td>
+								<td class="left">
+									<input type="checkbox" name="ka_option_tooltips_show_global_tips_for_empty_options" value="Y" {% if (ka_option_tooltips_show_global_tips_for_empty_options is not empty) %} checked="checked" {% endif %}" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"><!--
+
+//--></script>
+
+{{ footer }}

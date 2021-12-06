@@ -1,0 +1,36 @@
+# .htaccess
+# /config.php
+# admin/config.php
+
+*error_log
+!index.html
+
+download/
+
+# Images
+image/data/
+image/cache/
+
+# Videos.. 
+*.mp4
+*.mov
+*.webp
+
+# Archives
+*.zip
+*.tar.gz
+*.gz 
+
+# Cache, Logs
+system/cache/
+system/logs/
+
+system/storage/
+
+# vQmod log files
+vqmod/logs/*
+# vQmod cache files
+vqmod/vqcache/*
+vqmod/checked.cache
+vqmod/mods.cache
+
